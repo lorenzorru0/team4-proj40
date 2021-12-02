@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Type;
+use App\Plate;
 
 class User extends Authenticatable
 {
@@ -41,5 +42,10 @@ class User extends Authenticatable
     public function types()
     {
         return $this->belongsToMany('App\Type');
+    }
+
+    public function plates()
+    {
+        return $this->hasMany('App\Plate');
     }
 }

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
-use App\Order;
+use App\Plate;
 
-class Plate extends Model
+class Order extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -14,7 +14,7 @@ class Plate extends Model
      * @var array
      */
     protected $fillable = [
-        'plate_name', 'price', 'visible',
+        'customer_firstname', 'customer_lastname', 'customer_email', 'customer_address', 'customer_street_number',
     ];
 
     public function user()
@@ -22,8 +22,8 @@ class Plate extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function orders()
+    public function plates()
     {
-        return $this->belongsToMany('App\Order');
+        return $this->belongsToMany('App\Plate');
     }
 }

@@ -17,7 +17,7 @@ class CreatePlatesTable extends Migration
             $table->id();
             $table->string('plate_name', 50);
             $table->text('description')->nullable();
-            $table->float('price', 5, 2);
+            $table->float('price', 5, 2)->unsigned();
             $table->boolean('visible')->nullable();
             $table->integer('cooking_time')->nullable();
             $table->string('url_photo')->nullable();

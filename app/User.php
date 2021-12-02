@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Type;
 use App\Plate;
+use App\Order;
 
 class User extends Authenticatable
 {
@@ -47,5 +48,10 @@ class User extends Authenticatable
     public function plates()
     {
         return $this->hasMany('App\Plate');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
     }
 }

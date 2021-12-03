@@ -1,4 +1,4 @@
-@extends('layouts.users.base')
+@extends('layouts.users.dashboard')
 
 @section('layoutContent')
 <h2>Modifica Ristorante</h2>
@@ -10,10 +10,13 @@
   
     <div class="mb-3">
       <label for="business_name" class="form-label">Business Name</label>
-      <input type="text" class="form-control" id="business_name" aria-describedby="emailHelp">
+      <input type="text" class="form-control" id="business_name" placeholder="Insert title" value="{{old('business_name') ? old('business_name') : $user['business_name']}}">
+      @error('business_name')
+			<div class="alert alert-danger">{{ $message }}</div>
+		@enderror
     </div>
 
-    <div class="mb-3">
+    {{-- <div class="mb-3">
       <label for="address" class="form-label">Address</label>
       <input type="text" class="form-control" id="address" aria-describedby="emailHelp">
     </div>
@@ -45,7 +48,7 @@
               </span>
           @enderror
       </div>
-  </div>
+  </div> --}}
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

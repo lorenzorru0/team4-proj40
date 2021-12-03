@@ -26,6 +26,10 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Deliveboo
                 </a>
+                <a href="{{ route('admin.edit', $user->id) }}">
+                    Modifica i dati del tuo ristorante
+                </a>
+
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -74,8 +78,17 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+
+            @yield('pageContent')
+            @yield('layoutContent')
+
         </main>
     </div>
 </body>
 </html>
+
+
+
+
+
+    

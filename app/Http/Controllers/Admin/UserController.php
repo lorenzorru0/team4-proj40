@@ -10,13 +10,13 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    protected $validationRules = [
-        'business_name' => 'string|required|max:80',
-        'address' => 'string|required',
-        'street_number' => 'string|required',
-        'vat_number' => 'string|max:11',
-        'description' => 'string'
-    ];
+    // protected $validationRules = [
+    //     'business_name' => 'string|required|max:80',
+    //     'address' => 'string|required',
+    //     'street_number' => 'string|required',
+    //     'vat_number' => 'string|max:11',
+    //     'description' => 'string'
+    // ];
     /**
      * Display a listing of the resource.
      *
@@ -82,17 +82,18 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //validations
-        $request->validate($this->validationRules);
+        // $request->validate($this->validationRules);
 
         if($user->business_name != $request->business_name) {
             $user->slug = $this->getSlug($request->business_name);
         }
-
-        $user->fill($request->all());
+      
+        $user->update($request->all());
 
         $user->save();
 
-        return redirect()->route("admin.index", $user->id)->with('success', "user {$user->id} has been edited");
+        return redirect()->route("admin.index", $user->id);
+
     }
 
     /**

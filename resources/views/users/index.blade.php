@@ -1,6 +1,7 @@
-@extends('layouts.users.base')
+@extends('layouts.users.dashboard')
 
 @section('pageContent')
+
 <h2>Dettagli Ristorante</h2>
 
     <ul>

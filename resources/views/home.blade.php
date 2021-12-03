@@ -15,6 +15,8 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <img class="img-fluic" src="{{asset('storage/'. Auth::user()->url_cover)}}" alt="Cover user">
                 </div>
             </div>
         </div>

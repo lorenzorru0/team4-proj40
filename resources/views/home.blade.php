@@ -16,7 +16,9 @@
 
                     {{ __('You are logged in!') }}
 
-                    <img class="img-fluic" src="{{asset('storage/'. Auth::user()->url_cover)}}" alt="Cover user">
+
+                    <img class="img-fluid" src="{{asset('storage/'. Auth::user()->url_cover)}}" alt="Cover user">
+
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@
 
     <ul>
         <li>Nome Ristorante: {{$user->business_name}}</li>
-        <li>Indirizzo: {{$user->address}}</li>
+        <li>Indirizzo: {{$user->address}} {{$user->street_number}}</li>
         <li>Partita IVA: {{$user->vat_number}}</li>
     </ul>
 

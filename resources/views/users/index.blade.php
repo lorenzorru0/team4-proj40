@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.users.base')
 
 @section('pageContent')
 <h2>Dettagli Ristorante</h2>
@@ -10,3 +10,4 @@
     </ul>
 
 @endsection
+

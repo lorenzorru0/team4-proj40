@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -57,7 +58,8 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'max:70'],
             'street_number' => ['required', 'string', 'max:70'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
-            'description' => ['string', 'nullable']
+            'description' => ['string', 'nullable'],
+            'url_cover' => ['nullable', 'image', 'max:200']
         ]);
     }
 
@@ -69,6 +71,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if (array_key_exists('url_cover', $data)) {
+            $cover_path = Storage::put('user_covers', $data['url_cover']);
+            $data['url_cover'] = $cover_path;
+        }
+
         return User::create([
             'business_name' => $data['business_name'],
             'slug' => Str::of($data['business_name'])->slug('-'),
@@ -78,6 +85,7 @@ class RegisterController extends Controller
             'street_number' => $data['street_number'],
             'vat_number' => $data['vat_number'],
             'description' => $data['description'],
+            'url_cover' => $data['url_cover'],
         ]);
     }
 }

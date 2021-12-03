@@ -82,21 +82,17 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //validations
-        // $request->validate($this->validationRules);
+        $request->validate($this->validationRules);
 
-        // if($user->business_name != $request->business_name) {
-        //     $user->slug = $this->getSlug($request->business_name);
-        // }
+        if($user->business_name != $request->business_name) {
+            $user->slug = $this->getSlug($request->business_name);
+        }
 
-        $data = $request->all(); 
+        $user->fill($request->all());
 
-        $user->update($data);
+        $user->save();
 
-        // $user->save();
-
-        // $user->tags()->sync($request->tags);
-
-        return redirect()->route("admin.index");
+        return redirect()->route("admin.index", $user->id)->with('success', "user {$user->id} has been edited");
     }
 
     /**

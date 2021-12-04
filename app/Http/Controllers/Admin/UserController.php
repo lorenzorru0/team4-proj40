@@ -102,7 +102,7 @@ class UserController extends Controller
         
         $user->save();
 
-        return redirect()->route("admin.index", $user->id);
+        return redirect()->route("admin.users.index", $user->id);
 
     }
 

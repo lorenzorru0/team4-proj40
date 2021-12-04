@@ -7,16 +7,18 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    // protected $validationRules = [
-    //     'business_name' => 'string|required|max:80',
-    //     'address' => 'string|required',
-    //     'street_number' => 'string|required',
-    //     'vat_number' => 'string|max:11',
-    //     'description' => 'string'
-    // ];
+    protected $validationRules = [
+        'business_name' => 'string|required|max:80',
+        'address' => 'string|required',
+        'street_number' => 'string|required',
+        'vat_number' => 'string|max:11',
+        'description' => 'string',
+        'url_cover' => 'nullable', 'image', 'max:200'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -81,15 +83,23 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //validations
-        // $request->validate($this->validationRules);
+        // validations
+        $request->validate($this->validationRules);
 
         if($user->business_name != $request->business_name) {
             $user->slug = $this->getSlug($request->business_name);
         }
-      
-        $user->update($request->all());
 
+        if(array_key_exists('url_cover', $request->all())) {
+            if($user->url_cover != NULL) {
+                $this->deleteImage($user->url_cover);
+            }
+            $cover_path = Storage::put('user_covers', $request->url_cover);
+            $request->url_cover = $cover_path;
+        }
+
+        $user->update($request->all());
+        
         $user->save();
 
         return redirect()->route("admin.index", $user->id);
@@ -122,5 +132,14 @@ class UserController extends Controller
         }
 
         return $slug;
+    }
+
+    private function deleteImage($path_img)
+    {
+        $path_img = '/app/public/' . $path_img;
+
+        if(Storage::exists($path_img)) {
+            Storage::delete($path_img);
+        }
     }
 }

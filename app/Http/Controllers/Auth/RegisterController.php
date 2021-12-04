@@ -74,6 +74,8 @@ class RegisterController extends Controller
         if (array_key_exists('url_cover', $data)) {
             $cover_path = Storage::put('user_covers', $data['url_cover']);
             $data['url_cover'] = $cover_path;
+        } else {
+            $data['url_cover'] = NULL;
         }
 
         return User::create([

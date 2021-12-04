@@ -24,9 +24,9 @@ Auth::routes();
 // Rotte area Admin
 Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->group(function() {
     // Route::get('/', 'HomeController@index')->name('home');
-    // Route::resource('/', 'UserController');
-    Route::get('/', 'UserController@index')->name('index');
-    Route::get('/{user}/edit', 'UserController@edit')->name('edit');
-    Route::put("/{user}/update", 'UserController@update')->name('update');
-
+    Route::resource('users', 'UserController');
+    // Route::get('/', 'UserController@index')->name('index');
+    // Route::get('/{user}/edit', 'UserController@edit')->name('edit');
+    // Route::put("/{user}/update", 'UserController@update')->name('update');
+    Route::resource('plates', 'PlatesController');
 });

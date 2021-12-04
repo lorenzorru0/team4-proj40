@@ -26,8 +26,7 @@ class PlatesController extends Controller
      */
     public function index()
     {
-        $plates = Plate::where('id', Auth::user()->id)->get();
-        // $plates = Plate::all();
+        $plates = Plate::where('user_id', Auth::user()->id)->get();
         
         return view('plates.index', compact('plates'));
     }

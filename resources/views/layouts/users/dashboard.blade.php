@@ -27,8 +27,11 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Deliveboo
                 </a>
-                <a href="{{ route('admin.edit', $user->id) }}">
+                <a href="{{ route('admin.users.edit', Auth::user()->id) }}">
                     Modifica i dati del tuo ristorante
+                </a>
+                <a class="ml-3" href="{{ route('admin.plates.index') }}">
+                    Visualizza menu
                 </a>
 
                 

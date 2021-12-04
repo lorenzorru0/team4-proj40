@@ -6,9 +6,17 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
+    // protected $validationRules = [
+    //     'business_name' => 'string|required|max:80',
+    //     'address' => 'string|required',
+    //     'street_number' => 'string|required',
+    //     'vat_number' => 'string|max:11',
+    //     'description' => 'string'
+    // ];
     /**
      * Display a listing of the resource.
      *
@@ -59,9 +67,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -71,9 +79,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        //validations
+        // $request->validate($this->validationRules);
+
+        if($user->business_name != $request->business_name) {
+            $user->slug = $this->getSlug($request->business_name);
+        }
+      
+        $user->update($request->all());
+
+        $user->save();
+
+        return redirect()->route("admin.index", $user->id);
+
     }
 
     /**
@@ -85,5 +105,22 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function getSlug($business_name)
+    {
+        $slug = Str::of($business_name)->slug('-');
+
+        $userExist = User::where("slug", $slug)->first();
+
+        $count = 2;
+
+        while($userExist) {
+            $slug = Str::of($business_name)->slug('-') . "-{$count}";
+            $userExist = User::where("slug", $slug)->first();
+            $count++;
+        }
+
+        return $slug;
     }
 }

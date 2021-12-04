@@ -7,9 +7,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Plate;
+use App\Type;
+use Illuminate\Support\Facades\Storage;
+
 
 class PlatesController extends Controller
 {
+    protected $validationRules = [
+        'plate_name' => 'string|required|max:50',
+        'description' => 'string|nullable',
+        'price' => 'required|numeric',
+        'cooking_time' => 'nullable|numeric'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +26,9 @@ class PlatesController extends Controller
      */
     public function index()
     {
-        $plates = Plate::where('user_id', Auth::user()->id)->get();
+        $plates = Plate::where('id', Auth::user()->id)->get();
+
+        // $plates = Plate::all();
 
         return view('plates.index', compact('plates'));
     }
@@ -29,7 +40,7 @@ class PlatesController extends Controller
      */
     public function create()
     {
-        //
+        return view('plates.create');
     }
 
     /**
@@ -40,7 +51,15 @@ class PlatesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate($this->validationRules);
+
+        $newPlate = new Plate();
+        $newPlate->fill($request->all());
+        $newPlate->user_id = Auth::user()->id;
+
+        $newPlate->save();
+
+        return redirect()->route("admin.plates.index", $newPlate->id)->with('success', "New plate has been created");
     }
 
     /**
@@ -60,9 +79,9 @@ class PlatesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
-        //
+        return view('plates.edit', compact('plate'));
     }
 
     /**
@@ -72,9 +91,28 @@ class PlatesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Plate $plate)
     {
-        //
+         // validations
+         $request->validate($this->validationRules);
+
+        //  if($plate->plate_name != $request->plate_name) {
+        //      $plate->slug = $this->getSlug($request->plate_name);
+        //  }
+ 
+         if(array_key_exists('url_photo', $request->all())) {
+             if($plate->url_photo != NULL) {
+                 $this->deleteImage($plate->url_photo);
+             }
+             $cover_path = Storage::put('plate_covers', $request->url_photo);
+             $request->url_photo = $cover_path;
+         }
+ 
+         $plate->update($request->all());
+         
+         $plate->save();
+ 
+         return redirect()->route("admin.plates.index", $plate->id);
     }
 
     /**
@@ -86,5 +124,14 @@ class PlatesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function deleteImage($path_img)
+    {
+        $path_img = '/app/public/' . $path_img;
+
+        if(Storage::exists($path_img)) {
+            Storage::delete($path_img);
+        }
     }
 }

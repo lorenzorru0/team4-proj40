@@ -29,4 +29,5 @@ Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->
     // Route::get('/{user}/edit', 'UserController@edit')->name('edit');
     // Route::put("/{user}/update", 'UserController@update')->name('update');
     Route::resource('plates', 'PlatesController');
+    Route::put('/plates/{plate}/visibility', 'Platescontroller@changeVisibility')->name('plates.visibility');
 });

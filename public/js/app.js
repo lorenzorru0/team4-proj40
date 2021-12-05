@@ -49796,6 +49796,14 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+var deleteButtons = document.querySelectorAll('.deleteButton');
+var valueId = document.getElementById('deleteId');
+deleteButtons.forEach(function (elm) {
+  elm.addEventListener('click', function () {
+    console.log(this.getAttribute('data-id'));
+    valueId.value = this.getAttribute('data-id');
+  });
+});
 
 /***/ }),
 
@@ -49931,8 +49939,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andreageraci/Desktop/progetto-finale/team4-proj40/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/andreageraci/Desktop/progetto-finale/team4-proj40/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/lorenzoorru0/Desktop/team4-proj40/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/lorenzoorru0/Desktop/team4-proj40/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

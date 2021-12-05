@@ -14,7 +14,7 @@ class Plate extends Model
      * @var array
      */
     protected $fillable = [
-        'plate_name', 'price', 'visible',
+        'plate_name', 'price', 'visible', 'description', 'cooking_time', 'url_photo'
     ];
 
     public function user()

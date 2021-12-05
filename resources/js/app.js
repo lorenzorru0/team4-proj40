@@ -30,3 +30,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+const deleteButtons = document.querySelectorAll('.deleteButton');
+const valueId = document.getElementById('deleteId');
+
+deleteButtons.forEach((elm) => {
+    elm.addEventListener('click', function() {
+        console.log(this.getAttribute('data-id'));
+        valueId.value = this.getAttribute('data-id');
+    })
+});

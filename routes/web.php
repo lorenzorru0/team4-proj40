@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'PageController@index');
+
+Route::get("/api-users", "PageController@apiUsers")->name('users.api');
 
 Auth::routes();
 
@@ -25,9 +29,6 @@ Auth::routes();
 Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->group(function() {
     // Route::get('/', 'HomeController@index')->name('home');
     Route::resource('users', 'UserController');
-    // Route::get('/', 'UserController@index')->name('index');
-    // Route::get('/{user}/edit', 'UserController@edit')->name('edit');
-    // Route::put("/{user}/update", 'UserController@update')->name('update');
     Route::resource('plates', 'PlatesController');
     Route::put('/plates/{plate}/visibility', 'Platescontroller@changeVisibility')->name('plates.visibility');
 });

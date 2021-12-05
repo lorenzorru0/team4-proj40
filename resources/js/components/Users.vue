@@ -1,22 +1,26 @@
 <template>
-    <h1>Ristorante Il Gambero</h1>
+    <div class="album-container">
+        <UserCard v-for="user in users" :key="user.id" :data="user"/>
+    </div>
 </template>
 
 <script>
+import UserCard from './UserCard';
 
 export default {
-    name: 'User',
+    name: 'Users',
     data () {
         return {
             users: []
         }
     },
-    // components: {
-    //     PostCard
-    // },
+    components: {
+        UserCard
+    },
     mounted() {
         axios.get("/api/users")
         .then((response) => {
+            console.log(response);
             this.users = response.data.data;
         })
         .catch((error) => {

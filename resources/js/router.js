@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
-// import SinglePost from './pages/SinglePost';
+import SingleUser from './pages/SingleUser';
 import NotFound from './pages/NotFound';
 
 const router = new VueRouter({
@@ -27,11 +27,11 @@ const router = new VueRouter({
             name: 'contacts',
             component: Contacts
         },
-        // {
-        //     path: '/users/:slug',
-        //     name: 'user-post',
-        //     component: SingleUser
-        // },
+        {
+            path: '/users/:slug',
+            name: 'single-user',
+            component: SingleUser
+        },
         {
             path: '/*',
             name: 'not-found',

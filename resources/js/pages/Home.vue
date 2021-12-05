@@ -1,11 +1,14 @@
 <template>
-    <h1>Deliveroo - HomePage</h1>
+    <Users/>
 </template>
 
 <script>
-
+import Users from '../components/Users.vue'
 
 export default {
-    name: 'Home'
+    name: 'Home',
+    components: {
+        Users
+    }
 }
 </script>

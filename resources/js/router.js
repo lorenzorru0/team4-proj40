@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
 // import SinglePost from './pages/SinglePost';
-// import NotFound from './pages/NotFound';
+import NotFound from './pages/NotFound';
 
 const router = new VueRouter({
     mode: 'history',
@@ -26,17 +26,17 @@ const router = new VueRouter({
             path: '/contatti',
             name: 'contacts',
             component: Contacts
-        }
+        },
         // {
-        //     path: '/posts/:slug',
-        //     name: 'single-post',
-        //     component: SinglePost
+        //     path: '/users/:slug',
+        //     name: 'user-post',
+        //     component: SingleUser
         // },
-        // {
-        //     path: '/*',
-        //     name: 'not-found',
-        //     component: NotFound
-        // }
+        {
+            path: '/*',
+            name: 'not-found',
+            component: NotFound
+        }
     ]
 });
 

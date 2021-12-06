@@ -35267,6 +35267,14 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var deleteButtons = document.querySelectorAll('.deleteButton');
+var valueId = document.getElementById('deleteId');
+deleteButtons.forEach(function (elm) {
+  elm.addEventListener('click', function () {
+    valueId.value = this.getAttribute('data-id');
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -35310,8 +35318,8 @@ try {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andreageraci/Desktop/progetto-finale/team4-proj40/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/andreageraci/Desktop/progetto-finale/team4-proj40/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/lorenzoorru0/Desktop/team4-proj40/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/lorenzoorru0/Desktop/team4-proj40/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

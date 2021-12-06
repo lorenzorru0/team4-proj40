@@ -9,23 +9,18 @@
 </head>
 <body>
     @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-            <button class="ciccio">
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ route('admin.users.index') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
 
-                <a href="{{ route('admin.users.index') }}">Home</a>
-
-            </button>
-            @else
-                <a href="{{ route('login') }}">Login</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            @endauth
-        </div>
-    @endif
-
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
     <div id="app">
         
     </div>

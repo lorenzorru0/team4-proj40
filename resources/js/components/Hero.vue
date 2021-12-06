@@ -8,7 +8,7 @@
         <div class="right-section">
             <div class="hero">
                 <img src="https://sg.deliveroo.news/assets/images/blogs/sg.deliveroo.news/en/news/1uM9TDs_csvbmx7h7I7ZlfUjq-6qn0AC8T2hMgr9Wly0/h_pasted_image_0.jpg?v=1.01" alt="Hero Image">
-                <div class="to-your-home">#aCasaTuaConDeliveroo</div>
+                <div class="to-your-home">#aCasaTuaConDeliveboo</div>
             </div>
         </div>
         
@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     section {
         height: 700px;
         display: flex;

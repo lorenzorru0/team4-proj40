@@ -86,7 +86,7 @@ class UserController extends Controller
         // validations
         $request->validate($this->validationRules);
         $data = $request->all();
-      
+    
         if($user->business_name != $data['business_name']) {
             $user->slug = $this->getSlug($data['business_name']);
         }
@@ -115,17 +115,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(User $user)
     {
-        $user = User::find($request->deleteId);
-
         if (Storage::exists($user->url_cover)) {
             Storage::delete($user->url_cover);
         }
 
         $user->delete();
 
-        return redirect()->route('admin.plates.index');
+        return redirect()->route('home');
     }
 
     private function getSlug($business_name)

@@ -15,11 +15,3 @@ deleteButtons.forEach((elm) => {
     })
 });
 
-const deleteButtons = document.querySelectorAll('.deleteButtonUser');
-const valueId = document.getElementById('deleteIdUser');
-
-deleteButtons.forEach((elm) => {
-    elm.addEventListener('click', function() {
-        valueId.value = this.getAttribute('data-user-id');
-    })
-});

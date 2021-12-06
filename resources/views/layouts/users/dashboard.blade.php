@@ -32,6 +32,35 @@
                 <a class="ml-3" href="{{ route('admin.plates.index') }}">
                     Visualizza menu
                 </a>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary ml-3" data-toggle="modal" data-target="#exampleModal">
+                    Cancella account
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cancellazione account</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Vuoi confermare la cancellazione dell'account?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <form action="{{ route('admin.users.destroy', Auth::user()->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-primary">Delete</button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
 
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -64,12 +93,10 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="dropdown-item deleteButtonUser mt-2" data-user-id='{{Auth::user()->id}}' data-toggle="modal" data-target="#modalUser">Delete account</button>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -89,32 +116,6 @@
 
         </main>
 
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modalUser" tabindex="-1" aria-labelledby="modalUserLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Deleting plate</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="{{ route('admin.users.destroy', 'id') }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <div id="test" class="modal-body">
-                        Are you sure that you want delete this plate?
-                    </div>
-                    <div class="modal-footer">
-                        <input type="hidden" name="deleteIdUser" id="deleteIdUser">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
 
 </body>

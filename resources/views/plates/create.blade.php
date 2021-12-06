@@ -36,8 +36,17 @@
         </div>
 
         <div class="form-group">
+            <label class="container">Visibile
+                <input  type="radio" checked="checked" name="visible" id="visible" value="1">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Non Visibile
+                <input  type="radio" name="visible" id="non-visible" value="0">
+                <span class="checkmark"></span>
+              </label>
+{{-- 
             <label for="visible">Visible</label>
-            <input type="number" class="form-control" min="0" max="1" name="visible" id="visible" placeholder="0 = No / 1 = Si " value="{{ old('visible') }}">
+            <input type="number" class="form-control" min="0" max="1" name="visible" id="visible" placeholder="0 = No / 1 = Si " value="{{ old('visible') }}"> --}}
     
             @error('visible')
                 <div class="alert alert-danger">{{ $message }}</div>

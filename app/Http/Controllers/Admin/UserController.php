@@ -86,12 +86,12 @@ class UserController extends Controller
         // validations
         $request->validate($this->validationRules);
         $data = $request->all();
-
+      
         if($user->business_name != $data['business_name']) {
             $user->slug = $this->getSlug($data['business_name']);
         }
 
-        if(array_key_exists('url_cover', $data) || $data['url_cover'] != NULL) {
+        if(array_key_exists('url_cover', $data) && $data['url_cover'] != null) {
             if (Storage::exists($user->url_cover)) {
                 Storage::delete($user->url_cover);
             }
@@ -103,7 +103,7 @@ class UserController extends Controller
         
         $user->save();
 
-        return redirect()->route("admin.users.index", $user->id);
+        return redirect()->route("admin.users.index");
 
     }
 

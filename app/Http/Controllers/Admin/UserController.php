@@ -91,7 +91,7 @@ class UserController extends Controller
             $user->slug = $this->getSlug($data['business_name']);
         }
 
-        if(array_key_exists('url_cover', $data) || $data['url_cover'] != NULL) {
+        if(array_key_exists('url_cover', $data) && $data['url_cover'] != NULL) {
             if (Storage::exists($user->url_cover)) {
                 Storage::delete($user->url_cover);
             }
@@ -103,7 +103,7 @@ class UserController extends Controller
         
         $user->save();
 
-        return redirect()->route("admin.users.index", $user->id);
+        return redirect()->route("admin.users.index");
 
     }
 

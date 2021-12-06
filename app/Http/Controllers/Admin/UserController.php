@@ -85,20 +85,21 @@ class UserController extends Controller
     {
         // validations
         $request->validate($this->validationRules);
+        $data = $request->all();
 
-        if($user->business_name != $request->business_name) {
-            $user->slug = $this->getSlug($request->business_name);
+        if($user->business_name != $data['business_name']) {
+            $user->slug = $this->getSlug($data['business_name']);
         }
 
-        if(array_key_exists('url_cover', $request->all())) {
-            if($user->url_cover != NULL) {
-                $this->deleteImage($user->url_cover);
+        if(array_key_exists('url_cover', $data)) {
+            if (Storage::exists($user->url_cover)) {
+                Storage::delete($user->url_cover);
             }
-            $cover_path = Storage::put('user_covers', $request->url_cover);
-            $request->url_cover = $cover_path;
+            $cover_path = Storage::put('user_covers', $data['url_cover']);
+            $data['url_cover'] = $cover_path;
         }
 
-        $user->update($request->all());
+        $user->update($data);
         
         $user->save();
 
@@ -132,14 +133,5 @@ class UserController extends Controller
         }
 
         return $slug;
-    }
-
-    private function deleteImage($path_img)
-    {
-        $path_img = '/app/public/' . $path_img;
-
-        if(Storage::exists($path_img)) {
-            Storage::delete($path_img);
-        }
     }
 }

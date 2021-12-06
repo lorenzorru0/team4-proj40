@@ -113,9 +113,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Request $request)
     {
-        
+        $user = User::find($request->deleteId);
+
+        if (Storage::exists($user->url_cover)) {
+            Storage::delete($user->url_cover);
+        }
+
+        $user->delete();
+
+        return redirect()->route('admin.plates.index');
     }
 
     private function getSlug($business_name)

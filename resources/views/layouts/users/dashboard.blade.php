@@ -68,6 +68,8 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="dropdown-item deleteButtonUser mt-2" data-user-id='{{Auth::user()->id}}' data-toggle="modal" data-target="#modalUser">Delete account</button>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -88,6 +90,33 @@
         </main>
 
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalUser" tabindex="-1" aria-labelledby="modalUserLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Deleting plate</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('admin.users.destroy', 'id') }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <div id="test" class="modal-body">
+                        Are you sure that you want delete this plate?
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="deleteIdUser" id="deleteIdUser">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 

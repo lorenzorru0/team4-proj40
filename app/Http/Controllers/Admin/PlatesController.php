@@ -130,9 +130,13 @@ class PlatesController extends Controller
     {
         $plate = Plate::find($request->deleteId);
 
+        if (Storage::exists($plate->url_photo)) {
+            Storage::delete($plate->url_photo);
+        }
+
         $plate->delete();
 
-        return redirect()->route('admin.plates.index')->with('success', "The post number {$plate->id} has been deleted");
+        return redirect()->route('admin.plates.index')->with('success', "The post number has been deleted");
     }
 
     /**

@@ -91,7 +91,7 @@ class UserController extends Controller
             $user->slug = $this->getSlug($data['business_name']);
         }
 
-        if(array_key_exists('url_cover', $data)) {
+        if(array_key_exists('url_cover', $data) || $data['url_cover'] != NULL) {
             if (Storage::exists($user->url_cover)) {
                 Storage::delete($user->url_cover);
             }
@@ -113,9 +113,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        
     }
 
     private function getSlug($business_name)

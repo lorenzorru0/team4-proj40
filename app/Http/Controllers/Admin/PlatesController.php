@@ -136,7 +136,7 @@ class PlatesController extends Controller
 
         $plate->delete();
 
-        return redirect()->route('admin.plates.index')->with('success', "The post number has been deleted");
+        return redirect()->route('admin.plates.index')->with('success', "The plate has been deleted");
     }
 
     /**

@@ -3,7 +3,7 @@
 @section('pageContent')
 
 <div class="container">
-    <h1>Insert new plate</h1>
+    <h1>Edit plate</h1>
     
     <form action="{{route("admin.plates.update", $plate->id)}}" method="POST" enctype="multipart/form-data">
         @csrf

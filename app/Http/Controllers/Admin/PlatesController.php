@@ -17,7 +17,7 @@ class PlatesController extends Controller
         'description' => 'string|nullable',
         'price' => 'required|numeric',
         'cooking_time' => 'nullable|numeric',
-        'visible' => 'numeric|min:0|max:1',
+        'visible' => 'required|numeric',
         'url_photo' => 'nullable', 'image', 'max:200'
     ];
     /**

@@ -42,6 +42,18 @@ class UserController extends Controller
     public function show($slug)
     {
         $user = User::where('slug', $slug)->first();
+
+        if( $user ) {
+            return response()->json([
+                'success' => true,
+                'data' => $user
+            ]);
+        }
+
+        return response()->json([
+            'success' => false,
+            'data' => 'Nessun ristorante trovato'
+        ]);
                 
         return response()->json([
             'success' => true,

@@ -1,5 +1,5 @@
 <template>
-    <div class="album">
+    <div class="user">
         <h3>{{data.business_name}}</h3>
         <router-link :to="{ name: 'single-user', params: {slug: data.slug} }">Vai al ristorante</router-link>
     </div>
@@ -16,8 +16,8 @@ export default {
 
 </script>
 
-<style lang="scss">
-    .album {
+<style lang="scss" scoped>
+    .user {
         width: calc(100% / 2 - 30px);
         margin: 5px 15px;
         background-color: rgba(211, 211, 211, 0.63);

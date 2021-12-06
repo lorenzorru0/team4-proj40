@@ -32,3 +32,5 @@ Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->
     Route::resource('plates', 'PlatesController');
     Route::put('/plates/{plate}/visibility', 'Platescontroller@changeVisibility')->name('plates.visibility');
 });
+
+Route::get('/{any}', 'PageController@index')->where('any', '.*');

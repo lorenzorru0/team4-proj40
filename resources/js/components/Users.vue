@@ -1,5 +1,5 @@
 <template>
-    <div class="album-container">
+    <div class="users-container">
         <UserCard v-for="user in users" :key="user.id" :data="user"/>
     </div>
 </template>
@@ -30,8 +30,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.album-container{
+<style lang="scss" scoped>
+.users-container{
     width: 80%;
     margin: auto;
     display: flex;

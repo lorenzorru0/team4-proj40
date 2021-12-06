@@ -9,3 +9,9 @@ export default {
     name: 'NotFound'
 }
 </script>
+
+<style lang="scss">
+h1 {
+    color: black;
+}
+</style>

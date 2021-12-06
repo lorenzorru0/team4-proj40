@@ -4,16 +4,17 @@
 // Variables
 @import 'variables';
 
+// login buttons
+@import 'login-buttons';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-body {
-    background-color: #00CCBC;
-}
 
-h1 {
-    color: white;
-}
+// body {
+//     background-color: #D0EB99;
+// }
+
 
 a {
     color: #440063;

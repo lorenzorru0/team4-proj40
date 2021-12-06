@@ -26,13 +26,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .size {
     min-height: 80vh;
-}
-
-h3 {
+    color: #440063;
     padding-left: 50px;
 }
    

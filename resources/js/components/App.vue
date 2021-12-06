@@ -2,6 +2,7 @@
     <div id="app">
         <Header/>
         <main>
+            <Hero/>
             <router-view></router-view>
         </main>
         <Footer/>
@@ -10,12 +11,14 @@
 
 <script>
 import Header from './Header';
+import Hero from './Hero';
 import Footer from './Footer';
 
 export default {
     name: 'App',
     components: {
         Header,
+        Hero,
         Footer
     }
 }

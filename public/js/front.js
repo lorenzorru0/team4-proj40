@@ -2203,7 +2203,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "footer {\n  padding: 50px;\n  max-width: 100%;\n  margin: auto;\n  background-color: #e6e6e6;\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n}\nul, li {\n  list-style: none;\n  color: #b1b1b1;\n}\n.iscriviti {\n  color: white;\n  background-color: #00f0bc;\n  border: none;\n  border-radius: 10%;\n  padding: 5px;\n}", ""]);
+exports.push([module.i, "footer {\n  padding: 50px;\n  max-width: 100%;\n  margin: auto;\n  background-color: #e6e6e6;\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n}\nul, li {\n  list-style: none;\n  color: #b1b1b1;\n}\n.iscriviti {\n  color: white;\n  background-color: #00f0bc;\n  border: none;\n  border-radius: 10%;\n  padding-left: 15px;\n  padding-right: 15px;\n}", ""]);
 
 // exports
 
@@ -3511,7 +3511,13 @@ var staticRenderFns = [
     return _c("footer", [
       _c("div", [
         _c("ul", [
-          _c("li", [_c("span", [_vm._v("Deliveroo Restaurant")])]),
+          _c("li", [
+            _c(
+              "span",
+              { staticClass: "text-dark titleFooter font-weight-bold" },
+              [_vm._v("Deliveroo Restaurant")]
+            ),
+          ]),
           _vm._v(" "),
           _c("li", [_vm._v("signature")]),
           _vm._v(" "),
@@ -3525,7 +3531,13 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", [
         _c("ul", [
-          _c("li", [_c("span", [_vm._v("Legal")])]),
+          _c("li", [
+            _c(
+              "span",
+              { staticClass: "text-dark titleFooter font-weight-bold" },
+              [_vm._v("Legal")]
+            ),
+          ]),
           _vm._v(" "),
           _c("li", [_vm._v("sono il footer")]),
           _vm._v(" "),
@@ -3539,7 +3551,13 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", [
         _c("ul", [
-          _c("li", [_c("span", [_vm._v("Help")])]),
+          _c("li", [
+            _c(
+              "span",
+              { staticClass: "text-dark titleFooter font-weight-bold" },
+              [_vm._v("Help")]
+            ),
+          ]),
           _vm._v(" "),
           _c("li", [_vm._v("sono il footer")]),
           _vm._v(" "),

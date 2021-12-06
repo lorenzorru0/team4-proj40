@@ -2,7 +2,7 @@
     <footer>
         <div>
             <ul>
-                <li><span>Deliveroo Restaurant</span></li>
+                <li><span class="text-dark titleFooter font-weight-bold">Deliveroo Restaurant</span></li>
                 <li>signature</li>
                 <li>sono il footer</li>
                 <li>sono il footer</li>
@@ -11,7 +11,7 @@
         </div>
          <div>
             <ul>
-                <li><span>Legal</span></li>
+                <li><span class="text-dark titleFooter font-weight-bold">Legal</span></li>
                 <li>sono il footer</li>
                 <li>sono il footer</li>
                 <li>sono il footer</li>
@@ -20,7 +20,7 @@
         </div>
          <div>
             <ul>
-                 <li><span>Help</span></li>
+                 <li><span class="text-dark titleFooter font-weight-bold">Help</span></li>
                 <li>sono il footer</li>
                 <li>sono il footer</li>
                 <li>sono il footer</li>
@@ -65,6 +65,8 @@ ul, li {
     background-color: rgb(0, 240, 188);
     border: none;
     border-radius: 10%;
-    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
+
 </style>

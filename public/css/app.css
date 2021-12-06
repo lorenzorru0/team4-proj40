@@ -10030,6 +10030,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.logins {
+  padding: 30px;
+}
+
 a {
   color: #440063;
   font-size: 20px;

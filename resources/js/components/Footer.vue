@@ -3,7 +3,7 @@
         <div>
             <ul>
                 <li><span class="text-dark titleFooter font-weight-bold">Deliveroo Restaurant</span></li>
-                <li>signature</li>
+                <li><a href="#">signature</a></li>
                 <li>sono il footer</li>
                 <li>sono il footer</li>
                 <li>sono il footer</li>
@@ -24,9 +24,10 @@
                 <li>sono il footer</li>
                 <li>sono il footer</li>
                 <li>sono il footer</li>
+                <li>sono il footer</li>
             </ul>
         </div>
-        <div>
+        <div class="vuoi">
             <h6>Vuoi il tuo ristornate su Deliveroo?</h6>
             <button class="iscriviti">Iscriviti</button>
         </div>
@@ -43,7 +44,7 @@ export default {
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 footer{
     padding: 50px; 
     max-width: 100%;
@@ -55,9 +56,10 @@ footer{
 }
 
 
-ul, li {
+ul, li, a {
     list-style: none;
     color: rgb(177, 177, 177);
+    font-size: 15px;
 }
 
 .iscriviti {
@@ -69,4 +71,7 @@ ul, li {
     padding-right: 15px;
 }
 
+.vuoi {
+    margin-bottom: 80px;
+}
 </style>

@@ -53,7 +53,7 @@
               @enderror
             </div>
 
-            {{-- <div class="mb-3">
+            <div class="mb-3">
               <label for="url_cover" class="form-label">{{ __('URL Cover') }}</label>
 
               <div>
@@ -65,7 +65,7 @@
                       </span>
                   @enderror
               </div>
-            </div>  --}}
+            </div> 
 
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

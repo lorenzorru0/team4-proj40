@@ -103,16 +103,17 @@ class PlatesController extends Controller
     {
          // validations
         $request->validate($this->validationRules);
+        $data = $request->all();
 
-        if(array_key_exists('url_photo', $request->all())) {
-            if($plate->url_photo != NULL) {
-                $this->deleteImage($plate->url_photo);
+        if(array_key_exists('url_photo', $data)) {
+            if (Storage::exists($plate->url_photo)) {
+                Storage::delete($plate->url_photo);
             }
-            $cover_path = Storage::put('plates_photos', $request->url_photo);
-            $request->url_photo = $cover_path;
+            $cover_path = Storage::put('plates_photos', $data['url_photo']);
+            $data['url_photo'] = $cover_path;
         }
 
-        $plate->update($request->all());
+        $plate->update($data);
         
         $plate->save();
 
@@ -151,14 +152,5 @@ class PlatesController extends Controller
         $plate->save();
 
         return redirect()->route("admin.plates.index")->with('success', "Visibility changed");
-    }
-
-    private function deleteImage($path_img)
-    {
-        $path_img = '/app/public/' . $path_img;
-
-        if(Storage::exists($path_img)) {
-            Storage::delete($path_img);
-        }
     }
 }

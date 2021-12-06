@@ -91,7 +91,9 @@ class UserController extends Controller
             $user->slug = $this->getSlug($data['business_name']);
         }
 
+
         if(array_key_exists('url_cover', $data) && $data['url_cover'] != null) {
+
             if (Storage::exists($user->url_cover)) {
                 Storage::delete($user->url_cover);
             }

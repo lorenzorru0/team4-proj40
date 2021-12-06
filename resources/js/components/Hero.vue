@@ -24,18 +24,17 @@ export default {
 
 <style lang="scss" scoped>
     section {
-        height: 700px;
+        height: 100%;
         display: flex;
-        justify-content: space-around;
-        background: rgb(3,201,241);
-background: linear-gradient(172deg, #00CCBC 50%, #D0EB99 50%, #D0EB99 50%);
+        justify-content: space-between;
+        background: linear-gradient(172deg, #00CCBC 50%, #D0EB99 50%, #D0EB99 50%);
         .left-section {
             display: flex;
             flex-direction: column;
             h1 {
                 color: #440063;
                 margin: auto 0;
-                font-size: 45px;
+                font-size: 40px;
                 font-weight: 900;
             }
         }
@@ -55,7 +54,7 @@ background: linear-gradient(172deg, #00CCBC 50%, #D0EB99 50%, #D0EB99 50%);
                 max-width: 700px;
                 text-align: center;
                 color: white;
-                font-size: 40px;
+                font-size: 30px;
                 font-weight: 900;
                 background-color: #017E8A;
             }

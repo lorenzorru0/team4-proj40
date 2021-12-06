@@ -35321,9 +35321,9 @@ try {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andreageraci/Desktop/progetto-finale/team4-proj40/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/andreageraci/Desktop/progetto-finale/team4-proj40/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/andreageraci/Desktop/progetto-finale/team4-proj40/resources/sass/admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\Users\Mke_8\OneDrive\Desktop\Progetto_Deliveboo\team4-proj40\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Mke_8\OneDrive\Desktop\Progetto_Deliveboo\team4-proj40\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Mke_8\OneDrive\Desktop\Progetto_Deliveboo\team4-proj40\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

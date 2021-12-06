@@ -20,7 +20,7 @@ export default {
     .user {
         width: calc(100% / 2 - 30px);
         margin: 5px 15px;
-        background-color: rgba(211, 211, 211, 0.63);
+        background-color: #F6BB16;
         text-align: center; 
         padding: 30px; 
         border: 2px solid white;

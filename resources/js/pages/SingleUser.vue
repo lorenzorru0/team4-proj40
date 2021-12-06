@@ -1,6 +1,7 @@
 <template>
     <div class="size">
         <h1>{{user.business_name}}</h1>
+        <h4>{{user.address}} {{user.street_number}}</h4>
         <p>{{user.description}}</p>
     </div>
 </template>

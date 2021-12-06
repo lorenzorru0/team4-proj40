@@ -10031,7 +10031,9 @@ h3 {
   }
 }
 .logins {
-  padding: 30px;
+  display: flex;
+  justify-content: end;
+  padding: 20px;
 }
 
 a {

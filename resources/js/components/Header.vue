@@ -12,3 +12,9 @@ export default {
     name: 'Header'
 }
 </script>
+
+<style lang="scss" scoped>
+header {
+    padding: 10px;
+}
+</style>

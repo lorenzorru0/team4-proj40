@@ -23,7 +23,6 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Nome Articolo</th>
                 <th scope="col">Descrizione/Ingredienti</th>
                 <th scope="col">Prezzo</th>
@@ -34,7 +33,6 @@
         <tbody>
             @foreach ($plates as $plate)
                 <tr>
-                    <td>{{$plate->id}}</td>
                     <td>{{$plate->plate_name}}</td>
                     <td>{{$plate->description}}</td>
                     <td>{{$plate->price}} €</td>

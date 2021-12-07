@@ -27,6 +27,9 @@ class PlatesController extends Controller
      */
     public function index()
     {
+
+        $user = Auth::user();
+    
         $plates = Plate::where('user_id', Auth::user()->id)->get();
 
         return view('plates.index', compact('plates'));
@@ -78,6 +81,10 @@ class PlatesController extends Controller
      */
     public function show(Plate $plate)
     {
+        if( $plate->user_id != Auth::id() ) {
+            abort("403");
+        }
+
         return view('plates.show', compact('plate'));
     }
 
@@ -89,6 +96,10 @@ class PlatesController extends Controller
      */
     public function edit(Plate $plate)
     {
+        if( $plate->user_id != Auth::id() ) {
+            abort("403");
+        }
+        
         return view('plates.edit', compact('plate'));
     }
 

@@ -4,25 +4,5 @@
 // Variables
 @import 'variables';
 
-// login buttons
-@import 'login-buttons';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-
-// body {
-//     background-color: #D0EB99;
-// }
-
-.logins {
-    display: flex;
-    justify-content: end;
-    padding: 20px;
-}
-
-
-a {
-    color: #440063;
-    font-size: 20px;
-}

@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -21,7 +22,7 @@ class CreatePlatesTable extends Migration
             $table->boolean('visible')->nullable();
             $table->integer('cooking_time')->nullable();
             $table->string('url_photo')->nullable();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

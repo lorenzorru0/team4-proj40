@@ -15,7 +15,7 @@ class CreateOrderPlateTable extends Migration
     {
         Schema::create('order_plate', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained();
+            $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->foreignId('plate_id')->constrained();
             $table->integer('quantity')->unsigned();
             $table->timestamps();

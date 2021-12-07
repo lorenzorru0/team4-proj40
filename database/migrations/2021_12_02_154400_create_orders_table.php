@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('customer_address', 50);
             $table->string('customer_street_number', 50);
             $table->text('notes')->nullable();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

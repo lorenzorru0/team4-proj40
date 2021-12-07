@@ -24,11 +24,11 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome piatto</th>
-                <th scope="col">Descrizione</th>
+                <th scope="col">Nome Articolo</th>
+                <th scope="col">Descrizione/Ingredienti</th>
                 <th scope="col">Prezzo</th>
-                <th scope="col">Visibile</th>
-                <th scope="col">Azioni</th>
+                <th scope="col">Visibilità</th>
+                <th scope="col">Interagisci</th>
             </tr>
         </thead>
         <tbody>
@@ -49,14 +49,14 @@
                             @csrf
                             @method('PUT')
 
-                            <button type="submit" class="btn btn-info mt-2">Change visibility</button>
+                            <button type="submit" class="btn btn-info mt-2">Visualizza nel menù</button>
                         </form>
                     </td>
                     <td>
-                        <a href="{{route('admin.plates.show', $plate->id)}}"><button type="button" class="btn btn-primary">View</button></a> <br>
-                        <a href="{{route('admin.plates.edit', $plate->id)}}"><button type="button" class="btn btn-warning mt-2">Edit</button></a> <br>
+                        <a href="{{route('admin.plates.show', $plate->id)}}"><button type="button" class="btn btn-primary">Visualizza</button></a> <br>
+                        <a href="{{route('admin.plates.edit', $plate->id)}}"><button type="button" class="btn btn-warning mt-2">Modifica</button></a> <br>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger mt-1 deleteButton" data-id='{{$plate->id}}' data-toggle="modal" data-target="#exampleModal">Delete</button>
+                        <button type="button" class="btn btn-danger mt-1 deleteButton" data-id='{{$plate->id}}' data-toggle="modal" data-target="#exampleModal">Elimina</button>
                     </td>
                 </tr>
             @endforeach
@@ -69,7 +69,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Deleting plate</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Elimina Articolo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -78,12 +78,12 @@
                 @csrf
                 @method('DELETE')
                 <div id="test" class="modal-body">
-                    Are you sure that you want delete this plate?
+                   Sei sicuro di voler eliminare l'articolo?
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="deleteId" id="deleteId">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                    <button type="submit" class="btn btn-danger">Elimina</button>
                 </div>
             </form>
         </div>

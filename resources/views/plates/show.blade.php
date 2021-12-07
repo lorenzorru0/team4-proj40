@@ -4,10 +4,10 @@
 
 <div class="container">
     <ul>
-        <li>Nome del piatto: <strong>{{$plate->plate_name}}</strong></li>
+        <li>Nome dell'articolo: <strong>{{$plate->plate_name}}</strong></li>
         <li>Prezzo: {{$plate->price}} €</li>
         @if ($plate->description)
-            <li>Descrizione: {{$plate->description}}</li>
+            <li>Descrizione e Ingredienti: {{$plate->description}}</li>
         @endif
         @if ($plate->cooking_time)
             <li>Tempo cottura: {{$plate->cooking_time}} min</li>

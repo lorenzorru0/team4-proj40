@@ -24,7 +24,7 @@
             <div class="mb-3">
               <label for="address" class="form-label">Indirizzo*</label>
               <input name="address" type="text" class="form-control" id="address" value="{{old('address') ? old('address') : $user['address']}}">
-              @error('business_name')
+              @error('address')
                 <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
@@ -32,15 +32,15 @@
             <div class="mb-3">
               <label for="street_number" class="form-label">Numero civico*</label>
               <input name="street_number" type="text" class="form-control" id="street_number" value="{{old('street_number') ? old('street_number') : $user['street_number']}}">
-              @error('business_name')
+              @error('street_number')
                 <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
 
             <div class="mb-3">
               <label for="vat_number" class="form-label">Partita IVA*</label>
-              <input name="vat_number" type="text" class="form-control" id="vat_number" value="{{old('vat_number') ? old('vat_number') : $user['vat_number']}}">
-              @error('business_name')
+              <input minlength="11" maxlength="11" name="vat_number" type="text" class="form-control" id="vat_number" value="{{old('vat_number') ? old('vat_number') : $user['vat_number']}}">
+              @error('vat_number')
                 <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
@@ -48,7 +48,7 @@
             <div class="mb-3">
               <label for="description" class="form-label">Descrizione</label>
               <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" cols="30" rows="10">{{old('description') ? old('description') : $user['description']}}</textarea>
-              @error('business_name')
+              @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>

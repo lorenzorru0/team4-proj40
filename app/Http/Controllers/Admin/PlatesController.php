@@ -70,7 +70,7 @@ class PlatesController extends Controller
 
         $newPlate->save();
 
-        return redirect()->route("admin.plates.index")->with('success', "New plate has been created");
+        return redirect()->route("admin.plates.index")->with('success', "L' articolo è stato creato.");
     }
 
     /**
@@ -128,7 +128,7 @@ class PlatesController extends Controller
         
         $plate->save();
 
-        return redirect()->route("admin.plates.index")->with('success', "The plate has been updated");
+        return redirect()->route("admin.plates.index")->with('success', "L' articolo è stato aggiornato.");
     }
 
     /**
@@ -147,7 +147,7 @@ class PlatesController extends Controller
 
         $plate->delete();
 
-        return redirect()->route('admin.plates.index')->with('success', "The plate has been deleted");
+        return redirect()->route('admin.plates.index')->with('success', "L' articolo è stato cancellato.");
     }
 
     /**
@@ -166,6 +166,6 @@ class PlatesController extends Controller
 
         $plate->save();
 
-        return redirect()->route("admin.plates.index")->with('success', "Visibility changed");
+        return redirect()->route("admin.plates.index")->with('success', "Visibilità cambiata.");
     }
 }

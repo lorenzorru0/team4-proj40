@@ -16,7 +16,7 @@ class UserController extends Controller
         'business_name' => 'string|required|max:80',
         'address' => 'string|required',
         'street_number' => 'string|required',
-        'vat_number' => 'string|max:11',
+        'vat_number' => 'numeric|digits:11',
         'description' => 'string',
         'url_cover' => 'nullable', 'image', 'max:200'
     ];

@@ -12,6 +12,12 @@
         <li>
             <img src="{{asset('storage/' . $user->url_cover)}}" alt="">
         </li>
+        <ol>
+            Tipologie:
+            @foreach ($user->types as $type)
+                <li>{{$type->name}}</li>
+            @endforeach
+        </ol>
     </ul>
 </div>
 

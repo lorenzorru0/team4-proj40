@@ -9,7 +9,7 @@
         <div class="card-header">{{ __('Modifica dati ristorante') }}</div>
 
         <div class="card-body">
-          <form action="{{route("admin.users.update", $user["id"])}}" method="POST">
+          <form action="{{route("admin.users.update", $user["id"])}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method("PUT")
 

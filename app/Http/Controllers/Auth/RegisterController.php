@@ -78,16 +78,22 @@ class RegisterController extends Controller
             $data['url_cover'] = NULL;
         }
 
-        return User::create([
-            'business_name' => $data['business_name'],
-            'slug' => Str::of($data['business_name'])->slug('-'),
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'address' => $data['address'],
-            'street_number' => $data['street_number'],
-            'vat_number' => $data['vat_number'],
-            'description' => $data['description'],
-            'url_cover' => $data['url_cover'],
-        ]);
+        $newUser = new User();
+        $newUser['business_name'] = $data['business_name'];
+        $newUser['slug'] = Str::of($data['business_name'])->slug('-');
+        $newUser['email'] = $data['email'];
+        $newUser['password'] = Hash::make($data['password']);
+        $newUser['address'] = $data['address'];
+        $newUser['street_number'] = $data['street_number'];
+        $newUser['vat_number'] = $data['vat_number'];
+        $newUser['description'] = $data['description'];
+        $newUser['url_cover'] = $data['url_cover'];
+        $newUser->save();
+
+        foreach ($data['types'] as $type) {
+            $newUser->types()->attach($type);
+        }
+
+        return $newUser;
     }
 }

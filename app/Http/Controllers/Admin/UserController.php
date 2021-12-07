@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Type;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -71,7 +72,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+        $types = Type::all();
+
+        return view('users.edit', compact('user', 'types'));
     }
 
     /**
@@ -104,6 +107,8 @@ class UserController extends Controller
         $user->update($data);
         
         $user->save();
+
+        $user->types()->sync($data['types']);
 
         return redirect()->route("admin.users.index");
 

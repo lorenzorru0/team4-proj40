@@ -17,7 +17,7 @@ class PlatesController extends Controller
         'description' => 'string|nullable',
         'price' => 'required|numeric',
         'cooking_time' => 'nullable|numeric',
-        'visible' => 'required|numeric',
+        'visible' => 'min:0|max=1',
         'url_photo' => 'nullable', 'image', 'max:200'
     ];
     /**
@@ -112,7 +112,7 @@ class PlatesController extends Controller
      */
     public function update(Request $request, Plate $plate)
     {
-         // validations
+        // validations
         $request->validate($this->validationRules);
         $data = $request->all();
 

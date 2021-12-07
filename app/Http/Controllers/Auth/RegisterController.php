@@ -72,7 +72,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if (array_key_exists('url_cover', $data)) {
-            $cover_path = Storage::put('user_covers', $data['url_cover']);
+            $cover_path = Storage::put('users_covers', $data['url_cover']);
             $data['url_cover'] = $cover_path;
         } else {
             $data['url_cover'] = NULL;

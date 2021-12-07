@@ -56,7 +56,7 @@
                         <a href="{{route('admin.plates.show', $plate->id)}}"><button type="button" class="btn btn-primary">Visualizza</button></a> <br>
                         <a href="{{route('admin.plates.edit', $plate->id)}}"><button type="button" class="btn btn-warning mt-2">Modifica</button></a> <br>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger mt-1 deleteButton" data-id='{{$plate->id}}' data-toggle="modal" data-target="#exampleModal">Elimina</button>
+                        <button type="button" class="btn btn-danger mt-2 deleteButton" data-id='{{$plate->id}}' data-toggle="modal" data-target="#exampleModal">Elimina</button>
                     </td>
                 </tr>
             @endforeach

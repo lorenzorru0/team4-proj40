@@ -100,7 +100,7 @@ class UserController extends Controller
             if (Storage::exists($user->url_cover)) {
                 Storage::delete($user->url_cover);
             }
-            $cover_path = Storage::put('user_covers', $data['url_cover']);
+            $cover_path = Storage::put('users_covers', $data['url_cover']);
             $data['url_cover'] = $cover_path;
         }
 

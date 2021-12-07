@@ -1,15 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
-.ciccio {
-  background-color: white;
-  border: none;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  padding: 40px;
-}
-
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10029,14 +10018,4 @@ h3 {
     color: inherit;
     border-color: #dee2e6;
   }
-}
-.logins {
-  display: flex;
-  justify-content: end;
-  padding: 20px;
-}
-
-a {
-  color: #440063;
-  font-size: 20px;
 }

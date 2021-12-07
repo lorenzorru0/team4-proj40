@@ -3,6 +3,12 @@
         <h1>{{user.business_name}}</h1>
         <h4>{{user.address}} {{user.street_number}}</h4>
         <p>{{user.description}}</p>
+        <h4>Il nostro menù</h4>
+        <ul>
+            <li v-for="(plate,index) in user.plates" :key="index">
+                {{plate.plate_name}} €{{plate.price}}
+            </li>
+        </ul>
     </div>
 </template>
 

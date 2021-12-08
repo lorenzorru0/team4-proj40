@@ -12,11 +12,11 @@
     
     <div class="d-flex justify-content-between">
         <div>
-            <h2>Piatti</h2>
+            <h2>Menù</h2>
         </div>
 
         <div class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('admin.plates.create')}}">Create New Plate</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('admin.plates.create')}}">Crea nuovo piatto</a>
         </div>
     </div>
 

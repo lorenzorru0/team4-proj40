@@ -26,12 +26,6 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Deliveboo
                 </a>
-                <a href="{{ route('admin.users.edit', Auth::user()->id) }}">
-                    Modifica i dati del tuo ristorante
-                </a>
-                <a class="ml-3" href="{{ route('admin.plates.index') }}">
-                    Visualizza menu
-                </a>
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -40,7 +34,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <a class="ml-3" href="{{ route('admin.plates.index') }}">
+                            Visualizza menu
+                        </a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -62,12 +58,17 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a href="{{ route('admin.users.index') }}" class="dropdown-item">Visualizza profilo</a>
+
+                                    <a href="{{ route('admin.users.edit', Auth::user()->id) }}" class="dropdown-item mt-2">Modifica profilo</a>
+
+                                    <a class="dropdown-item mt-2" data-toggle="modal" data-target="#userModal">Cancella account</a>
+                                    
+                                    <a class="dropdown-item mt-2" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a class="dropdown-item mt-2" data-toggle="modal" data-target="#userModal">Cancella account</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

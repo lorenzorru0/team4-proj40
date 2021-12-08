@@ -17,7 +17,7 @@ class PlatesController extends Controller
         'description' => 'string|nullable',
         'price' => 'required|numeric',
         'cooking_time' => 'nullable|numeric',
-        'visible' => 'min:0|max=1',
+        'visible' => 'numeric|min:0|max:1',
         'url_photo' => 'nullable', 'image', 'max:200'
     ];
     /**
@@ -27,10 +27,9 @@ class PlatesController extends Controller
      */
     public function index()
     {
-
-        $user = Auth::user();
-    
         $plates = Plate::where('user_id', Auth::user()->id)->get();
+
+        $plates = $this->sortPlates($plates);
 
         return view('plates.index', compact('plates'));
     }
@@ -151,7 +150,7 @@ class PlatesController extends Controller
     }
 
     /**
-     * Chanmge visibilty of the specified resource.
+     * Change visibilty of the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -167,5 +166,29 @@ class PlatesController extends Controller
         $plate->save();
 
         return redirect()->route("admin.plates.index")->with('success', "Visibilità cambiata.");
+    }
+
+    /**
+     * Sort all plates of the specific resource.
+     * 
+     * @param  array  $plates
+     * @return array $sortPlates
+     */
+    public function sortPlates($plates)
+    {
+        foreach($plates as $plate) {
+            $platesName[] = $plate->plate_name;
+        }
+        sort($platesName);
+
+        foreach($platesName as $plateName) {
+            foreach ($plates as $plate) {
+                if($plateName == $plate->plate_name) {
+                    $sortPlates[] = $plate;
+                }
+            }
+        }
+
+        return $sortPlates;
     }
 }

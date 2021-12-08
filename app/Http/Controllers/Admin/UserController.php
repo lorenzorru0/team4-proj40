@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
+    /**
+     * Validation rules
+     */
     protected $validationRules = [
         'business_name' => 'string|required|max:80',
         'address' => 'string|required',
@@ -20,6 +23,7 @@ class UserController extends Controller
         'description' => 'string',
         'url_cover' => 'nullable', 'image', 'max:200'
     ];
+
     /**
      * Display a listing of the resource.
      *
@@ -30,38 +34,6 @@ class UserController extends Controller
         $user = User::where('id', Auth::user()->id)->first();
         
         return view('users.index', compact('user'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -86,8 +58,9 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        // validations
+        // Validation
         $request->validate($this->validationRules);
+        
         $data = $request->all();
     
         if($user->business_name != $data['business_name']) {

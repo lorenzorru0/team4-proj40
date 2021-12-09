@@ -29,7 +29,9 @@ class PlatesController extends Controller
     {
         $plates = Plate::where('user_id', Auth::user()->id)->get();
 
-        $plates = $this->sortPlates($plates);
+        if( count($plates) != 0) {
+            $plates = $this->sortPlates($plates);
+        }
 
         return view('plates.index', compact('plates'));
     }

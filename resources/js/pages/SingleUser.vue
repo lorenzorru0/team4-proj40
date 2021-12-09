@@ -18,7 +18,7 @@
 					<div class="plate" v-for="plate in user.plates" :key="plate.id">
 						<!-- <img :src="'public/storage/'. plate.url_photo" :alt="plate.name"> -->
 						<h3>{{plate.plate_name}}</h3>
-						<div class="price">Prezzo: €{{plate.price}}</div>
+						<div class="price">Prezzo: {{plate.price}} €</div>
 						<button class="btn add-cart" @click="addToCart(plate)">Aggiungi al carrello</button>
 					</div>
 
@@ -27,8 +27,8 @@
                 <h2>Carrello</h2>
                 <ul class="cart-basket" id="cart-basket">
                     <li v-for="plate in cart" :key="plate.id">
-                        <h4>{{plate.name}}</h4>
-                        <div>€{{plate.price}}</div>
+                        <h4>{{plate.plate_name}}</h4>
+                        <div>{{plate.price}} €</div>
                         <button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
                     </li>
                 </ul>
@@ -49,6 +49,8 @@ export default {
 		    cart: []
         }
     },
+
+	
     mounted() {
         axios.get(`/api/users/${this.$route.params.slug}`)
         .then((response) => {
@@ -58,8 +60,21 @@ export default {
         .catch((error) => {
             console.log(error);
         })
+		if(localStorage.cart){
+			this.cart = JSON.parse(localStorage.cart);
+		}
     },
+	watch:{
+		
+		cart:{
+			handler(newCart){
+			localStorage.cart = JSON.stringify(newCart);
+		},
+		deep: true
+		}
+	},
 	methods: {
+
 		addToCart: function(plate) {
 			this.cart.push(plate);
 		},

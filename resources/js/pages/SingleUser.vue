@@ -8,7 +8,7 @@
         <h4>Il nostro menù</h4>
         <ul>
             <li v-for="(plate,index) in user.plates" :key="index">
-                {{plate.plate_name}} €{{plate.price}}
+                {{plate.plate_name}} {{plate.price}}€
             </li>
         </ul>
     </div>

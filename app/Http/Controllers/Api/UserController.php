@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Type;
 
 class UserController extends Controller
 {
@@ -54,11 +55,6 @@ class UserController extends Controller
             'success' => false,
             'data' => 'Nessun ristorante trovato'
         ]);
-                
-        return response()->json([
-            'success' => true,
-            'data' => $user
-        ]);
     }
 
     public function types($slug)
@@ -68,6 +64,16 @@ class UserController extends Controller
         return response()->json([
             'success' => true,
             'data' => $user->types
+        ]);
+    }
+
+    public function typesAll()
+    {
+        $types = Type::all();
+
+        return response()->json([
+            'success' => true,
+            'data' => $types
         ]);
     }
 }

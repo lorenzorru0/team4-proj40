@@ -6,3 +6,14 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.logins {
+    a {
+        display: inline-block;
+        margin: .3125rem;
+        padding: .3125rem .9375rem;
+        background-color: $deliverooColor;
+        color: white;
+        border-radius: .3125rem;
+    }
+}

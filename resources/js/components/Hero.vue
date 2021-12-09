@@ -1,17 +1,19 @@
 <template>
     <section>
-        
-        <div class="left-section">
-            <h1>I piatti che ami, a domicilio.</h1>
-        </div>
+        <div class="container">
+            <div class="row">
+                <div class="left-section col-6">
+                    <h1>I piatti che ami, a domicilio.</h1>
+                </div>
 
-        <div class="right-section">
-            <div class="hero">
-                <img src="https://sg.deliveroo.news/assets/images/blogs/sg.deliveroo.news/en/news/1uM9TDs_csvbmx7h7I7ZlfUjq-6qn0AC8T2hMgr9Wly0/h_pasted_image_0.jpg?v=1.01" alt="Hero Image">
-                <div class="to-your-home">#aCasaTuaConDeliveboo</div>
+                <div class="right-section col-6">
+                    <div class="hero">
+                        <img src="https://sg.deliveroo.news/assets/images/blogs/sg.deliveroo.news/en/news/1uM9TDs_csvbmx7h7I7ZlfUjq-6qn0AC8T2hMgr9Wly0/h_pasted_image_0.jpg?v=1.01" alt="Hero Image">
+                        <div class="to-your-home">#aCasaTuaConDeliveboo</div>
+                    </div>
+                </div>
             </div>
         </div>
-        
     </section>
 </template>
 
@@ -29,20 +31,16 @@ export default {
         justify-content: space-between;
         background: linear-gradient(172deg, #00CCBC 50%, #D0EB99 50%, #D0EB99 50%);
         .left-section {
-            display: flex;
-            flex-direction: column;
             h1 {
                 color: #440063;
-                margin: auto 0;
-                font-size: 40px;
+                margin-top: .9375rem;
+                font-size: 2.5rem;
                 font-weight: 900;
             }
         }
         .right-section {
-            display: flex;
-            flex-direction: column;
             .hero {
-                max-width: 700px;
+                max-width: 43.75rem;
                 margin: auto 0;
 
                 img {
@@ -51,10 +49,10 @@ export default {
                 }
             }
             .to-your-home {
-                max-width: 700px;
+                max-width: 43.75rem;
                 text-align: center;
                 color: white;
-                font-size: 30px;
+                font-size: 1.875rem;
                 font-weight: 900;
                 background-color: #017E8A;
             }

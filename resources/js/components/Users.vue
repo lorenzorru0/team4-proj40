@@ -1,6 +1,8 @@
 <template>
     <div class="users-container">
-        <UserCard v-for="user in users" :key="user.id" :data="user"/>
+        <div class="row">
+            <UserCard v-for="user in users" :key="user.id" :data="user"/>
+        </div>
     </div>
 </template>
 
@@ -34,8 +36,6 @@ export default {
 .users-container{
     width: 80%;
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
     padding: 20px; 
 }
 </style>

@@ -61,5 +61,13 @@ class UserController extends Controller
         ]);
     }
 
-    
+    public function types($slug)
+    {
+        $user = User::where('slug', $slug)->with('types')->first();
+
+        return response()->json([
+            'success' => true,
+            'data' => $user->types
+        ]);
+    }
 }

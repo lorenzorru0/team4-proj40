@@ -10019,3 +10019,11 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.logins a {
+  display: inline-block;
+  margin: 0.3125rem;
+  padding: 0.3125rem 0.9375rem;
+  background-color: #00CCBC;
+  color: white;
+  border-radius: 0.3125rem;
+}

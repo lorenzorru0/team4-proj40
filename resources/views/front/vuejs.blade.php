@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div class="logins">
+    <div class="logins d-flex justify-content-end px-3">
     @if (Route::has('login'))
         <div class="top-right links">
+            
             @auth
                 <a href="{{ route('admin.users.index') }}">Home</a>
             @else
+                <span>Sei un ristoratore?</span>
                 <a href="{{ route('login') }}">{{ __('Login') }}</a>
 
                 @if (Route::has('register'))

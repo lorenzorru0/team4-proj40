@@ -29,8 +29,15 @@
                 </ul>
             </div>
             <div class="vuoi">
-                <h6>Vuoi il tuo ristornate su Deliveroo?</h6>
+                <h6 class="font-weight-bold">Vuoi il tuo ristornate su Deliveroo?</h6>
                 <a href="/register"><button class="iscriviti">Iscriviti</button></a>
+                <h6 class="seguici">Seguici</h6>
+                <div class="icon_fontawesome">
+                    <a href="#"><i class="fab fa-twitter icon_fontawesome"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square icon_fontawesome"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square icon_fontawesome"></i></a>
+                    <a href="#"><i class="fab fa-youtube icon_fontawesome"></i></a>
+                </div>
             </div>
         </div>
     </footer>
@@ -73,10 +80,29 @@ ul, li, a {
     border-radius: 10%;
     padding-left: .9375rem;
     padding-right: .9375rem;
+   
 }
 
 .vuoi {
-    margin-bottom: 5rem;
     padding-left: 3.125rem;
+    padding-top: 25px;
+    position: relative;
+   
 }
+
+.icon_fontawesome {
+    display: flex;
+    color: rgb(172, 172, 172);
+    margin-right: 10px;
+    padding-top: 35px;
+    font-size: 20px;
+}
+
+.seguici {
+    position: absolute;
+    top: 120px;
+    color: gray
+}
+
+
 </style>

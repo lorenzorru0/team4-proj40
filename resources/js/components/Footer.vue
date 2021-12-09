@@ -33,10 +33,10 @@
                 <a href="/register"><button class="iscriviti">Iscriviti</button></a>
                 <h6 class="seguici">Seguici</h6>
                 <div class="icon_fontawesome">
-                    <a href="#"><i class="fab fa-twitter icon_fontawesome"></i></a>
-                    <a href="#"><i class="fab fa-facebook-square icon_fontawesome"></i></a>
-                    <a href="#"><i class="fab fa-instagram-square icon_fontawesome"></i></a>
-                    <a href="#"><i class="fab fa-youtube icon_fontawesome"></i></a>
+                    <a href="https://twitter.com/tweeter"><i class="fab fa-twitter icon_fontawesome"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-square icon_fontawesome"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram-square icon_fontawesome"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube icon_fontawesome"></i></a>
                 </div>
             </div>
         </div>

@@ -3957,23 +3957,23 @@ var staticRenderFns = [
           _c("h6", { staticClass: "seguici" }, [_vm._v("Seguici")]),
           _vm._v(" "),
           _c("div", { staticClass: "icon_fontawesome" }, [
-            _c("a", { attrs: { href: "#" } }, [
+            _c("a", { attrs: { href: "https://twitter.com/tweeter" } }, [
               _c("i", { staticClass: "fab fa-twitter icon_fontawesome" }),
             ]),
             _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [
+            _c("a", { attrs: { href: "https://www.facebook.com/" } }, [
               _c("i", {
                 staticClass: "fab fa-facebook-square icon_fontawesome",
               }),
             ]),
             _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [
+            _c("a", { attrs: { href: "https://www.instagram.com/" } }, [
               _c("i", {
                 staticClass: "fab fa-instagram-square icon_fontawesome",
               }),
             ]),
             _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [
+            _c("a", { attrs: { href: "https://www.youtube.com/" } }, [
               _c("i", { staticClass: "fab fa-youtube icon_fontawesome" }),
             ]),
           ]),

@@ -6,49 +6,44 @@
             <router-link class="link" :to="{ name: 'contacts' }">Contatti</router-link>
         </div>
         <div>
-            <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu dropdown-menu-rigth" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li> -->
-            <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Right-aligned menu
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdownContainer">
-                        <div class="form-group row">
-                            <p class="col-md-3 col-form-label text-md-left">Tipologie</p>
+                <button type="button" class="btn btn-secondary" @click='openMenu = !openMenu'>MENU</button>
+
+                <transition name="menu">
+                    <div class="menu" v-if="openMenu">
+
+                       <div class="form-group row">
+                            <h3 class="col-md-3 col-form-label text-md-left">Tipologie</h3>
                             <div class="col-md-10 mx-auto">
                                 <div class="row"> 
                                     <div class="col-6">
-                                        <div v-for="type in types" :key="type.id" class="custom-control custom-checkbox">
-                                            <template v-if="type.id % 2 == 1">
-                                                <input name="types[]" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
-                                                <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
-                                            </template>
-                                        </div>
+                                        <transition-group appear name="types">
+
+                                            <div v-for="type in types" :key="type.id" class="custom-control custom-checkbox">
+                                                <template v-if="type.id % 2 == 1">
+                                                    <input name="types[]" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
+                                                    <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
+                                                </template>
+                                            </div>
+
+                                        </transition-group>
                                     </div>
                                     <div class="col-6">
-                                        <div v-for="type in types" :key="type.id" class="custom-control custom-checkbox">
-                                            <template v-if="type.id % 2 == 0">
-                                                <input name="types[]" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
-                                                <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
-                                            </template>
-                                        </div>
+                                        <transition-group appear name="types">
+
+                                            <div v-for="type in types" :key="type.id" class="custom-control custom-checkbox">
+                                                <template v-if="type.id % 2 == 0">
+                                                    <input name="types[]" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
+                                                    <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
+                                                </template>
+                                            </div>
+
+                                        </transition-group>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </transition>
         </div>
     </header>
 </template>
@@ -58,7 +53,8 @@ export default {
     name: 'Header',
     data() {
         return {
-            types: []
+            types: [],
+            openMenu: false
         }
     },
     mounted() {
@@ -89,24 +85,61 @@ header {
         border-radius: .3125rem;
     }
 
-    .dropdown-menu {
-        display: block;
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(0px);
-        transition: .5s ease-in all;
 
-        .dropdownContainer {
-            width: 500px;
+    
+    // MENU-OPEN
+    .menu{
+        width: 31.25rem;
+        background-color: rgba($color: #ffff, $alpha: .9);
+        position: absolute;
+        right: 0;
+        z-index: 50;
+        border-radius: 10px;
+
+        
+        
+    }
+    // MENU-TRANSITION
+    .menu{
+        &-enter, &-leave-to {
+            opacity: 0;
+            transform: translateX(60px);
+        }
+        &-enter-active, &-leave-active{
+            transition: all 500ms;
+        }
+
+    }
+
+    .types{
+         &-enter {
+            opacity: 0;
+            transform: translateX(60px);
+        }
+        &-enter-active{
+            transition: all 500ms ease-in-out;
         }
     }
 
-    .dropdown-menu.show {
-        display: block;
-        visibility: visible;
-        opacity:1;
-        transform: translateX(0px);
-        transition: .5s ease-in all;
-    }
+
+    // .dropdown-menu {
+    //     display: block;
+    //     visibility: hidden;
+    //     opacity: 0;
+    //     transform: translateY(0px);
+    //     transition: .5s ease-in all;
+
+    //     .dropdownContainer {
+    //         width: 500px;
+    //     }
+    // }
+
+    // .dropdown-menu.show {
+    //     display: block;
+    //     visibility: visible;
+    //     opacity:1;
+    //     transform: translateX(0px);
+    //     transition: .5s ease-in all;
+    // }
 }
 </style>

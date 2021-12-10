@@ -76,4 +76,29 @@ class UserController extends Controller
             'data' => $types
         ]);
     }
+
+    public function usersTypes()
+    {
+        $users = User::all();
+
+        foreach($users as $user) {
+            $types[$user->id] = $user->types;
+        }
+        
+        $usersTypes = [];
+
+        foreach($types as $key => $type) {
+            foreach($type as $singleType) {
+                $ids[] = $singleType->id;
+            }
+            $usersTypes[] = $ids;
+            $ids = [];
+            $arrayKeys[] = $key;
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $usersTypes
+        ]);
+    }
 }

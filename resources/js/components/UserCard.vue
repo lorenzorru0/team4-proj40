@@ -34,7 +34,6 @@ export default {
         axios.get(`/api/users/${this.data.slug}/types`)
         .then((response) => {
             this.types = response.data.data;
-            console.log(this.types);
         })
         .catch((error) => {
             console.log(error);

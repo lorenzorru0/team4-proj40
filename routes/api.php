@@ -20,5 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/users', 'Api\UserController@index')->name('api.index');
 Route::get('/users/types', 'Api\UserController@typesAll')->name('api.typesAll');
+Route::get('/users/typesAll', 'Api\UserController@usersTypes')->name('api.usersTypes');
 Route::get('/users/{slug}', 'Api\UserController@show')->name('api.show');
 Route::get('/users/{slug}/types', 'Api\UserController@types')->name('api.types');

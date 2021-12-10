@@ -11,7 +11,7 @@
                 <transition name="menu">
                     <div class="menu" v-if="openMenu">
 
-                       <div class="form-group row">
+                        <div class="form-group row">
                             <h3 class="col-md-3 col-form-label text-md-left">Tipologie</h3>
                             <div class="col-md-10 mx-auto">
                                 <div class="row"> 
@@ -60,7 +60,6 @@ export default {
     mounted() {
         axios.get('/api/users/types')
         .then((response) => {
-            console.log(response);
             this.types = response.data.data;
         })
         .catch((error) => {
@@ -112,7 +111,7 @@ header {
     }
 
     .types{
-         &-enter {
+        &-enter {
             opacity: 0;
             transform: translateX(60px);
         }
@@ -120,26 +119,5 @@ header {
             transition: all 500ms ease-in-out;
         }
     }
-
-
-    // .dropdown-menu {
-    //     display: block;
-    //     visibility: hidden;
-    //     opacity: 0;
-    //     transform: translateY(0px);
-    //     transition: .5s ease-in all;
-
-    //     .dropdownContainer {
-    //         width: 500px;
-    //     }
-    // }
-
-    // .dropdown-menu.show {
-    //     display: block;
-    //     visibility: visible;
-    //     opacity:1;
-    //     transform: translateX(0px);
-    //     transition: .5s ease-in all;
-    // }
 }
 </style>

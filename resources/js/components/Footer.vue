@@ -71,6 +71,7 @@ ul, li, a {
     list-style: none;
     color: rgb(177, 177, 177);
     font-size: .9375rem;
+    text-decoration: none;
 }
 
 .iscriviti {
@@ -96,6 +97,7 @@ ul, li, a {
     margin-right: 10px;
     padding-top: 35px;
     font-size: 20px;
+    
 }
 
 .seguici {

@@ -15,21 +15,23 @@
 
     <div class="plates" id="plates">
 					
-					<div class="plate" v-for="plate in user.plates" :key="plate.id">
+					<div class="plate" v-for="(plate, index) in user.plates" :key="index+'first'">
 						<!-- <img :src="'public/storage/'. plate.url_photo" :alt="plate.name"> -->
 						<h3>{{plate.plate_name}}</h3>
 						<div class="price">Prezzo: {{plate.price}} €</div>
-						<button class="btn add-cart" @click="addToCart(plate)">Aggiungi al carrello</button>
+						<button class="btn add-cart" @click="addToCart(plate), getTotalPrice()">Aggiungi al carrello</button>
 					</div>
 
 				</div>
             <div class="cart">
                 <h2>Carrello</h2>
                 <ul class="cart-basket" id="cart-basket">
-                    <li v-for="plate in cart" :key="plate.id">
-                        <h4>{{plate.plate_name}}</h4>
-                        <div>{{plate.price}} €</div>
-                        <button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
+                    <li v-for="(plate, index) in cart" :key="index">
+                        <template>
+							<h4>{{plate.plate_name}}</h4>
+                        	<div>{{plate.price}} €</div>
+                        	<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
+						</template>
                     </li>
                 </ul>
                 <div class="total"><strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span></div>
@@ -47,6 +49,7 @@ export default {
         return {
             user: null,
 		    cart: []
+			
         }
     },
 
@@ -76,7 +79,37 @@ export default {
 	methods: {
 
 		addToCart: function(plate) {
-			this.cart.push(plate);
+			
+			if (!this.cart.includes(plate)){
+				
+				plate.quantity = 1;
+				this.cart.push(plate);
+				
+			} else {
+				this.cart.forEach(product => {
+					if (product == plate){
+						product.quantity++;
+					}		
+				});
+				
+			}
+			
+			// if (!this.cart.includes(plate)){
+			// 	this.cart.push(plate);
+			// 	let product ={
+			// 		cartPlate : plate,
+			// 		quantity : 1
+			// 	}
+			// 	this.cart.push(product);
+			// 	console.log(this.cart);
+			// } else {
+			// 	this.cart.forEach(product => {
+			// 		if (product.cartPlate == plate){
+			// 			product.quantity++;
+			// 		}		
+			// 	});
+			// }
+
 		},
 		removeToCart: function(id) {
 			this.cart = this.cart.filter(
@@ -89,11 +122,11 @@ export default {
 			);
 		},
 		getTotalPrice: function() {
-			let tot = 0;
-		
+			let tot = 0
 			this.cart.forEach(
 				(elm) => {
-					tot += elm.price;
+					
+					tot += elm.price * elm.quantity
 				}
 			);
 	

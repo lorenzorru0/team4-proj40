@@ -88,6 +88,7 @@ class UserController extends Controller
         $usersTypes = [];
 
         foreach($types as $key => $type) {
+            $ids = [];
             foreach($type as $singleType) {
                 $ids[] = $singleType->id;
             }

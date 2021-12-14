@@ -27,19 +27,29 @@
                 <h2>Carrello</h2>
                 <ul class="cart-basket" id="cart-basket">
                     <li v-for="(plate, index) in cart" :key="index">
-                        <template>
-							<h4>{{plate.plate_name}}</h4>
-                        	<div>{{plate.price}} €</div>			
-							<div class="input-group">
-								<input type="button" value="-" class="button-minus" data-field="quantity" @click="plate.quantity--" v-if="plate.quantity > 1">
-								<input type="number" step="1" max="" :value="plate.quantity" name="quantity" class="quantity-field" v-if="plate.quantity > 1">
-								<input type="button" value="+" class="button-plus" data-field="quantity" @click="plate.quantity++" v-if="plate.quantity > 1">
+                        <template class="row">
+							<div class="col-4">
+								<h4>{{plate.plate_name}}</h4>
+								<div>{{plate.price}} €</div>
 							</div>
-                        	<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
+							<div class="col-4">
+								<div class="input-group justify-content-center">
+									<!-- <input type="button" value="-" class="button-minus" data-field="quantity" @click="qty[plate.id]--" > -->
+									<input min="1" max="10" type="number" step="1" v-model.number="qty[plate.id]" name="quantity" class="quantity-field" >
+									<!-- <input type="button" value="+" class="button-plus" data-field="quantity" @click="qty[plate.id]++" > -->
+								</div>
+							</div>
+							<div class="col-4">
+								<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
+							</div>
 						</template>
                     </li>
                 </ul>
-                <div class="total"><strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span></div>
+                <div class="total">
+					<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
+					<button class="btn btn-primary">Checkout</button>
+				</div>
+
 			</div>
 
 </section>
@@ -53,12 +63,13 @@ export default {
     data() {
         return {
             user: null,
-		    cart: []
+		    cart: [],
+			qty: []
         }
     },
 
 	
-    mounted() {
+    created() {
         axios.get(`/api/users/${this.$route.params.slug}`)
         .then((response) => {
             console.log(response);
@@ -69,15 +80,22 @@ export default {
         })
 		if(localStorage.cart){
 			this.cart = JSON.parse(localStorage.cart);
+			this.qty = JSON.parse(localStorage.qty);
 		}
     },
 	watch:{
 		
 		cart:{
 			handler(newCart){
-			localStorage.cart = JSON.stringify(newCart);
+				localStorage.cart = JSON.stringify(newCart);
+			},
+			deep: true
 		},
-		deep: true
+		qty:{
+			handler(quantity){
+				localStorage.qty = JSON.stringify(quantity);
+			},
+			deep: true
 		}
 	},
 	methods: {
@@ -85,20 +103,19 @@ export default {
 		addToCart: function(plate) {
 
 			if (!this.cart.includes(plate)){
-				
-				plate.quantity = 1;
+				this.qty[plate.id] = 1;
 				
 				this.cart.push(plate);
-			
+			} 
+			// else {
+			// 	this.cart.forEach(product => {
+			// 		if (product == plate){
+			// 			this.qty[plate.id]++;
+			// 			// product.quantity++;
+			// 		}		
+			// 	});
 				
-			} else {
-				this.cart.forEach(product => {
-					if (product == plate){
-						product.quantity++;
-					}		
-				});
-				
-			}
+			// }
 			console.log(this.cart);
 
 			
@@ -136,24 +153,35 @@ export default {
 				}
 			});
 
-			if (plate.quantity > 1) {
-				plate.quantity--;
-			} else {
-				this.cart = this.cart.filter(
-					(elm) => {
-						if ( elm.id != id ) {
-							return true;
-						}
-						return false;
-					});
-			}
+			this.cart = this.cart.filter(
+				(elm) => {
+					if ( elm.id != id ) {
+						this.qty[plate.id] = 1;
+						return true;
+					}
+					return false;
+				}
+			);
+			
+			// if (this.qty[plate.id] > 1) {
+			// 	this.qty[plate.id]--;
+			// } else {
+			// 	this.cart = this.cart.filter(
+			// 		(elm) => {
+			// 			if ( elm.id != id ) {
+			// 				this.qty[plate.id] = 1;
+			// 				return true;
+			// 			}
+			// 			return false;
+			// 		});
+			// }
 		},
 		getTotalPrice: function() {
 			let tot = 0
 			this.cart.forEach(
 				(elm) => {
 					
-					tot += elm.price * elm.quantity
+					tot += elm.price * this.qty[elm.id];
 				}
 			);
 	

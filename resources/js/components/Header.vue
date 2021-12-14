@@ -5,46 +5,6 @@
             <router-link class="link" :to="{ name: 'about' }">Chi Siamo</router-link>
             <router-link class="link" :to="{ name: 'contacts' }">Contatti</router-link>
         </div>
-        <div>
-                <button type="button" class="btn btn-secondary" @click='openMenu = !openMenu'>MENU</button>
-
-                <transition name="menu">
-                    <div class="menu" v-if="openMenu">
-
-                        <div class="form-group row">
-                            <h3 class="col-md-3 col-form-label text-md-left">Tipologie</h3>
-                            <div class="col-md-10 mx-auto">
-                                <div class="row"> 
-                                    <div class="col-6">
-                                        <transition-group appear name="types">
-
-                                            <div v-for="type in types" :key="type.id" class="custom-control custom-checkbox">
-                                                <template v-if="type.id % 2 == 1">
-                                                    <input name="types[]" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
-                                                    <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
-                                                </template>
-                                            </div>
-
-                                        </transition-group>
-                                    </div>
-                                    <div class="col-6">
-                                        <transition-group appear name="types">
-
-                                            <div v-for="type in types" :key="type.id" class="custom-control custom-checkbox">
-                                                <template v-if="type.id % 2 == 0">
-                                                    <input name="types[]" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
-                                                    <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
-                                                </template>
-                                            </div>
-
-                                        </transition-group>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
-        </div>
     </header>
 </template>
 

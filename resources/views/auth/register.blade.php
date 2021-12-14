@@ -114,47 +114,19 @@
                             <div class="col-md-8">
                                 <div class="row"> 
                                     @if ($errors->any())
-                                        <div class="col-6">
-                                            @foreach ($types as  $type)
-                                                @if ($type['id'] % 2 == 1)
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input {{in_array($type['id'], old('types')) ? 'checked' : ''}} name="types[]" value="{{$type['id']}}" type="checkbox" class="custom-control-input" id="type-{{$type['id']}}">
-                                                        <label class="custom-control-label" for="type-{{$type['id']}}">{{$type['name']}}</label>
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
-                                        <div class="col-6">
-                                            @foreach ($types as  $type)
-                                                @if ($type['id'] % 2 == 0)
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input {{in_array($type['id'], old('types')) ? 'checked' : ''}} name="types[]" value="{{$type['id']}}" type="checkbox" class="custom-control-input" id="type-{{$type['id']}}">
-                                                        <label class="custom-control-label" for="type-{{$type['id']}}">{{$type['name']}}</label>
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
+                                        @foreach ($types as  $type)
+                                            <div class="custom-control custom-checkbox col-6">
+                                                <input {{in_array($type['id'], old('types')) ? 'checked' : ''}} name="types[]" value="{{$type['id']}}" type="checkbox" class="custom-control-input" id="type-{{$type['id']}}">
+                                                <label class="custom-control-label" for="type-{{$type['id']}}">{{$type['name']}}</label>
+                                            </div>
+                                        @endforeach
                                     @else
-                                        <div class="col-6">
-                                            @foreach ($types as  $type)
-                                                @if ($type['id'] % 2 == 1)
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input name="types[]" value="{{$type['id']}}" type="checkbox" class="custom-control-input" id="type-{{$type['id']}}">
-                                                        <label class="custom-control-label" for="type-{{$type['id']}}">{{$type['name']}}</label>
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
-                                        <div class="col-6">
-                                            @foreach ($types as  $type)
-                                                @if ($type['id'] % 2 == 0)
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input name="types[]" value="{{$type['id']}}" type="checkbox" class="custom-control-input" id="type-{{$type['id']}}">
-                                                        <label class="custom-control-label" for="type-{{$type['id']}}">{{$type['name']}}</label>
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
+                                        @foreach ($types as  $type)
+                                                <div class="custom-control custom-checkbox col-6">
+                                                    <input name="types[]" value="{{$type['id']}}" type="checkbox" class="custom-control-input" id="type-{{$type['id']}}">
+                                                    <label class="custom-control-label" for="type-{{$type['id']}}">{{$type['name']}}</label>
+                                                </div>
+                                        @endforeach
                                     @endif
                                 </div>
                             </div>

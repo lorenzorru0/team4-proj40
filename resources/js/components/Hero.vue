@@ -2,11 +2,11 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="left-section col-6">
+                <div class="left-section col-12 col-md-6">
                     <h1>I piatti che ami, a domicilio.</h1>
                 </div>
 
-                <div class="right-section col-6">
+                <div class="right-section col-12 col-md-6">
                     <div class="hero">
                         <img src="https://sg.deliveroo.news/assets/images/blogs/sg.deliveroo.news/en/news/1uM9TDs_csvbmx7h7I7ZlfUjq-6qn0AC8T2hMgr9Wly0/h_pasted_image_0.jpg?v=1.01" alt="Hero Image">
                         <div class="to-your-home">#aCasaTuaConDeliveboo</div>

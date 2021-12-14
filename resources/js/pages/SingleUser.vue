@@ -1,13 +1,13 @@
 <template>
 <section>
 
-        <div class="size">
+        <div v-if="user" class="size">
         <h1>{{user.business_name}}</h1>
         <h4>{{user.address}} {{user.street_number}}</h4>
         <p>{{user.description}}</p>
         <h4>Il nostro menù</h4>
         <ul>
-            <li v-for="(plate,index) in user.plates" :key="index">
+            <li v-for="(plate,index) in plates" :key="index">
                 {{plate.plate_name}} {{plate.price}}€
             </li>
         </ul>
@@ -15,7 +15,7 @@
 
     <div class="plates" id="plates">
 					
-					<div class="plate" v-for="(plate, index) in user.plates" :key="index+'first'">
+					<div class="plate" v-for="(plate, index) in plates" :key="index+'first'">
 						<!-- <img :src="'public/storage/'. plate.url_photo" :alt="plate.name"> -->
 						<h3>{{plate.plate_name}}</h3>
 						<div class="price">Prezzo: {{plate.price}} €</div>
@@ -63,6 +63,7 @@ export default {
     data() {
         return {
             user: null,
+			plates: null,
 		    cart: [],
 			qty: []
         }
@@ -72,8 +73,11 @@ export default {
     created() {
         axios.get(`/api/users/${this.$route.params.slug}`)
         .then((response) => {
-            console.log(response);
+            
             this.user = response.data.data;
+			this.plates = this.user.plates;
+            
+
         })
         .catch((error) => {
             console.log(error);

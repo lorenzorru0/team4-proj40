@@ -52,7 +52,7 @@ export default {
                 max-width: 43.75rem;
                 text-align: center;
                 color: white;
-                font-size: 1.875rem;
+                font-size: 1.5625rem;
                 font-weight: 900;
                 background-color: #017E8A;
             }

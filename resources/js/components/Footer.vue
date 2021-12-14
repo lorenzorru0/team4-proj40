@@ -71,6 +71,10 @@ ul, li, a {
     text-decoration: none;
 }
 
+ul{
+    padding: 0 3.125rem;
+}
+
 .iscriviti {
     color:rgb(255, 255, 255);
     background-color: rgb(212, 0, 240);

@@ -72,7 +72,7 @@ ul, li, a {
 }
 
 ul{
-    padding: 0 3.125rem;
+    padding: 0 0 0 3.125rem;
 }
 
 .iscriviti {

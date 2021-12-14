@@ -1,56 +1,70 @@
 <template>
 <section>
 
-        <div v-if="user" class="size">
-        <h1>{{user.business_name}}</h1>
-        <h4>{{user.address}} {{user.street_number}}</h4>
-        <p>{{user.description}}</p>
-        <h4>Il nostro menù</h4>
-        <ul>
-            <li v-for="(plate,index) in plates" :key="index">
-                {{plate.plate_name}} {{plate.price}}€
-            </li>
-        </ul>
-    </div>
+	<div class="left">
+		<div v-if="user" class="size">
+			<h1>{{user.business_name}}</h1>
+			<h4>{{user.address}} {{user.street_number}}</h4>
+			<p>{{user.description}}</p>
+			<h4>Il nostro menù</h4>
+			<ul>
+				<li v-for="(plate,index) in plates" :key="index">
+					{{plate.plate_name}} {{plate.price}}€
+				</li>
+			</ul>
+    	</div>
 
-    <div class="plates" id="plates">
-					
-					<div class="plate" v-for="(plate, index) in plates" :key="index+'first'">
-						<!-- <img :src="'public/storage/'. plate.url_photo" :alt="plate.name"> -->
-						<h3>{{plate.plate_name}}</h3>
-						<div class="price">Prezzo: {{plate.price}} €</div>
-						<button class="btn add-cart" @click="addToCart(plate), getTotalPrice()">Aggiungi al carrello</button>
+		<div class="plates" id="plates">
+						
+			<div class="plate" v-for="(plate, index) in plates" :key="index+'first'">
+				<!-- <img :src="'public/storage/'. plate.url_photo" :alt="plate.name"> -->
+				<h3>{{plate.plate_name}}</h3>
+				<div class="price">Prezzo: {{plate.price}} €</div>
+				<button class="btn add-cart" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
+			</div>
+
+		</div>
+	</div>
+           
+	<div class="right justify-content-end">
+		<button class="btn btn-primary " @click="cartOpen = !cartOpen"><i class="fas fa-shopping-cart"></i> {{cart.length}} </button>
+		<transition name="sideCart">
+			
+				<div v-if="cartOpen && cart.length != 0" class="cart">
+				
+					<h2>Carrello</h2>
+					<ul class="cart-basket" id="cart-basket">
+						<li v-for="(plate, index) in cart" :key="index">
+							<template class="row">
+								<div class="col-4">
+									<h4>{{plate.plate_name}} {{qty[plate.id]}}</h4>
+									<div>{{plate.price}} €</div>
+								</div>
+								<div class="col-4">
+									<div class="input-group justify-content-center">
+										<input type="button" value="-" class="button-minus" data-field="quantity" @click="qty[plate.id]--" >
+										<input :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty[plate.id]" name="quantity" class="quantity-field">
+										<input type="button" value="+" class="button-plus" data-field="quantity" @click="qty[plate.id]++" >
+									</div>
+								</div>
+								<div class="col-4">
+									<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
+								</div>
+							</template>
+						</li>
+					</ul>
+					<div class="total">
+						<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
+						<button class="btn btn-primary">Checkout</button>
+						<button class="btn btn-danger" @click="cart = [], qty = []">Svuota Carrello</button>
+
 					</div>
 
-				</div>
-            <div class="cart">
-                <h2>Carrello</h2>
-                <ul class="cart-basket" id="cart-basket">
-                    <li v-for="(plate, index) in cart" :key="index">
-                        <template class="row">
-							<div class="col-4">
-								<h4>{{plate.plate_name}}</h4>
-								<div>{{plate.price}} €</div>
-							</div>
-							<div class="col-4">
-								<div class="input-group justify-content-center">
-									<!-- <input type="button" value="-" class="button-minus" data-field="quantity" @click="qty[plate.id]--" > -->
-									<input min="1" max="10" type="number" step="1" v-model.number="qty[plate.id]" name="quantity" class="quantity-field" >
-									<!-- <input type="button" value="+" class="button-plus" data-field="quantity" @click="qty[plate.id]++" > -->
-								</div>
-							</div>
-							<div class="col-4">
-								<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
-							</div>
-						</template>
-                    </li>
-                </ul>
-                <div class="total">
-					<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
-					<button class="btn btn-primary">Checkout</button>
-				</div>
 
-			</div>
+				</div>
+			
+		</transition>
+	</div>
 
 </section>
 
@@ -65,7 +79,8 @@ export default {
             user: null,
 			plates: null,
 		    cart: [],
-			qty: []
+			qty: [],
+			cartOpen: false
         }
     },
 
@@ -86,6 +101,8 @@ export default {
 			this.cart = JSON.parse(localStorage.cart);
 			this.qty = JSON.parse(localStorage.qty);
 		}
+		
+
     },
 	watch:{
 		
@@ -101,6 +118,8 @@ export default {
 			},
 			deep: true
 		}
+
+		
 	},
 	methods: {
 
@@ -110,35 +129,12 @@ export default {
 				this.qty[plate.id] = 1;
 				
 				this.cart.push(plate);
-			} 
-			// else {
-			// 	this.cart.forEach(product => {
-			// 		if (product == plate){
-			// 			this.qty[plate.id]++;
-			// 			// product.quantity++;
-			// 		}		
-			// 	});
-				
-			// }
-			console.log(this.cart);
+			} else {
+				this.qty[plate.id]++;
 
-			
-			// if (!this.cart.includes(plate)){
-			// 	this.cart.push(plate);
-			// 	let product ={
-			// 		cartPlate : plate,
-			// 		quantity : 1
-			// 	}
-			// 	this.cart.push(product);
-			// 	console.log(this.cart);
-			// } else {
-			// 	this.cart.forEach(product => {
-			// 		if (product.cartPlate == plate){
-			// 			product.quantity++;
-			// 		}		
-			// 	});
-			// }
 
+			}
+			console.log(this.qty);
 		},
 		removeToCart: function(id) {
 			// this.cart = this.cart.filter(
@@ -166,19 +162,6 @@ export default {
 					return false;
 				}
 			);
-			
-			// if (this.qty[plate.id] > 1) {
-			// 	this.qty[plate.id]--;
-			// } else {
-			// 	this.cart = this.cart.filter(
-			// 		(elm) => {
-			// 			if ( elm.id != id ) {
-			// 				this.qty[plate.id] = 1;
-			// 				return true;
-			// 			}
-			// 			return false;
-			// 		});
-			// }
 		},
 		getTotalPrice: function() {
 			let tot = 0
@@ -208,6 +191,20 @@ export default {
 section {
     display: flex;
 	margin-top: 100px;
+	// border: 1px solid red;
+}
+
+.left{
+	display:flex;
+	// border: 1px solid red;
+	width: 70%;
+}
+
+.right{
+	display: flex;
+	align-items: flex-start;
+	// border: 1px solid blue;
+
 }
 
 
@@ -217,14 +214,7 @@ section {
 	display: flex;
 	flex-wrap: wrap;
 }
-.cart {
-	width: 30%;
-	height: 100%;
-	right: 0;
-	padding: 40px 20px;
-	text-align: center;
-	background-color: #D0EB99;
-}
+
 
 .plate {
 	width: calc(100% / 4 - 20px);
@@ -326,6 +316,41 @@ input[type="button"] {
 //   -moz-appearance: textfield;
 //   -webkit-appearance: none;
 // }
+
+ // CART-OPEN
+
+	.cart {
+		padding: 40px 20px;
+		text-align: center;
+		width: 31.25rem;
+		background-color: rgba($color: #D0EB99, $alpha: .8);
+		position: absolute;
+		right: 0;
+		z-index: 50;
+		border-radius: 10px;
+	}
+    
+    // MENU-TRANSITION
+    .sideCart{
+        &-enter, &-leave-to {
+            opacity: 0;
+            transform: translateX(60px);
+        }
+        &-enter-active, &-leave-active{
+            transition: all 500ms;
+        }
+
+    }
+
+    .types{
+        &-enter {
+            opacity: 0;
+            transform: translateX(60px);
+        }
+        &-enter-active{
+            transition: all 500ms ease-in-out;
+        }
+    }
 
    
 </style>

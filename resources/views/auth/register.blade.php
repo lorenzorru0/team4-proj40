@@ -18,9 +18,7 @@
                                 <input id="business_name" type="text" class="form-control @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name') }}" required autocomplete="business_name" autofocus>
 
                                 @error('business_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                         </div>
@@ -32,9 +30,7 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                         </div>
@@ -46,9 +42,7 @@
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
 
                                 @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                         </div>
@@ -60,9 +54,7 @@
                                 <input id="street_number" type="text" class="form-control @error('street_number') is-invalid @enderror" name="street_number" value="{{ old('street_number') }}" required autocomplete="street_number" autofocus>
 
                                 @error('street_number')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                         </div>
@@ -74,9 +66,7 @@
                                 <input minlength="11" maxlength="11" id="vat_number" type="text" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" value="{{ old('vat_number') }}" required autocomplete="vat_number" autofocus>
 
                                 @error('vat_number')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                         </div>
@@ -88,9 +78,7 @@
                                 <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" cols="30" rows="10">{{old('description')}}</textarea>
 
                                 @error('description')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                         </div>
@@ -102,9 +90,7 @@
                                 <input type="file" name="url_cover" class="form-control-file @error('url_cover') is-invalid @enderror" >
 
                                 @error('url_cover')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                         </div>
@@ -113,7 +99,7 @@
                             <h5 class="col-md-3 col-form-label text-md-right">Tipologie</h5>
                             <div class="col-md-8">
                                 <div class="row"> 
-                                    @if ($errors->any())
+                                    @if ($errors->any() && old('types') != NULL)
                                         @foreach ($types as  $type)
                                             <div class="custom-control custom-checkbox col-6">
                                                 <input {{in_array($type['id'], old('types')) ? 'checked' : ''}} name="types[]" value="{{$type['id']}}" type="checkbox" class="custom-control-input" id="type-{{$type['id']}}">
@@ -129,6 +115,9 @@
                                         @endforeach
                                     @endif
                                 </div>
+                                @error('types')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
                             </div>
                         </div>
 
@@ -139,9 +128,7 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                         </div>

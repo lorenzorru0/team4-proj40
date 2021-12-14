@@ -59,7 +59,8 @@ class RegisterController extends Controller
             'street_number' => ['required', 'string', 'max:70'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
             'description' => ['string', 'nullable'],
-            'url_cover' => ['nullable', 'image', 'max:200']
+            'url_cover' => ['nullable', 'image', 'max:200'],
+            'types' => ['required']
         ]);
     }
 

@@ -1,63 +1,71 @@
 <template>
 <section>
+	<div class="row">
+		<div class="left col-12 col-md-9">
+			<div class="row">
+				<div v-if="user" class="size col-12 col-md-2">
+					<h1>{{user.business_name}}</h1>
+					<h4>{{user.address}} {{user.street_number}}</h4>
+					<p>{{user.description}}</p>
+				</div>
 
-	<div class="left">
-		<div class="row">
-			<div v-if="user" class="size col-2">
-				<h1>{{user.business_name}}</h1>
-				<h4>{{user.address}} {{user.street_number}}</h4>
-				<p>{{user.description}}</p>
-			</div>
-
-			<div class="plates col-10" id="plates">
-				<div class="row row-cols-2">
-					<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
-						<div v-if="plate.url_photo">
-							<img :src="require(`../../../public/storage/${plate.url_photo}`)" :alt="plate.name">
+				<div class="plates col-12 col-md-10" id="plates">
+					<div class="row row-cols-1 row-cols-sm-2">
+						<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
+							<div class="row">
+								<div class="col-4" v-if="plate.url_photo">
+									<img :src="require(`../../../public/storage/${plate.url_photo}`)" :alt="plate.name">
+								</div>
+								<div class="col-4 d-flex align-items-center">
+									<div>
+										<h3>{{plate.plate_name}}</h3>
+										<div class="price">Prezzo: {{plate.price}} €</div>
+									</div>
+								</div>
+								<div class="col-4 d-flex align-items-center">
+									<button class="btn add-cart" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
+								</div>
+							</div>
 						</div>
-						<h3>{{plate.plate_name}}</h3>
-						<div class="price">Prezzo: {{plate.price}} €</div>
-						<button class="btn add-cart" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="right justify-content-end">
-		<button class="btn btn-primary " @click="cartOpen = !cartOpen"><i class="fas fa-shopping-cart"></i> {{cart.cart.length}} </button>
-		<transition name="sideCart">
-			
-				<div v-if="cartOpen && cart.length != 0" class="cart">
-					<h2>Carrello</h2>
-					<ul class="cart-basket" id="cart-basket">
-						<li v-for="(plate, index) in cart.cart" :key="index">
-							<template class="row">
-								<div class="col-4">
-									<h4>{{plate.plate_name}} {{plate.price}} €</h4>
-								</div>
-								<div class="col-4">
-									<div class="input-group justify-content-center">
-										<input min="1" max="10" :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty.qty[plate.id]" name="quantity" class="quantity-field">
+		<div class="right col-12 col-md-3">
+			<button class="btn btn-primary " @click="cartOpen = !cartOpen"><i class="fas fa-shopping-cart"></i> {{cart.cart.length}} </button>
+			<transition name="sideCart">
+				
+					<div v-if="cartOpen && cart.length != 0" class="cart">
+						<h2>Carrello</h2>
+						<ul class="cart-basket" id="cart-basket">
+							<li v-for="(plate, index) in cart.cart" :key="index">
+								<template class="row">
+									<div class="col-4">
+										<h4>{{plate.plate_name}} {{plate.price}} €</h4>
 									</div>
-								</div>
-								<div class="col-4">
-									<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
-								</div>
-							</template>
-						</li>
-					</ul>
-					<div class="total">
-						<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
+									<div class="col-4">
+										<div class="input-group justify-content-center">
+											<input min="1" max="10" :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty.qty[plate.id]" name="quantity" class="quantity-field">
+										</div>
+									</div>
+									<div class="col-4">
+										<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
+									</div>
+								</template>
+							</li>
+						</ul>
+						<div class="total">
+							<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
 
-						<form action="/checkout">
-							<button class="btn btn-primary">Checkout</button>
-						</form>	
-						<button class="btn btn-danger" @click="cart.cart = [], qty.qty = []">Svuota Carrello</button>
+							<!-- <form action="/checkout"> -->
+								<button @click="sendInfo()" class="btn btn-primary">Checkout</button>
+							<!-- </form>	 -->
+							<button class="btn btn-danger" @click="cart.cart = [], qty.qty = []">Svuota Carrello</button>
+						</div>
 					</div>
-				</div>
-		</transition>
+			</transition>
+		</div>
 	</div>
-
 </section>
 
 
@@ -125,7 +133,6 @@ export default {
 		}
 	},
 	methods: {
-
 		addToCart: function(plate) {
 			let testCart =  JSON.parse(localStorage[`cart-${this.user.id}`]);
 			var presence = 0;
@@ -166,11 +173,28 @@ export default {
 			let tot = 0
 			this.cart.cart.forEach(
 				(elm) => {
-					
 					tot += elm.price * this.qty.qty[elm.id];
 				}
 			);
 			return tot;
+		},
+		sendInfo: function() {
+			let info = {};
+			info.cart = this.cart.cart;
+			info.qty = this.qty.qty;
+			info.user = this.user.id;
+
+			// info = JSON.stringify(info);
+			let data = {
+				cart: JSON.stringify(info)
+			}
+
+			axios.post(`/test`, data);
+
+			
+
+			window.location.assign('/checkout');
+			console.log(info);
 		}
 	}
 }
@@ -188,8 +212,8 @@ section {
 }
 
 .left{
+	width: 100%;
 	display:flex;
-	width: 70%;
 
 	.row {
 		width: 100%;
@@ -209,6 +233,7 @@ section {
 
 		.plate {
 			padding: 10px 0;
+			background-color: #F9FAFA;
 		}
 	}
 }

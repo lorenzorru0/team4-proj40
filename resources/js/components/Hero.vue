@@ -6,9 +6,10 @@
                     <h1>I piatti che ami, a domicilio.</h1>
                 </div>
 
-                <div class="right-section col-6">
+                <div class="right-section col-12">
+                    
                     <div class="hero">
-                        <img src="https://sg.deliveroo.news/assets/images/blogs/sg.deliveroo.news/en/news/1uM9TDs_csvbmx7h7I7ZlfUjq-6qn0AC8T2hMgr9Wly0/h_pasted_image_0.jpg?v=1.01" alt="Hero Image">
+                        <img class="logo" src="images/logo_white.png" alt="logoTipo Deliveboo">
                         <div class="to-your-home">#aCasaTuaConDeliveboo</div>
                     </div>
                 </div>
@@ -29,13 +30,20 @@ export default {
         height: 100%;
         display: flex;
         justify-content: space-between;
-        background: linear-gradient(172deg, #00CCBC 50%, #D0EB99 50%, #D0EB99 50%);
+        // background: linear-gradient(172deg, #8bc64373 50%, #8bc64373 50%);
+        background-image: url('/images/bkg.jpg');
+        background-position: center;
+        // filter: brightness(50%);
         .left-section {
             h1 {
-                color: #440063;
+                color: white;
+                // color: #440063;
                 margin-top: .9375rem;
                 font-size: 2.5rem;
                 font-weight: 900;
+                display: flex;
+                align-items: center;
+                margin-top: 50px;
             }
         }
         .right-section {
@@ -44,20 +52,24 @@ export default {
                 margin: auto 0;
 
                 img {
-                    width: 100%;
+                    width: 50%;
                     text-align: center;
                 }
             }
             .to-your-home {
                 max-width: 43.75rem;
-                text-align: center;
+                text-align: left;
                 color: white;
                 font-size: 1.875rem;
                 font-weight: 900;
-                background-color: #017E8A;
+                // background-color: #017E8A;
+                padding-bottom: 20px;
             }
         }
-        
-        
     }
+
+    .logo {
+       padding: 40px;
+    }
+
 </style>

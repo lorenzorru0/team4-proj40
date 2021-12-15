@@ -2,49 +2,44 @@
 <section>
 
 	<div class="left">
-		<div v-if="user" class="size">
-			<h1>{{user.business_name}}</h1>
-			<h4>{{user.address}} {{user.street_number}}</h4>
-			<p>{{user.description}}</p>
-			<h4>Il nostro menù</h4>
-			<ul>
-				<li v-for="(plate,index) in plates" :key="index">
-					{{plate.plate_name}} {{plate.price}}€
-				</li>
-			</ul>
-    	</div>
-
-		<div class="plates" id="plates">
-						
-			<div class="plate" v-for="(plate, index) in plates" :key="index+'first'">
-				<!-- <img :src="'public/storage/'. plate.url_photo" :alt="plate.name"> -->
-				<h3>{{plate.plate_name}}</h3>
-				<div class="price">Prezzo: {{plate.price}} €</div>
-				<button class="btn add-cart" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
+		<div class="row">
+			<div v-if="user" class="size col-2">
+				<h1>{{user.business_name}}</h1>
+				<h4>{{user.address}} {{user.street_number}}</h4>
+				<p>{{user.description}}</p>
 			</div>
 
+			<div class="plates col-10" id="plates">
+				<div class="row row-cols-2">
+					<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
+						<!-- <div v-if="plate.url_photo">
+							<img  :src="'public/storage/'. plate.url_photo" :alt="plate.name">
+						</div> -->
+						<!-- <p v-if="plate.url_photo" >{{plate.url_photo}}</p> -->
+						<!-- <p v-else>photo</p>  -->
+						<h3>{{plate.plate_name}}</h3>
+						<div class="price">Prezzo: {{plate.price}} €</div>
+						<button class="btn add-cart" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-           
 	<div class="right justify-content-end">
-		<button class="btn btn-primary " @click="cartOpen = !cartOpen"><i class="fas fa-shopping-cart"></i> {{cart.length}} </button>
+		<button class="btn btn-primary " @click="cartOpen = !cartOpen"><i class="fas fa-shopping-cart"></i> {{cart.cart.length}} </button>
 		<transition name="sideCart">
 			
 				<div v-if="cartOpen && cart.length != 0" class="cart">
-				
 					<h2>Carrello</h2>
 					<ul class="cart-basket" id="cart-basket">
-						<li v-for="(plate, index) in cart" :key="index">
+						<li v-for="(plate, index) in cart.cart" :key="index">
 							<template class="row">
 								<div class="col-4">
-									<h4>{{plate.plate_name}} {{qty[plate.id]}}</h4>
-									<div>{{plate.price}} €</div>
+									<h4>{{plate.plate_name}} {{plate.price}} €</h4>
 								</div>
 								<div class="col-4">
 									<div class="input-group justify-content-center">
-										<input type="button" value="-" class="button-minus" data-field="quantity" @click="qty[plate.id]--" >
-										<input :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty[plate.id]" name="quantity" class="quantity-field">
-										<input type="button" value="+" class="button-plus" data-field="quantity" @click="qty[plate.id]++" >
+										<input min="1" max="10" :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty.qty[plate.id]" name="quantity" class="quantity-field">
 									</div>
 								</div>
 								<div class="col-4">
@@ -56,13 +51,9 @@
 					<div class="total">
 						<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
 						<button class="btn btn-primary">Checkout</button>
-						<button class="btn btn-danger" @click="cart = [], qty = []">Svuota Carrello</button>
-
+						<button class="btn btn-danger" @click="cart.cart = [], qty.qty = []">Svuota Carrello</button>
 					</div>
-
-
 				</div>
-			
 		</transition>
 	</div>
 
@@ -78,85 +69,84 @@ export default {
         return {
             user: null,
 			plates: null,
-		    cart: [],
-			qty: [],
+		    cart: {
+				user: null,
+				cart: []
+			},
+			qty: {
+				user: null,
+				qty: []
+			},
 			cartOpen: false
         }
     },
-
-	
     created() {
         axios.get(`/api/users/${this.$route.params.slug}`)
         .then((response) => {
-            
             this.user = response.data.data;
 			this.plates = this.user.plates;
-            
+			this.cart.user = this.user.id;
+			this.qty.user = this.user.id;
 
+			if(localStorage[`cart-${this.user.id}`]) {
+				let cartTest = JSON.parse(localStorage[`cart-${this.user.id}`]);
+				let qtyTest = JSON.parse(localStorage[`qty-${this.user.id}`]);
+				if (cartTest.user == this.user.id) {
+					this.cart.cart = cartTest.cart;
+					this.qty.qty = qtyTest.qty;
+				}
+			}
         })
         .catch((error) => {
             console.log(error);
         })
-		if(localStorage.cart){
-			this.cart = JSON.parse(localStorage.cart);
-			this.qty = JSON.parse(localStorage.qty);
-		}
-		
-
     },
 	watch:{
-		
 		cart:{
 			handler(newCart){
-				localStorage.cart = JSON.stringify(newCart);
+				localStorage[`cart-${this.user.id}`] = JSON.stringify(newCart);
 			},
 			deep: true
 		},
 		qty:{
 			handler(quantity){
-				localStorage.qty = JSON.stringify(quantity);
+				localStorage[`qty-${this.user.id}`] = JSON.stringify(quantity);
 			},
 			deep: true
 		}
-
-		
 	},
 	methods: {
 
 		addToCart: function(plate) {
+			let testCart =  JSON.parse(localStorage[`cart-${this.user.id}`]);
+			var presence = 0;
 
-			if (!this.cart.includes(plate)){
-				this.qty[plate.id] = 1;
-				
-				this.cart.push(plate);
-			} else {
-				this.qty[plate.id]++;
-
-
+			if (!this.cart.cart.includes(plate)){
+				testCart.cart.forEach(elm => {
+					if (elm.id == plate.id) {
+						presence = 1;
+						console.log('Presente');
+					}
+				});
+				if (presence == 0) {
+					this.qty.qty[plate.id] = 1;
+					this.cart.cart.push(plate);
+				} 
 			}
-			console.log(this.qty);
 		},
 		removeToCart: function(id) {
-			// this.cart = this.cart.filter(
-			// 	(elm) => {
-			// 		if ( elm.id != id ) {
-			// 			return true;
-			// 		}
-			// 		return false;
-			// 	}
-			// );
 			let plate;
 			
-			this.cart.forEach(element => {
+			this.cart.cart.forEach(element => {
 				if (element.id == id) {
 					plate = element;
 				}
 			});
 
-			this.cart = this.cart.filter(
+			this.cart.cart = this.cart.cart.filter(
 				(elm) => {
 					if ( elm.id != id ) {
-						this.qty[plate.id] = 1;
+						this.qty.qty[plate.id] = 1;
 						return true;
 					}
 					return false;
@@ -165,13 +155,12 @@ export default {
 		},
 		getTotalPrice: function() {
 			let tot = 0
-			this.cart.forEach(
+			this.cart.cart.forEach(
 				(elm) => {
 					
-					tot += elm.price * this.qty[elm.id];
+					tot += elm.price * this.qty.qty[elm.id];
 				}
 			);
-	
 			return tot;
 		}
 	}
@@ -181,45 +170,40 @@ export default {
 <style lang="scss" scoped>
 
 .size {
-    min-height: 80vh;
-    color: #440063;
     padding-left: 50px;
 }
 
-
-
 section {
     display: flex;
-	margin-top: 100px;
-	// border: 1px solid red;
+	margin: 100px 0;
 }
 
 .left{
 	display:flex;
-	// border: 1px solid red;
 	width: 70%;
+
+	.row {
+		width: 100%;
+	}
 }
 
 .right{
 	display: flex;
 	align-items: flex-start;
-	// border: 1px solid blue;
-
 }
 
 
 .plates {
-	width: 70%;
-	padding: 40px 20px;
-	display: flex;
-	flex-wrap: wrap;
+
+	.row {
+		width: 100%;
+
+		.plate {
+			padding: 10px 0;
+		}
+	}
 }
 
-
-.plate {
-	width: calc(100% / 4 - 20px);
-	margin: 10px;
-}
 .plate img {
 	width: 100%;
 }
@@ -260,14 +244,14 @@ section {
 // }
 
 input[type="number"] {
-  width: 50px;
-  height: 25px;
+	width: 50px;
+	height: 25px;
 }
 
 input[type="button"] {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
 }
 // input::-webkit-outer-spin-button,
 // input::-webkit-inner-spin-button {

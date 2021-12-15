@@ -1,0 +1,1 @@
+<h1>Il tuo pagamento è andato a buon fine! Grazie per aver scelto Deliveboo!</h1>

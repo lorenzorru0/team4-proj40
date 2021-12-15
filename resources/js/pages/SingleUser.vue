@@ -50,7 +50,10 @@
 					</ul>
 					<div class="total">
 						<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
-						<button class="btn btn-primary">Checkout</button>
+
+						<form action="/checkout">
+							<button class="btn btn-primary">Checkout</button>
+						</form>	
 						<button class="btn btn-danger" @click="cart.cart = [], qty.qty = []">Svuota Carrello</button>
 					</div>
 				</div>
@@ -252,6 +255,11 @@ input[type="button"] {
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
+}
+
+a {
+	text-align: none;
+	color: white;
 }
 // input::-webkit-outer-spin-button,
 // input::-webkit-inner-spin-button {

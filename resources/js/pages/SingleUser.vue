@@ -12,11 +12,9 @@
 			<div class="plates col-10" id="plates">
 				<div class="row row-cols-2">
 					<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
-						<!-- <div v-if="plate.url_photo">
-							<img  :src="'public/storage/'. plate.url_photo" :alt="plate.name">
-						</div> -->
-						<!-- <p v-if="plate.url_photo" >{{plate.url_photo}}</p> -->
-						<!-- <p v-else>photo</p>  -->
+						<div v-if="plate.url_photo">
+							<img :src="require(`../../../public/storage/${plate.url_photo}`)" :alt="plate.name">
+						</div>
 						<h3>{{plate.plate_name}}</h3>
 						<div class="price">Prezzo: {{plate.price}} €</div>
 						<button class="btn add-cart" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>

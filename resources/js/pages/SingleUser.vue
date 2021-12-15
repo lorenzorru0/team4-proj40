@@ -94,10 +94,11 @@ export default {
 					this.qty.qty = qtyTest.qty;
 				}
 
-				if (this.qty.qty.length == 0 && cartTest.cart.length != 0) {
-					console.log('Entra');
+				if (cartTest.cart.length > 0) {
 					cartTest.cart.forEach(elm => {
-						this.qty.qty[elm.id] = 1;
+						if (!this.qty.qty[elm.id]) {
+							this.qty.qty[elm.id] = 1;
+						}
 					});
 				}
 			}

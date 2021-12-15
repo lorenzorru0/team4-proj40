@@ -95,6 +95,13 @@ export default {
 					this.cart.cart = cartTest.cart;
 					this.qty.qty = qtyTest.qty;
 				}
+
+				if (this.qty.qty.length == 0 && cartTest.cart.length != 0) {
+					console.log('Entra');
+					cartTest.cart.forEach(elm => {
+						this.qty.qty[elm.id] = 1;
+					});
+				}
 			}
         })
         .catch((error) => {

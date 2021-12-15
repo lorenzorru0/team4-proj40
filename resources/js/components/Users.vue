@@ -1,47 +1,5 @@
 <template>
     <div class="users-container">
-        <!-- <div class="d-flex justify-content-end">
-            <div>
-                <button type="button" class="btn btn-secondary" @click='openMenu = !openMenu'>MENU</button>
-
-                <transition name="menu">
-                    <div class="menu" v-if="openMenu">
-
-                        <div class="form-group row">
-                            <h3 class="col-md-3 col-form-label text-md-left">Tipologie</h3>
-                            <div class="col-md-10 mx-auto">
-                                <div class="row"> 
-                                    <div class="col-6">
-                                        <transition-group appear name="types">
-
-                                            <div v-for="type in types" :key="type.id" class="custom-control custom-checkbox">
-                                                <template v-if="type.id % 2 == 1">
-                                                    <input name="types[]" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
-                                                    <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
-                                                </template>
-                                            </div>
-
-                                        </transition-group>
-                                    </div>
-                                    <div class="col-6">
-                                        <transition-group appear name="types">
-
-                                            <div v-for="type in types" :key="type.id" class="custom-control custom-checkbox">
-                                                <template v-if="type.id % 2 == 0">
-                                                    <input name="types[]" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
-                                                    <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
-                                                </template>
-                                            </div>
-
-                                        </transition-group>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
-            </div>
-        </div> -->
         <p>
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Ricerca i ristoranti tramite le tipologie
@@ -49,29 +7,11 @@
         </p>
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
-                <div class="row">
-                    <div class="col-4 d-flex justify-content-center">
-                        <div>
-                            <div v-for="(type, index) in types" :key="type.id" v-show="index < (types.length / 3)" class="custom-control custom-checkbox">
-                                <input v-model="typesSelected" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
-                                <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4 d-flex justify-content-center">
-                        <div>
-                            <div v-for="(type, index) in types" :key="type.id" v-show="index >= (types.length / 3) && index < (types.length / 3) * 2" class="custom-control custom-checkbox">
-                                <input v-model="typesSelected" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
-                                <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4 d-flex justify-content-center">
-                        <div>
-                            <div v-for="(type, index) in types" :key="type.id" v-show="index >= (types.length / 3) * 2" class="custom-control custom-checkbox">
-                                <input v-model="typesSelected" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
-                                <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
-                            </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
+                    <div v-for="type in types" :key="type.id" class="custom-control custom-checkbox col">
+                        <div class="pl-5">
+                            <input v-model="typesSelected" :value="type.id" type="checkbox" class="custom-control-input" :id="'type-' + type.id">
+                            <label class="custom-control-label" :for="'type-' + type.id">{{type.name}}</label>
                         </div>
                     </div>
                 </div>

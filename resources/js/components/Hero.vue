@@ -2,12 +2,10 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="left-section col-6">
+                <div class="left-section col-12 col-md-6">
                     <h1>I piatti che ami, a domicilio.</h1>
                 </div>
-
-                <div class="right-section col-12">
-                    
+                <div class="right-section col-12 col-md-6">
                     <div class="hero">
                         <img class="logo" src="images/logo_white.png" alt="logoTipo Deliveboo">
                         <div class="to-your-home">#aCasaTuaConDeliveboo</div>
@@ -60,7 +58,7 @@ export default {
                 max-width: 43.75rem;
                 text-align: left;
                 color: white;
-                font-size: 1.875rem;
+                font-size: 1.5625rem;
                 font-weight: 900;
                 // background-color: #017E8A;
                 padding-bottom: 20px;

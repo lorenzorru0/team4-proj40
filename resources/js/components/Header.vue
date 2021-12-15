@@ -47,42 +47,6 @@ header {
         color: black;
         border-radius: .3125rem;
     }
-
-
-    
-    // MENU-OPEN
-    .menu{
-        width: 31.25rem;
-        background-color: rgba($color: #ffff, $alpha: .9);
-        position: absolute;
-        right: 0;
-        z-index: 50;
-        border-radius: 10px;
-
-        
-        
-    }
-    // MENU-TRANSITION
-    .menu{
-        &-enter, &-leave-to {
-            opacity: 0;
-            transform: translateX(60px);
-        }
-        &-enter-active, &-leave-active{
-            transition: all 500ms;
-        }
-
-    }
-
-    .types{
-        &-enter {
-            opacity: 0;
-            transform: translateX(60px);
-        }
-        &-enter-active{
-            transition: all 500ms ease-in-out;
-        }
-    }
 }
 
 .logo {

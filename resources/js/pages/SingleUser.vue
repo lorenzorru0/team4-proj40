@@ -1,75 +1,67 @@
 <template>
-<section>
+<section class="container-fluid">
 	<div class="row">
-		<div class="left col-12 col-md-9">
-			<div class="row">
-				<div v-if="user" class="size col-12 col-md-2">
-					<h1>{{user.business_name}}</h1>
-					<h4>{{user.address}} {{user.street_number}}</h4>
-					<p>{{user.description}}</p>
-				</div>
+		<div class="col-sm-12 col-md-8 flex-column justify-content-center">
+			<div v-if="user" class="col">
+				<h1>{{user.business_name}}</h1>
+				<h5>{{user.address}} {{user.street_number}}</h5>
+				<p>{{user.description}}</p>
+			</div>
 
-				<div class="plates col-12 col-md-10" id="plates">
-					<div class="row row-cols-1 row-cols-sm-2">
-						<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
-							<div class="row">
-								<div class="col-4" v-if="plate.url_photo">
-									<img :src="require(`../../../public/storage/${plate.url_photo}`)" :alt="plate.name">
-								</div>
-								<div class="col-4 d-flex align-items-center">
-									<div>
-										<h3>{{plate.plate_name}}</h3>
-										<div class="price">Prezzo: {{plate.price}} €</div>
-									</div>
-								</div>
-								<div class="col-4 d-flex align-items-center">
-									<button class="btn add-cart" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
-								</div>
+			<div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
+					<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
+						<div class="plate-container d-flex justify-content-center mt-5">
+							<div v-if="plate.url_photo" class="plate-image">
+								<img :src="require(`../../../public/storage/${plate.url_photo}`)" :alt="plate.name">
+							</div>
+								
+							<div>
+								<h3>{{plate.plate_name}}</h3>
+								<div class="price">Prezzo: {{plate.price}}€</div>
+								<button class="btn add-cart" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
 							</div>
 						</div>
 					</div>
+				</div>	
+			</div>
+		
+		<div class="col-sm-12 col-md-4">	
+			<div>
+				<i class="fas fa-shopping-cart"></i> {{cart.cart.length}}
+			</div>
+			<div class="cart" v-if="cart.cart.length > 0">
+				<h2>Carrello</h2>
+				<ul class="cart-basket" id="cart-basket">
+					<li v-for="(plate, index) in cart.cart" :key="index">
+						<template class="row">
+							<div class="col-4">
+								<h4>{{plate.plate_name}}<h4>
+								</h4>{{plate.price}}€</h4>
+							</div>
+							<div class="col-4">
+								<div class="input-group">
+									<input min="1" max="10" :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty.qty[plate.id]" name="quantity" class="quantity-field qty">
+								</div>
+							</div>
+							<div class="col-4">
+								<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
+							</div>
+						</template>
+					</li>
+				</ul>
+				<div class="total">
+					<div class="mb-2">
+						<strong>Totale:</strong> <span id="total-price">{{getTotalPrice()}}€</span> 
+					</div>
+					<form action="/checkout"> 
+						<button @click="sendInfo()" class="btn btn-primary">Checkout</button>
+					</form>	
+					<button v-if="cart.cart.length > 0" class="btn btn-danger" @click="cart.cart = [], qty.qty = []">Svuota Carrello</button>
 				</div>
 			</div>
 		</div>
-		<div class="right col-12 col-md-3">
-			<button class="btn btn-primary " @click="cartOpen = !cartOpen"><i class="fas fa-shopping-cart"></i> {{cart.cart.length}} </button>
-			<transition name="sideCart">
-				
-					<div v-if="cartOpen && cart.length != 0" class="cart">
-						<h2>Carrello</h2>
-						<ul class="cart-basket" id="cart-basket">
-							<li v-for="(plate, index) in cart.cart" :key="index">
-								<template class="row">
-									<div class="col-4 d-flex align-items-center">
-										<h4>{{plate.plate_name}} {{plate.price}} €</h4>
-									</div>
-									<div class="col-4 d-flex align-items-center">
-										<div class="input-group">
-											<input min="1" max="10" :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty.qty[plate.id]" name="quantity" class="quantity-field qty">
-										</div>
-									</div>
-									<div class="col-4 d-flex align-items-center">
-										<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
-									</div>
-								</template>
-							</li>
-						</ul>
-						<div class="total">
-							<div class="mb-2">
-								<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
-							</div>
-
-							<!-- <form action="/checkout"> -->
-								<button @click="sendInfo()" class="btn btn-primary">Checkout</button>
-							<!-- </form>	 -->
-							<button class="btn btn-danger" @click="cart.cart = [], qty.qty = []">Svuota Carrello</button>
-						</div>
-					</div>
-			</transition>
-		</div>
 	</div>
 </section>
-
 
 </template>
 
@@ -198,59 +190,42 @@ export default {
 
 <style lang="scss" scoped>
 
-.size {
-    padding-left: 50px;
-}
-
 section {
-    display: flex;
-	margin: 100px 0;
-
-	& > .row {
-		width: 100%;
-	}
+    // display: flex;
+	padding: 50px;
+	// background-image: url('../../../public/images/texture.jpeg');
+	// background-color: rgb(231, 212, 212);
+	// & > .row {
+	// 	width: 100%;
+	// }
 }
 
-.left{
-	width: 100%;
-	display:flex;
-
-	h1 {
-		text-transform: capitalize;
-	}
-
-	.row {
-		width: 100%;
-	}
-}
-
-.right{
-	display: flex;
-	align-items: flex-start;
-}
-
-
-.plates {
-
-	.row {
-		width: 100%;
-
-		.plate {
-			padding: 10px 0;
-			background-color: #F9FAFA;
-		}
-	}
-}
-
-.plate img {
-	width: 100%;
-}
-.plate .price {
-	margin-bottom: 10px;
-}
 .btn.add-cart {
 	background-color: #00CCBC;
 	margin: auto;
+	color: white;
+}
+
+.plate {
+	margin: 15px 0;
+}
+
+.plate-image img{
+	margin-right: 20px;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10%;
+}
+
+.plate .price {
+	margin-bottom: 10px;
+	font-size: 15px;
+}
+
+i {
+	color: #00CCBC;
+	font-size: 20px;
 }
 
 .cart-basket {
@@ -260,8 +235,8 @@ section {
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 1px solid #999;
-	padding: 10px;
+	border-bottom: 1px solid #00CCBC;
+	padding: 20px;
 }
 
 .cart .total {
@@ -270,16 +245,17 @@ section {
 
 .cart-remove {
 	background-color: #00CCBC;
+	color: white;
 }
 
 .input-group {
 	width: 100%;
-
+	margin-left: 20px;
 	.qty {
 		width: 100%;
 		border: none;
 		font-size: 1.1rem;
-		padding: 15px;
+		// padding: 15px;
 		border-radius: 5px;
 		text-align: center;
 	}
@@ -289,15 +265,9 @@ section {
 	font-size: 1.1rem;
 }
 
-
-// input,
-// textarea {
-//   border: 1px solid #eeeeee;
-//   box-sizing: border-box;
-//   margin: 0;
-//   outline: none;
-//   padding: 10px;
-// }
+.btn.btn-primary {
+	margin: 30px 0;
+}
 
 input[type="number"] {
 	width: 50px;
@@ -314,88 +284,45 @@ a {
 	text-align: none;
 	color: white;
 }
-// input::-webkit-outer-spin-button,
-// input::-webkit-inner-spin-button {
-//   -webkit-appearance: none;
-// }
-
-// .input-group {
-//   clear: both;
-//   margin: 15px 0;
-//   position: relative;
-// }
-
-// .input-group input[type='button'] {
-//   background-color: #eeeeee;
-//   min-width: 38px;
-//   width: auto;
-//   transition: all 300ms ease;
-// }
-
-// .input-group .button-minus,
-// .input-group .button-plus {
-//   font-weight: bold;
-//   height: 38px;
-//   padding: 0;
-//   width: 38px;
-//   position: relative;
-// }
-
-// .input-group .quantity-field {
-//   position: relative;
-//   height: 38px;
-//   left: -6px;
-//   text-align: center;
-//   width: 62px;
-//   display: inline-block;
-//   font-size: 13px;
-//   margin: 0 0 5px;
-//   resize: vertical;
-// }
-
-// .button-plus {
-//   left: -13px;
-// }
-
-// input[type="number"] {
-//   -moz-appearance: textfield;
-//   -webkit-appearance: none;
-// }
 
  // CART-OPEN
 
 	.cart {
-		padding: 40px 20px;
+		padding: 20px;
 		text-align: center;
-		width: 31.25rem;
-		background-color: rgba($color: #D0EB99, $alpha: .8);
-		position: absolute;
-		right: 0;
-		z-index: 50;
+		// width: 31.25rem;
+		// background-color: #c0e4e0;
+		position: relative;
+		// right: 0;
+		// z-index: 50;
 		border-radius: 10px;
+		margin-left: 20px;
+		border: 3px solid #00CCBC;
+		ul {
+			padding: 0px;
+		}
 	}
     
-    // MENU-TRANSITION
-    .sideCart{
-        &-enter, &-leave-to {
-            opacity: 0;
-            transform: translateX(60px);
-        }
-        &-enter-active, &-leave-active{
-            transition: all 500ms;
-        }
+    // // MENU-TRANSITION
+    // .sideCart{
+    //     &-enter, &-leave-to {
+    //         opacity: 0;
+    //         transform: translateX(60px);
+    //     }
+    //     &-enter-active, &-leave-active{
+    //         transition: all 500ms;
+    //     }
 
-    }
+    // }
 
-    .types{
-        &-enter {
-            opacity: 0;
-            transform: translateX(60px);
-        }
-        &-enter-active{
-            transition: all 500ms ease-in-out;
-        }
-    }
+    // .types{
+    //     &-enter {
+    //         opacity: 0;
+    //         transform: translateX(60px);
+    //     }
+    //     &-enter-active{
+    //         transition: all 500ms ease-in-out;
+    //     }
+    // }
 
-   
 </style>

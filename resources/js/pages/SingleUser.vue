@@ -40,22 +40,24 @@
 						<ul class="cart-basket" id="cart-basket">
 							<li v-for="(plate, index) in cart.cart" :key="index">
 								<template class="row">
-									<div class="col-4">
+									<div class="col-4 d-flex align-items-center">
 										<h4>{{plate.plate_name}} {{plate.price}} €</h4>
 									</div>
-									<div class="col-4">
-										<div class="input-group justify-content-center">
-											<input min="1" max="10" :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty.qty[plate.id]" name="quantity" class="quantity-field">
+									<div class="col-4 d-flex align-items-center">
+										<div class="input-group">
+											<input min="1" max="10" :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty.qty[plate.id]" name="quantity" class="quantity-field qty">
 										</div>
 									</div>
-									<div class="col-4">
+									<div class="col-4 d-flex align-items-center">
 										<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
 									</div>
 								</template>
 							</li>
 						</ul>
 						<div class="total">
-							<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
+							<div class="mb-2">
+								<strong>Totale:</strong> <span id="total-price">€{{getTotalPrice()}}</span> 
+							</div>
 
 							<!-- <form action="/checkout"> -->
 								<button @click="sendInfo()" class="btn btn-primary">Checkout</button>
@@ -184,17 +186,31 @@ export default {
 			info.qty = this.qty.qty;
 			info.user = this.user.id;
 
-			// info = JSON.stringify(info);
-			let data = {
-				cart: JSON.stringify(info)
+			if (info.cart.length > 0) {
+	
+				// info = JSON.stringify(info);
+				// let data = {
+				// 	cart: JSON.stringify(info)
+				// }
+	
+				// axios.post(`api/order`, data);
+	
+				// axios({
+				// 	method: 'post',
+				// 	url: 'api/order',
+				// 	data: data,
+				// 	headers: {
+				// 		'Content-Type': 'multipart/form-data',
+				// 	},
+				// }).then(function (response) {
+				// 	console.log(response);
+				// }).catch(function (error) {
+				// 	console.log(error);
+				// });
+	
+				window.location.assign('/checkout');
+				console.log(data);
 			}
-
-			axios.post(`/test`, data);
-
-			
-
-			window.location.assign('/checkout');
-			console.log(info);
 		}
 	}
 }
@@ -209,11 +225,19 @@ export default {
 section {
     display: flex;
 	margin: 100px 0;
+
+	& > .row {
+		width: 100%;
+	}
 }
 
 .left{
 	width: 100%;
 	display:flex;
+
+	h1 {
+		text-transform: capitalize;
+	}
 
 	.row {
 		width: 100%;
@@ -267,6 +291,24 @@ section {
 .cart-remove {
 	background-color: #00CCBC;
 }
+
+.input-group {
+	width: 100%;
+
+	.qty {
+		width: 100%;
+		border: none;
+		font-size: 1.1rem;
+		padding: 15px;
+		border-radius: 5px;
+		text-align: center;
+	}
+}
+
+.total > div {
+	font-size: 1.1rem;
+}
+
 
 // input,
 // textarea {

@@ -33,8 +33,8 @@
                 <div class="col d-flex justify-content-center flex-column">
                     <div class="full-name d-flex justify-content-center">Simone Severini</div>
                     <div class="contacts d-flex justify-content-center">
-                        <a href="#"><i class="fab fa-github"></i></a>  
-                        <a href="#"><i class="fab fa-linkedin"></i></a> 
+                        <a href="https://github.com/SamSepiool"><i class="fab fa-github"></i></a>  
+                        <a href="www.linkedin.com/in/simone--severini"><i class="fab fa-linkedin"></i></a> 
                     </div>
                 </div>
             </div>

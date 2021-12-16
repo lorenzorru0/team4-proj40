@@ -187,29 +187,9 @@ export default {
 			info.user = this.user.id;
 
 			if (info.cart.length > 0) {
-	
-				// info = JSON.stringify(info);
-				// let data = {
-				// 	cart: JSON.stringify(info)
-				// }
-	
-				// axios.post(`api/order`, data);
-	
-				// axios({
-				// 	method: 'post',
-				// 	url: 'api/order',
-				// 	data: data,
-				// 	headers: {
-				// 		'Content-Type': 'multipart/form-data',
-				// 	},
-				// }).then(function (response) {
-				// 	console.log(response);
-				// }).catch(function (error) {
-				// 	console.log(error);
-				// });
-	
-				window.location.assign('/checkout');
-				console.log(data);
+				window.location.assign(`/checkout/${this.user.id}`);
+				// this.cart.cart = [];
+				// this.qty.qty = [];
 			}
 		}
 	}

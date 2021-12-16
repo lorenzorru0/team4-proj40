@@ -24,7 +24,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="col-md-6 offset-md-3">
+            <div>
                 <h1>Dettagli Pagamento</h1>
                 <div class="spacer"></div>
 
@@ -46,94 +46,59 @@
                 <form action="{{ url('/checkout') }}" method="POST" id="payment-form">
                     @csrf
                     <div class="form-group">
-                        <label for="email">Indirizzo email*</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <label for="customer_email">Indirizzo email *</label>
+                        <input type="email" class="form-control" id="email" name="customer_email" value="{{old('customer_email')}}" required>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-12 col-md-6">
+                        <div class="form-group">
+                          <label for="name_on_card">Nome *</label>
+                          <input type="text" class="form-control" id="name_on_card" name="customer_firstname" value="{{old('customer_firstname')}}" required>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <div class="form-group">
+                          <label for="name_on_card">Cognome *</label>
+                          <input type="text" class="form-control" id="name_on_card" name="customer_lastname" value="{{old('customer_lastname')}}" required>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="address">Indirizzo di spedizione *</label>
+                                <input type="text" class="form-control" id="address" name="customer_address" value="{{old('customer_address')}}" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="customer_street_number">Numero civico *</label>
+                                <input type="text" class="form-control" id="city" name="customer_street_number" value="{{old('customer_street_number')}}" required>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="name_on_card">Nome e cognome*</label>
-                        <input type="text" class="form-control" id="name_on_card" name="name_on_card" required>
+                      <label for="notes">Note</label>
+                      <textarea name="notes" id="description" class="form-control" cols="10" rows="3">{{old('notes')}}</textarea>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="address">Indirizzo di spedizione*</label>
-                                <input type="text" class="form-control" id="address" name="address" required>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="city">Città*</label>
-                                <input type="text" class="form-control" id="city" name="city" required>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="province">Provincia*</label>
-                                <input type="text" class="form-control" id="province" name="province" required>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="postalcode">Codice Postale*</label>
-                                <input type="text" class="form-control" id="postalcode" name="postalcode" required>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="country">Paese</label>
-                                <input type="text" class="form-control" id="country" name="country">
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="phone">Numero di telefono</label>
-                                <input type="text" class="form-control" id="phone" name="phone">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="amount">Importo</label>
-                                <input type="text" class="form-control" id="amount" name="amount" value="11">
+                                <label for="total_price">Importo totale: </label>
+                                <input type="text" class="form-control" id="total_price" name="total_price" disabled>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6">
-                            
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                              
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="cc_number">Numero Carta*</label>
+                            <label for="cc_number">Numero Carta *</label>
 
                             <div class="form-group" id="card-number">
 
@@ -141,7 +106,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="expiry">Data scadenza*</label>
+                            <label for="expiry">Data scadenza *</label>
 
                             <div class="form-group" id="expiration-date">
 
@@ -149,7 +114,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="cvv">CVV*</label>
+                            <label for="cvv">CVV *</label>
 
                             <div class="form-group" id="cvv">
 
@@ -180,6 +145,7 @@
     <script>
       var form = document.querySelector('#payment-form');
       var submit = document.querySelector('input[type="submit"]');
+
       braintree.client.create({
         authorization: '{{ $token }}'
       }, function (clientErr, clientInstance) {
@@ -282,6 +248,24 @@
         });
         });
       });
+
+      let user = '<?php echo json_encode($user); ?>';
+      user = JSON.parse(user);
+      console.log(user);
+
+      let cart = JSON.parse(window.localStorage.getItem(`cart-${user.id}`));
+      let qty = JSON.parse(window.localStorage.getItem(`qty-${user.id}`));
+      console.log(cart);
+      console.log(qty);
+
+      let totalPrice = 0;
+
+      cart.cart.forEach(element => {
+        totalPrice += element.price * qty.qty[element.id];
+      });
+      document.getElementById('total_price').value = totalPrice;
+      console.log(totalPrice);
+
     </script>
     </body>
 </html>

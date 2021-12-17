@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use Braintree;
 use App\User;
 use App\Order;
+use App\Plate;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -43,6 +46,7 @@ class PaymentController extends Controller
 
         $cart = $request->cart;
         $qty = $request->qty;
+        
 
         foreach ($cart as $key => $item) {
             DB::table('order_plate')->insert([
@@ -69,9 +73,31 @@ class PaymentController extends Controller
                 'submitForSettlement' => true
             ]
         ]);
-        
+
         if ($result->success) {
-            // $transaction = $result->transaction;
+            $orders = Order::where('user_id')->get();
+
+            // prendo il ristorante a cui si sta' facendo un ordine
+            $user = User::where('id', $newOrder->user_id)->first();
+            // recupero i piatti che sono stati ordinati
+            foreach ($cart as $cartItem)
+            {
+                $platesOrdered []= $orders;
+            }
+            // recupero le email del ristoratore e dell'utente che sta' ordinando
+            $emails=[$newOrder->customer_email,$user['email']];
+            $emailNames=[$newOrder->customer_firstname,$user['business_name']];
+
+            // eseguo un ciclo per inviare tante email, quante ne sono contenute in $emails
+            foreach ($emails as $key=>$email){
+                Mail::send('email.emailOrder', compact('newOrder','user','platesOrdered', 'cart'),
+                function($message) use ($email,$emailNames,$key){
+                    $message->to(strval($email),strval($emailNames[$key]))
+                    ->subject('Order Created Subject');
+                });
+            }
+            
+            // restituisco view avvenuto pagamento
             return view('successfulPayment');
         } else {
             $errorString = "";

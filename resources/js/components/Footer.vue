@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="container footerContainer">
-            <div class="row">
+            <div class="row mx-0">
                 <div class="col d-flex justify-content-center flex-column">
                     <div class="full-name d-flex justify-content-center">Andrea Geraci</div>
                     <div class="contacts d-flex justify-content-center">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row ">
+            <div class="row mx-0">
                 <div class="col-6 d-flex flex-column align-items-center margin">
                     <h6 class="font-weight-bold">Vuoi il tuo ristorante su Deliveboo?</h6>
                     <a href="/register"><button class="iscriviti">Iscriviti</button></a>

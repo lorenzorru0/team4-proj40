@@ -1,10 +1,10 @@
 <template>
     <div class="users-container">
-        <p>
+        <!-- <p>
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Ricerca i ristoranti tramite le tipologie
             </button>
-        </p>
+        </p> -->
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">

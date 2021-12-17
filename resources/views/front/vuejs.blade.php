@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
 </head>
 <body>
+
     <div class="logins d-flex justify-content-end px-3">
     @if (Route::has('login'))
         <div class="top-right links">

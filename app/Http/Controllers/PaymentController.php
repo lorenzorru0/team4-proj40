@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Braintree;
 use App\User;
+use App\Order;
+use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
 {
@@ -26,7 +28,29 @@ class PaymentController extends Controller
         return view('hosted', compact('token', 'user'));
     }
     
-    public function paymentPost(Request $request) {
+    public function paymentPost(Request $request, $id) {
+
+        $newOrder = new Order();
+        $newOrder['total_price'] = $request['amount'];
+        $newOrder['customer_firstname'] = $request['customer_firstname'];
+        $newOrder['customer_lastname'] = $request['customer_lastname'];
+        $newOrder['customer_email'] = $request['customer_email'];
+        $newOrder['customer_address'] = $request['customer_address'];
+        $newOrder['customer_street_number'] = $request['customer_street_number'];
+        $newOrder['notes'] = $request['notes'];
+        $newOrder['user_id'] = $id;
+        $newOrder->save();
+
+        $cart = $request->cart;
+        $qty = $request->qty;
+
+        foreach ($cart as $key => $item) {
+            DB::table('order_plate')->insert([
+                'plate_id' => $item,
+                'order_id' => $newOrder->id,
+                'quantity' => $qty[$key]
+            ]);
+        }
         
         $gateway = new Braintree\Gateway([
             'environment' => config('services.braintree.environment'),

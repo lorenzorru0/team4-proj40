@@ -16,3 +16,14 @@
         width: 200px;
     }
 }
+
+.totalPrice {
+    position: relative;
+
+    .euro {
+        position: absolute;
+        font-size: 1.1rem;
+        top: 2.25rem;
+        right: .4375rem;
+    }
+}

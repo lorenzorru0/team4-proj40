@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-6 d-flex flex-column align-items-center margin">
                     <h6>Seguici su Instagram</h6>
-                    <a href="https://www.instagram.com/deliveboo40/"><i class="fab fa-instagram-square icon_fontawesome"></i></a>
+                    <a href="https://www.instagram.com/deliveboo40/" target="_blank"><i class="fab fa-instagram-square icon_fontawesome"></i></a>
                 </div>
             </div>
         </div>

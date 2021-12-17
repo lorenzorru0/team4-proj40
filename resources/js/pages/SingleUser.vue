@@ -18,7 +18,8 @@
 							<div>
 								<h3>{{plate.plate_name}}</h3>
 								<div class="price">Prezzo: {{plate.price}}€</div>
-								<button class="btn add-cart" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
+								<div>Descrizione: {{plate.description}}</div>
+								<button class="btn add-cart mt-3" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
 							</div>
 						</div>
 					</div>
@@ -53,9 +54,9 @@
 					<div class="mb-2">
 						<strong>Totale:</strong> <span id="total-price">{{getTotalPrice()}}€</span> 
 					</div>
-					<form action="/checkout"> 
+					<div>
 						<button @click="sendInfo()" class="btn btn-primary">Checkout</button>
-					</form>	
+					</div>
 					<button v-if="cart.cart.length > 0" class="btn btn-danger" @click="cart.cart = [], qty.qty = []">Svuota Carrello</button>
 				</div>
 			</div>
@@ -173,15 +174,10 @@ export default {
 			return tot;
 		},
 		sendInfo: function() {
-			let info = {};
-			info.cart = this.cart.cart;
-			info.qty = this.qty.qty;
-			info.user = this.user.id;
+			let infoCart = this.cart.cart;
 
-			if (info.cart.length > 0) {
+			if (infoCart.length > 0) {
 				window.location.assign(`/checkout/${this.user.id}`);
-				// this.cart.cart = [];
-				// this.qty.qty = [];
 			}
 		}
 	}

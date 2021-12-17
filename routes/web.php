@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 Route::get('/', 'PageController@index')->name('home');
 
 Route::get('/checkout/{id}', 'PaymentController@paymentGet')->name('order.checkout');
-Route::post('/checkout', 'PaymentController@paymentPost');
+Route::post('/checkout/{id}', 'PaymentController@paymentPost')->name('order.checkout.post');
 
 Auth::routes();
 

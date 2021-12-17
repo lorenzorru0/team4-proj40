@@ -4,7 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Deliveboo</title>
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
+        <!-- Styles -->
+        <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+
         <link rel="stylesheet" href="/css/app.css">
         <style>
             body {
@@ -43,7 +50,8 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ url('/checkout') }}" method="POST" id="payment-form">
+
+                <form action="{{ route('order.checkout.post', $user['id']) }}" method="POST" id="payment-form">
                     @csrf
                     <div class="form-group">
                         <label for="customer_email">Indirizzo email *</label>
@@ -87,13 +95,23 @@
                       <textarea name="notes" id="description" class="form-control" cols="10" rows="3">{{old('notes')}}</textarea>
                     </div>
 
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="total_price">Importo totale: </label>
-                                <input type="text" class="form-control" id="total_price" name="total_price" disabled>
+                            <div class="form-group totalPrice">
+                                <label for="amount">Importo totale: </label>
+                                <input type="text" class="form-control" id="amount" name="amount" readonly>
+                                <span class="euro">€</span>
                             </div>
                         </div>
+
+                        <div class="col-md-6">
+                          <p>Riepilogo ordine: </p>
+                          <div id="infoContainer"></div>
+                        </div>
+                    </div>
+
+                    <div id="cartContainer">
+
                     </div>
 
                     <div class="row">
@@ -130,7 +148,7 @@
                     <div class="spacer"></div>
 
                     <input id="nonce" name="payment_method_nonce" type="hidden" />
-                    <button type="submit" class="btn btn-success">Paga ora</button>
+                    <button type="submit" class="btn btn-success" id="payNow">Paga ora</button>
                 </form>
             </div>
         </div>
@@ -260,11 +278,35 @@
 
       let totalPrice = 0;
 
+      // let cartContainer = document.getElementById("cartContainer");
+      // cartContainer.innerHtml = '';
+
       cart.cart.forEach(element => {
         totalPrice += element.price * qty.qty[element.id];
+
+        var newCart = document.createElement('div');
+        var newQty = document.createElement('div');
+        var newInfo = document.createElement('div');
+
+        newCart.innerHTML = `<input type="hidden" name="cart[]" value="${element.id}">`;
+        newQty.innerHTML = `<input type="hidden" name="qty[]" value="${qty.qty[element.id]}">`;
+        newInfo.innerHTML = `<span>${qty.qty[element.id]}x ${element.plate_name}      ${element.price} €</span>`
+
+        document.getElementById("cartContainer").appendChild(newCart);
+        document.getElementById("cartContainer").appendChild(newQty);
+        document.getElementById("infoContainer").appendChild(newInfo);
       });
-      document.getElementById('total_price').value = totalPrice;
-      console.log(totalPrice);
+      document.getElementById('amount').value = totalPrice;
+
+      let buttonPay = document.getElementById('payNow');
+
+      buttonPay.onclick = function() {
+        cart.cart = [];
+        qty.qty = [];
+
+        localStorage[`cart-${user.id}`] = JSON.stringify(cart);
+        localStorage[`qty-${user.id}`] = JSON.stringify(qty);
+      };
 
     </script>
     </body>

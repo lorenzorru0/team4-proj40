@@ -10022,3 +10022,19 @@ h3 {
 .indexUser {
   font-size: 1.2rem;
 }
+.indexUser h2 {
+  text-align: center;
+}
+.indexUser img {
+  width: 200px;
+}
+
+.totalPrice {
+  position: relative;
+}
+.totalPrice .euro {
+  position: absolute;
+  font-size: 1.1rem;
+  top: 2.25rem;
+  right: 0.4375rem;
+}

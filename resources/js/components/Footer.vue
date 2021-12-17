@@ -5,36 +5,36 @@
                 <div class="col d-flex justify-content-center flex-column">
                     <div class="full-name d-flex justify-content-center">Andrea Geraci</div>
                     <div class="contacts d-flex justify-content-center">
-                        <a href="https://github.com/touros91"><i class="fab fa-github"></i></a>  
-                        <a href="https://www.linkedin.com/in/andrea-geraci-web-developer/"><i class="fab fa-linkedin"></i></a> 
+                        <a href="https://github.com/touros91" target="_blank"><i class="fab fa-github"></i></a>  
+                        <a href="https://www.linkedin.com/in/andrea-geraci-web-developer/" target="_blank"><i class="fab fa-linkedin"></i></a> 
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center flex-column">
                     <div class="full-name d-flex justify-content-center">Lorenzo Orrù</div>
                     <div class="contacts d-flex justify-content-center">
-                        <a href="https://github.com/lorenzorru0"><i class="fab fa-github"></i></a>  
-                        <a href="https://www.linkedin.com/in/lorenzo-orrù/"><i class="fab fa-linkedin"></i></a> 
+                        <a href="https://github.com/lorenzorru0" target="_blank"><i class="fab fa-github"></i></a>  
+                        <a href="https://www.linkedin.com/in/lorenzo-orrù/" target="_blank"><i class="fab fa-linkedin"></i></a> 
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center flex-column">
                     <div class="full-name d-flex justify-content-center">Michele Amoruso</div>
                     <div class="contacts d-flex justify-content-center">
-                        <a href="#"><i class="fab fa-github"></i></a>  
-                        <a href="#"><i class="fab fa-linkedin"></i></a> 
+                        <a href="#"><i class="fab fa-github" target="_blank"></i></a>  
+                        <a href="#"><i class="fab fa-linkedin" target="_blank"></i></a> 
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center flex-column">
                     <div class="full-name d-flex justify-content-center">Ilario Cocco</div>
                     <div class="contacts d-flex justify-content-center">
-                        <a href="https://github.com/IlarioCocco"><i class="fab fa-github"></i></a>  
-                        <a href="https://www.linkedin.com/in/ilario-cocco-ba728a10a/"><i class="fab fa-linkedin"></i></a> 
+                        <a href="https://github.com/IlarioCocco" target="_blank"><i class="fab fa-github"></i></a>  
+                        <a href="https://www.linkedin.com/in/ilario-cocco-ba728a10a/" target="_blank"><i class="fab fa-linkedin"></i></a> 
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center flex-column">
                     <div class="full-name d-flex justify-content-center">Simone Severini</div>
                     <div class="contacts d-flex justify-content-center">
-                        <a href="https://github.com/SamSepiool"><i class="fab fa-github"></i></a>  
-                        <a href="www.linkedin.com/in/simone--severini"><i class="fab fa-linkedin"></i></a> 
+                        <a href="https://github.com/SamSepiool" target="_blank"><i class="fab fa-github"></i></a>  
+                        <a href="www.linkedin.com/in/simone--severini" target="_blank"><i class="fab fa-linkedin"></i></a> 
                     </div>
                 </div>
             </div>

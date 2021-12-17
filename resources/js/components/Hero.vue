@@ -7,7 +7,7 @@
                 </div>
                 <div class="right-section col-12 col-md-6">
                     <div class="hero">
-                        <img class="logo" src="images/logo_white.png" alt="logoTipo Deliveboo">
+                        <img class="logo" src="http://localhost:3000/images/logo_white.png" alt="logoTipo Deliveboo">
                         <div class="to-your-home">#aCasaTuaConDeliveboo</div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 <template>
     <header class="d-flex justify-content-between">
         <div>
-	        <img class="logo" src="images/logoTipoDeliveboo.png" alt="logoTipo Deliveboo">
+	        <img class="logo" src="http://localhost:3000/images/logoTipoDeliveboo.png" alt="logoTipo Deliveboo">
         </div>
         <div>
             <router-link class="link" :to="{ name: 'home' }">Homepage</router-link>

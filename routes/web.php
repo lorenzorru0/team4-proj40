@@ -30,6 +30,7 @@ Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->
     Route::resource('users', 'UserController');
     Route::resource('plates', 'PlatesController');
     Route::put('/plates/{plate}/visibility', 'Platescontroller@changeVisibility')->name('plates.visibility');
+    Route::resource('orders', 'OrderController');
 });
 
 Route::get('/{any}', 'PageController@index')->where('any', '.*');

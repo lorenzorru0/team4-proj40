@@ -39,6 +39,9 @@
                         <a class="ml-3" href="{{ route('admin.plates.index') }}">
                             Visualizza menu
                         </a>
+                        <a class="ml-3" href="{{ route('admin.orders.index') }}">
+                            Visualizza ordini
+                        </a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

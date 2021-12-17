@@ -15,3 +15,11 @@ deleteButtons.forEach((elm) => {
     })
 });
 
+const deleteButtonsOrder = document.querySelectorAll('.deleteButtonOrder');
+const valueIdOrder = document.getElementById('deleteIdOrder');
+
+deleteButtonsOrder.forEach((elm) => {
+    elm.addEventListener('click', function() {
+        valueIdOrder.value = this.getAttribute('data-order');
+    })
+});

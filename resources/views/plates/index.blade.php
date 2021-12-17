@@ -78,9 +78,7 @@
             <form action="{{ route('admin.plates.destroy', 'id') }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <div id="test" class="modal-body">
-                   Sei sicuro di voler eliminare l'articolo?
-                </div>
+                <div id="test" class="modal-body">Sei sicuro di voler eliminare l'articolo?</div>
                 <div class="modal-footer">
                     <input type="hidden" name="deleteId" id="deleteId">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>

@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
 {
+    protected $validationRules = [
+        'amount' => 'numeric|required|min:0|max:9999.99',
+        'customer_firstname' => 'string|required|min:3|max:50',
+        'customer_lastname' => 'string|required|min:3|max:50',
+        'customer_email' => 'string|required|min:3|max:50',
+        'customer_address' => 'string|required|min:3|max:50',
+        'customer_street_number' => 'string|required|min:1|max:50',
+        'notes' => 'nullable|string',
+    ];
+
     public function paymentGet(Request $request, $id) {
 
         $gateway = new Braintree\Gateway([
@@ -29,6 +39,7 @@ class PaymentController extends Controller
     }
     
     public function paymentPost(Request $request, $id) {
+        $request->validate($this->validationRules);
 
         $newOrder = new Order();
         $newOrder['total_price'] = $request['amount'];
@@ -38,6 +49,7 @@ class PaymentController extends Controller
         $newOrder['customer_address'] = $request['customer_address'];
         $newOrder['customer_street_number'] = $request['customer_street_number'];
         $newOrder['notes'] = $request['notes'];
+        $newOrder['deliver'] = 0;
         $newOrder['user_id'] = $id;
         $newOrder->save();
 

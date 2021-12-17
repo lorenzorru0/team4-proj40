@@ -57,7 +57,7 @@
 					<div>
 						<button @click="sendInfo()" class="btn btn-primary">Checkout</button>
 					</div>
-					<button v-if="cart.cart.length > 0" class="btn btn-danger" @click="cart.cart = [], qty.qty = []">Svuota Carrello</button>
+					<button v-if="cart.cart.length > 0" class="btn btn-danger" @click="removeCart()">Svuota Carrello</button>
 				</div>
 			</div>
 		</div>
@@ -135,12 +135,13 @@ export default {
 			if (!this.cart.cart.includes(plate)){
 				testCart.cart.forEach(elm => {
 					if (elm.id == plate.id) {
+						this.qty.qty[plate.id] = 1;
 						presence = 1;
-						console.log('Presente');
 					}
 				});
 				if (presence == 0) {
 					this.qty.qty[plate.id] = 1;
+					localStorage[`qty-${this.user.id}`] = JSON.stringify(this.qty);
 					this.cart.cart.push(plate);
 				} 
 			}
@@ -172,6 +173,11 @@ export default {
 				}
 			);
 			return tot;
+		},
+		removeCart: function() {
+			this.cart.cart = [];
+			this.qty.qty = []; 
+			localStorage[`qty-${this.user.id}`] = JSON.stringify(this.qty);
 		},
 		sendInfo: function() {
 			let infoCart = this.cart.cart;

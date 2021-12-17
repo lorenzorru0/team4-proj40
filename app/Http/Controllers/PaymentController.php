@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Braintree;
+use App\User;
 
 class PaymentController extends Controller
 {
-    public function paymentGet(Request $request) {
+    public function paymentGet(Request $request, $id) {
 
         $gateway = new Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
@@ -17,10 +18,12 @@ class PaymentController extends Controller
         ]);
         
         $token = $gateway->ClientToken()->generate();
+
+        $user = User::where('id', $id)->first();
+
+        $user = $this->object_to_array($user->getAttributes());
     
-        return view('hosted', [
-            'token' => $token
-        ]);
+        return view('hosted', compact('token', 'user'));
     }
     
     public function paymentPost(Request $request) {
@@ -55,5 +58,20 @@ class PaymentController extends Controller
         
             return back()->withErrors('Errore'. $result->message);
         }
-    }         
+    }
+    
+    public function object_to_array($data)
+    {
+        if (is_array($data) || is_object($data)) {
+            $result = array();
+
+            foreach ($data as $key => $value) {
+                $result[$key] = $this->object_to_array($value);
+            }
+
+            return $result;
+        }
+
+        return $data;
+    }
 }

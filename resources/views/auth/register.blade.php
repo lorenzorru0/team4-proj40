@@ -115,10 +115,10 @@
                                         @endforeach
                                     @endif
                                 </div>
-                                @error('types')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                @enderror
                             </div>
+                            @error('types')
+                                <div class="alert alert-danger col-10 mx-auto">{{$message}}</div>
+                            @enderror
                         </div>
 
                         <div class="form-group row">

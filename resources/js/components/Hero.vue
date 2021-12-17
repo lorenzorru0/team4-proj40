@@ -30,6 +30,7 @@ export default {
         justify-content: space-between;
         // background: linear-gradient(172deg, #8bc64373 50%, #8bc64373 50%);
         background-image: url('/images/bkg.jpg');
+        background-size: cover;
         background-position: center;
         // filter: brightness(50%);
         .left-section {
@@ -67,7 +68,7 @@ export default {
     }
 
     .logo {
-       padding: 40px;
+        padding: 40px;
     }
 
 </style>

@@ -10,7 +10,7 @@
 
 			<div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
 					<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
-						<div class="plate-container d-flex justify-content-center mt-5">
+						<div class="plate-container d-flex mt-5">
 							<div v-if="plate.url_photo" class="plate-image">
 								<img :src="require(`../../../public/storage/${plate.url_photo}`)" :alt="plate.name">
 							</div>

@@ -20,49 +20,52 @@
         </div>
     </div>
 
-    <div class="table-responsive-sm">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Nome Articolo</th>
-                    <th class="d-none d-md-table-cell" scope="col">Descrizione/Ingredienti</th>
-                    <th class="d-none d-md-table-cell" scope="col">Prezzo</th>
-                    <th class="d-none d-md-table-cell" scope="col">Visibilità</th>
-                    <th scope="col">Interagisci</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($plates as $plate)
+    @if (count($plates) == 0)
+        <h3>Non è stato inserito ancora nessun piatto</h3>
+    @else    
+        <div class="table-responsive-sm">
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <td>{{$plate->plate_name}}</td>
-                        <td class="d-none d-md-table-cell">{{$plate->description}}</td>
-                        <td class="d-none d-md-table-cell">{{$plate->price}} €</td>
-                        <td class="d-none d-md-table-cell">
-                            @if ($plate->visible)
-                                Si
-                            @else
-                                No 
-                            @endif
-                            <br>
-                            <form action="{{route('admin.plates.visibility', $plate->id)}}" method="POST">
-                                @csrf
-                                @method('PUT')
-    
-                                <button type="submit" class="btn btn-info mt-2">Visualizzazione nel menù</button>
-                            </form>
-                        </td>
-                        <td>
-                            <a href="{{route('admin.plates.show', $plate->id)}}"><button type="button" class="btn btn-primary">Visualizza</button></a> <br>
-                            <a href="{{route('admin.plates.edit', $plate->id)}}"><button type="button" class="btn btn-warning mt-2">Modifica</button></a> <br>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger mt-2 deleteButton" data-id='{{$plate->id}}' data-toggle="modal" data-target="#exampleModal">Elimina</button>
-                        </td>
+                        <th scope="col">Nome Articolo</th>
+                        <th class="d-none d-md-table-cell" scope="col">Descrizione/Ingredienti</th>
+                        <th class="d-none d-md-table-cell" scope="col">Prezzo</th>
+                        <th class="d-none d-md-table-cell" scope="col">Visibilità</th>
+                        <th scope="col">Interagisci</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-
+                </thead>
+                <tbody>
+                    @foreach ($plates as $plate)
+                        <tr>
+                            <td>{{$plate->plate_name}}</td>
+                            <td class="d-none d-md-table-cell">{{$plate->description}}</td>
+                            <td class="d-none d-md-table-cell">{{$plate->price}} €</td>
+                            <td class="d-none d-md-table-cell">
+                                @if ($plate->visible)
+                                    Si
+                                @else
+                                    No 
+                                @endif
+                                <br>
+                                <form action="{{route('admin.plates.visibility', $plate->id)}}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+        
+                                    <button type="submit" class="btn btn-info mt-2">Visualizzazione nel menù</button>
+                                </form>
+                            </td>
+                            <td>
+                                <a href="{{route('admin.plates.show', $plate->id)}}"><button type="button" class="btn btn-primary">Visualizza</button></a> <br>
+                                <a href="{{route('admin.plates.edit', $plate->id)}}"><button type="button" class="btn btn-warning mt-2">Modifica</button></a> <br>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger mt-2 deleteButton" data-id='{{$plate->id}}' data-toggle="modal" data-target="#exampleModal">Elimina</button>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    @endif
 </div>
 
 <!-- Modal -->

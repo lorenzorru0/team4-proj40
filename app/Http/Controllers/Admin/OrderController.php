@@ -18,7 +18,39 @@ class OrderController extends Controller
     {
         $orders = Order::where('user_id', Auth::user()->id)->get();
 
+        $ordersFiltered = [];
+
+        foreach ($orders as $order) {
+            if ($order->deliver == 0) {
+                $ordersFiltered[] = $order;
+            }
+        }
+
+        $orders = $ordersFiltered;
+
         return view('orders.index', compact('orders'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexDelivered()
+    {
+        $orders = Order::where('user_id', Auth::user()->id)->get();
+
+        $ordersFiltered = [];
+
+        foreach ($orders as $order) {
+            if ($order->deliver) {
+                $ordersFiltered[] = $order;
+            }
+        }
+
+        $orders = $ordersFiltered;
+
+        return view('orders.indexDelivered', compact('orders'));
     }
 
     /**
@@ -37,17 +69,20 @@ class OrderController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Change visibilty of the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function changeDeliver(Request $request)
     {
+
         $order = Order::find($request->deleteId);
 
-        $order->delete();
+        $order->deliver = 1;
 
-        return redirect()->route('admin.orders.index')->with('success', "L' ordine è stato cancellato.");
+        $order->save();
+
+        return redirect()->route("admin.orders.index")->with('success', "Ordine segnato come consegnato.");
     }
 }

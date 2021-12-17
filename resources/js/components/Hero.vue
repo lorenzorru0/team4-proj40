@@ -4,12 +4,21 @@
             <div class="row">
                 <div class="left-section col-12 col-md-6">
                     <h1>I piatti che ami, a domicilio.</h1>
+                    <h5 class="text-light">
+                        Basta con i soliti piatti: da oggi ci pensa Deliveboo,
+                        dal Ristorante alla tua tavola
+                    </h5>
                 </div>
-                <div class="right-section col-12 col-md-6">
+                <div class="right-section col-12">
                     <div class="hero">
                         <img class="logo" src="http://localhost:3000/images/logo_white.png" alt="logoTipo Deliveboo">
                         <div class="to-your-home">#aCasaTuaConDeliveboo</div>
                     </div>
+                    <p>
+                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Ricerca i ristoranti tramite le tipologie
+                        </button>
+                    </p>
                 </div>
             </div>
         </div>
@@ -29,9 +38,11 @@ export default {
         display: flex;
         justify-content: space-between;
         // background: linear-gradient(172deg, #8bc64373 50%, #8bc64373 50%);
-        background-image: url('/images/bkg.jpg');
-        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('/images/bkg_quattro.jpg');
         background-position: center;
+        background-size: cover;
+        height: 650px;
         // filter: brightness(50%);
         .left-section {
             h1 {
@@ -68,7 +79,7 @@ export default {
     }
 
     .logo {
-        padding: 40px;
+       padding: 40px;
     }
 
 </style>

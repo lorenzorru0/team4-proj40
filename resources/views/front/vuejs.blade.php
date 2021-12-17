@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+
     <div class="logins d-flex justify-content-end px-3">
     @if (Route::has('login'))
         <div class="top-right links">

@@ -3,7 +3,7 @@
         <div>
 	        <img class="logo" src="images/logoTipoDeliveboo.png" alt="logoTipo Deliveboo">
         </div>
-        <div>
+        <div class="bottoni">
             <router-link class="link" :to="{ name: 'home' }">Homepage</router-link>
             <router-link class="link" :to="{ name: 'about' }">Chi Siamo</router-link>
             <router-link class="link" :to="{ name: 'contacts' }">Contatti</router-link>
@@ -36,11 +36,14 @@ export default {
 
 header {
     // background-color: #43c6bf73;
-    background-color: #000000ce;
+    background-color: #73d29ef8;
     padding: 10px;
+    // position: fixed;
+    // margin: auto;
+    // width: 100%;
 
     .link {
-        display: inline-block;
+        display: inline-flex;
         margin: .3125rem;
         padding: .3125rem .9375rem;
         background-color: white;
@@ -53,5 +56,10 @@ header {
     width:160px;
     display: flex;
     padding:10px;
+}
+
+.bottoni {
+    display: flex;
+    align-items: center;
 }
 </style>

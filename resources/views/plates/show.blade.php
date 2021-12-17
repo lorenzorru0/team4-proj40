@@ -6,7 +6,7 @@
     <h2>{{$plate->plate_name}}</h2>
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <p>Prezzo: {{$plate->price}} €</p>
             @if ($plate->description)
                 <p>Descrizione e Ingredienti: {{$plate->description}}</p>
@@ -19,8 +19,14 @@
             @else
                 <p>Non visibile nel menù</p>
             @endif
+            <form action="{{route('admin.plates.visibility', $plate->id)}}" method="POST">
+                @csrf
+                @method('PUT')
+
+                <button type="submit" class="btn btn-info mt-2">Visualizzazione nel menù</button>
+            </form>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             @if ($plate->url_photo)
                 <img class="w-100 rounded" src="{{asset('storage/'. $plate->url_photo)}}" alt="Plate photo">
             @else

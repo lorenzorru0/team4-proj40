@@ -19,8 +19,9 @@
             <thead>
                 <tr>
                     <th scope="col">id Ordine</th>
-                    <th scope="col">Nome e Cognome</th>
-                    <th scope="col">Indirizzo</th>
+                    <th class="d-none d-md-table-cell" scope="col">Nome e Cognome</th>
+                    <th class="d-none d-md-table-cell" scope="col">Indirizzo</th>
+                    <th class="d-none d-md-table-cell" scope="col">Data e ora</th>
                     <th scope="col">Interagisci</th>
                 </tr>
             </thead>
@@ -28,8 +29,9 @@
                 @foreach ($orders as $order)
                     <tr>
                         <td>{{$order->id}}</td>
-                        <td>{{$order->customer_firstname}} {{$order->customer_lastname}}</td>
-                        <td>{{$order->customer_address}} {{$order->customer_street_number}}</td>
+                        <td class="d-none d-md-table-cell">{{$order->customer_firstname}} {{$order->customer_lastname}}</td>
+                        <td class="d-none d-md-table-cell">{{$order->customer_address}} {{$order->customer_street_number}}</td>
+                        <td class="d-none d-md-table-cell">{{$order->created_at}}</td>
                         <td>
                             <a href="{{route('admin.orders.show', $order->id)}}"><button type="button" class="btn btn-primary">Visualizza</button></a> <br>
                             <!-- Button trigger modal -->

@@ -25,9 +25,9 @@
             <thead>
                 <tr>
                     <th scope="col">Nome Articolo</th>
-                    <th scope="col">Descrizione/Ingredienti</th>
-                    <th scope="col">Prezzo</th>
-                    <th scope="col">Visibilità</th>
+                    <th class="d-none d-md-table-cell" scope="col">Descrizione/Ingredienti</th>
+                    <th class="d-none d-md-table-cell" scope="col">Prezzo</th>
+                    <th class="d-none d-md-table-cell" scope="col">Visibilità</th>
                     <th scope="col">Interagisci</th>
                 </tr>
             </thead>
@@ -35,9 +35,9 @@
                 @foreach ($plates as $plate)
                     <tr>
                         <td>{{$plate->plate_name}}</td>
-                        <td>{{$plate->description}}</td>
-                        <td>{{$plate->price}} €</td>
-                        <td>
+                        <td class="d-none d-md-table-cell">{{$plate->description}}</td>
+                        <td class="d-none d-md-table-cell">{{$plate->price}} €</td>
+                        <td class="d-none d-md-table-cell">
                             @if ($plate->visible)
                                 Si
                             @else
@@ -48,7 +48,7 @@
                                 @csrf
                                 @method('PUT')
     
-                                <button type="submit" class="btn btn-info mt-2">Visualizza nel menù</button>
+                                <button type="submit" class="btn btn-info mt-2">Visualizzazione nel menù</button>
                             </form>
                         </td>
                         <td>

@@ -15,6 +15,7 @@
             @if ($order->notes)
                 <p>Note: {{$order->notes}}</p>
             @endif
+            <p>Giorno e ora: {{$order->created_at}}</p>
         </div>
         <div class="col-12 col-md-6">
             <p><strong>Dati ordine:</strong></p>

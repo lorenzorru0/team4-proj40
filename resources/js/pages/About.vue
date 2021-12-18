@@ -1,39 +1,29 @@
 <template>
 <div>
     <div class="about">
-       <h1>Deliveboo è una piattaforma che colma ogni tua richiesta</h1> 
+       <h2 class="text-uppercase font-weight-bold">Deliveboo è una piattaforma che accontenta ogni tua richiesta</h2> 
     </div>
     <h3 class="about">i nostri Partner</h3>
-
-    <!-- <div class="mainSectionFour d-flex">
-      <div class="sectionOneImgLeft">
-      </div>
-      <div class="sectionOneImgRight">
-      </div>
-    </div> -->
 
     <div class="about view text-uppercase text-center">
         <ul class="view">
             <li class="view">
-                <img src="images/uno.png" alt="Rossopomodoro">
+                <img src="images/uno.png" alt="Imachai">
             </li>
             <li class="view">
-                <img src="images/quattro.png" alt="La Piadineria">
+                <img src="images/quattro.png" alt="Lievita">
             </li>
             <li class="view">
-                <img src="images/tre.png" alt="La Piadineria">
+                <img src="images/tre.png" alt="Femakinho">
             </li>
             <li class="view">
-                <img src="images/cinque.png" alt="La Piadineria">
+                <img src="images/cinque.png" alt="Starbene">
             </li>
             <li class="view">
-                <img src="images/due.png" alt="lievita">
+                <img src="images/due.png" alt="Daruma">
             </li>
         </ul>
     </div>
-    <!-- <div class="left-section col-md-6">
-        <img src="images/pasta.jpg" alt="prova">
-    </div> -->
 
     <section>
         <div class="container">
@@ -48,14 +38,23 @@
                         impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,
                         hic totam, debitis laborum delectus. Fugit, voluptate expedita.</h6>
+                        <h6 class="unaRealta">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, 
+                        impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,
+                        hic totam, debitis laborum delectus. Fugit, voluptate expedita.</h6>
                 </div>
                 <div class="right-section col-6" >
-                    <div class="">
-                        <img class="pasta" src="images/bkg_tre.jpg" alt="">
-                        <!-- <img class="pasta" src="images/pasta.jpg" alt=""> -->
-                        <img class="logo" src="images/logo_green.png" alt="">
+                    <div class="imgAbout">
+                        <img class="imgAbout" src="images/bkg_tre.jpg" alt="">
+                        <img class="imgAbout" src="images/restaurants.jpg" alt="">
+                       
                     </div>
                 </div>
+                
+                <div>
+                    <img class="imageProva" src="images/pricing_home - Copia.svg" alt="">
+                </div>
+                
             </div>
         </div>
     </section>
@@ -77,12 +76,12 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 40px;
+    padding-top: 100px;
 }
 
 .view{
    padding: 30px;
-   background: #ffffff;
+   background: #ffffff00;
    color: rgb(70, 70, 70);
    display: flex;
    align-items: center;
@@ -100,8 +99,10 @@ ul li {
     margin-top: 40px;
 }
 
-.pasta {
+.imgAbout {
     width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .logo {
@@ -110,53 +111,9 @@ ul li {
     padding-top: 50px;
 }
 
-
-// .sectionOneImgLeft {
-//     background-image: url('/images/prova_uno.jpg');
-//     background-position: right;
-//     background-size: cover;
-//     height: 500px;
-//     width: 50%;
-// }
-
-// .sectionOneImgRight {
-//    background-image: url('/images/prova_uno.jpg');
-//     background-position: right;
-//     background-size: cover;
-//     height: 500px;
-//     width: 50%;
-// }
-
-// .sectionTwoImgLeft {
-//     background-image: url('/images/prova_uno.jpg');
-//     background-position: right;
-//     background-size: cover;
-//     height: 500px;
-//     width: 50%;
-// }
-
-// .sectionTwoImgRight {
-//     background-image: url('/image/prova_uno.jpg');
-//     background-position: right;
-//     background-size: cover;
-//     height: 500px;
-//     width: 50%;
-// }
-
-// .sectionTreeImgLeft {
-//     background-image: url('/images/prova_uno.jpg');
-//     background-position: right;
-//     background-size: cover;
-//     height: 500px;
-//     width: 50%;
-// }
-
-// .sectionTwoImgRight {
-//     background-image: url('/image/prova_uno.jpg');
-//     background-position: right;
-//     background-size: cover;
-//     height: 500px;
-//     width: 50%;
-// }
+.imageProva {
+    width: 170%;
+    margin-left: 40px;
+}
 
 </style>

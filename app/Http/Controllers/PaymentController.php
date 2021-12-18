@@ -46,7 +46,14 @@ class PaymentController extends Controller
 
         $cart = $request->cart;
         $qty = $request->qty;
-        
+
+        $objectQty = (object) $qty;
+
+        $user = User::where('id', $id)->first();
+
+        $user = $this->object_to_array($user->getAttributes());
+       
+        $plates = Plate::where('user_id', $user)->get();
 
         foreach ($cart as $key => $item) {
             DB::table('order_plate')->insert([
@@ -77,35 +84,28 @@ class PaymentController extends Controller
         if ($result->success) {
             $orders = Order::where('user_id')->get();
 
-            // prendo il ristorante a cui si sta' facendo un ordine
             $user = User::where('id', $newOrder->user_id)->first();
-            // recupero i piatti che sono stati ordinati
-            foreach ($cart as $cartItem)
-            {
-                $platesOrdered []= $orders;
-            }
-            // recupero le email del ristoratore e dell'utente che sta' ordinando
+
             $emails=[$newOrder->customer_email,$user['email']];
             $emailNames=[$newOrder->customer_firstname,$user['business_name']];
 
-            // eseguo un ciclo per inviare tante email, quante ne sono contenute in $emails
             foreach ($emails as $key=>$email){
-                Mail::send('email.emailOrder', compact('newOrder','user','platesOrdered', 'cart'),
+                Mail::send('email.emailOrder', compact('newOrder','user','plates', 'objectQty'),
                 function($message) use ($email,$emailNames,$key){
                     $message->to(strval($email),strval($emailNames[$key]))
-                    ->subject('Order Created Subject');
+                    ->subject('Il tuo ordine Deliveboo');
                 });
             }
             
-            // restituisco view avvenuto pagamento
             return view('successfulPayment');
+            
         } else {
             $errorString = "";
         
             foreach($result->errors->deepAll() as $error) {
                 $errorString .= 'Errore: ' . $error->code . ": " . $error->message . "\n";
             }
-        
+    
             return back()->withErrors('Errore'. $result->message);
         }
     }

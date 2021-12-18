@@ -50,10 +50,10 @@
                         hic totam, debitis laborum delectus. Fugit, voluptate expedita.</h6>
                 </div>
                 <div class="right-section col-6" >
-                    <div class="">
+                    <div class="pasta">
                         <img class="pasta" src="images/bkg_tre.jpg" alt="">
                         <!-- <img class="pasta" src="images/pasta.jpg" alt=""> -->
-                        <img class="logo" src="images/logo_green.png" alt="">
+                        <img class="pasta" src="images/restaurants.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -102,6 +102,8 @@ ul li {
 
 .pasta {
     width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .logo {

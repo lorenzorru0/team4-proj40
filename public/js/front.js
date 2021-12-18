@@ -2340,6 +2340,102 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Contacts'
 });
@@ -7106,7 +7202,26 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".about[data-v-520b5d54] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  padding: 40px;\n}\n.view[data-v-520b5d54] {\n  padding: 30px;\n  background: #ffffff;\n  color: #464646;\n  display: flex;\n  align-items: center;\n}\nul li[data-v-520b5d54] {\n  display: inline-flex;\n  list-style: none;\n  max-width: 100%;\n  padding-right: 70px;\n}\n.unaRealta[data-v-520b5d54] {\n  padding: 30px;\n  margin-top: 40px;\n}\n.pasta[data-v-520b5d54] {\n  width: 100%;\n}\n.logo[data-v-520b5d54] {\n  width: 70%;\n  padding-left: 170px;\n  padding-top: 50px;\n}", ""]);
+exports.push([module.i, ".about[data-v-520b5d54] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  padding: 40px;\n}\n.view[data-v-520b5d54] {\n  padding: 30px;\n  background: #ffffff;\n  color: #464646;\n  display: flex;\n  align-items: center;\n}\nul li[data-v-520b5d54] {\n  display: inline-flex;\n  list-style: none;\n  max-width: 100%;\n  padding-right: 70px;\n}\n.unaRealta[data-v-520b5d54] {\n  padding: 30px;\n  margin-top: 40px;\n}\n.pasta[data-v-520b5d54] {\n  width: 100%;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.logo[data-v-520b5d54] {\n  width: 70%;\n  padding-left: 170px;\n  padding-top: 50px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".contacts[data-v-2d69ed48] {\n  background-color: #ebeced;\n}\n.bloccoTitolo[data-v-2d69ed48] {\n  text-align: center;\n  padding-top: 80px;\n  color: black;\n}\n.loremMainOne[data-v-2d69ed48] {\n  padding: 40px;\n  padding-bottom: 60px;\n}\n.if[data-v-2d69ed48] {\n  color: #6e89a0;\n  line-height: 20px;\n}\n.why[data-v-2d69ed48] {\n  padding-left: 30%;\n  padding-right: 30%;\n  padding-top: 30px;\n}\n.dark[data-v-2d69ed48] {\n  background: #95b1ba;\n}\n.blocInput[data-v-2d69ed48] {\n  padding-top: 10px;\n  padding-bottom: 80px;\n}\n.input[data-v-2d69ed48] {\n  border: none;\n  width: 30%;\n  font-size: 10px;\n  margin-top: 20px;\n  line-height: 30px;\n}\n.danger[data-v-2d69ed48] {\n  background: #73d29ef8;\n  text-align: center;\n  font-size: 15px;\n  color: white;\n}\n[data-v-2d69ed48]::-moz-placeholder {\n  color: #d5d5d5;\n}\n[data-v-2d69ed48]:-ms-input-placeholder {\n  color: #d5d5d5;\n}\n[data-v-2d69ed48]::placeholder {\n  color: #d5d5d5;\n}\n.imagineContattaci[data-v-2d69ed48] {\n  display: flex;\n  justify-content: center;\n}\n.imgContact[data-v-2d69ed48] {\n  width: 40%;\n  padding: 30px;\n  padding-bottom: 70px;\n}\n.testoContattaci[data-v-2d69ed48] {\n  padding: 20px;\n}\n.about[data-v-2d69ed48] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n}\n.view[data-v-2d69ed48] {\n  padding: 30px;\n  display: flex;\n  align-items: center;\n}\n.blocText[data-v-2d69ed48] {\n  padding-top: 20px;\n  background: #ffffff57;\n  color: #7c7c7c;\n  padding: 60px;\n  text-align: center;\n  max-width: 100%;\n}\n.secondText[data-v-2d69ed48] {\n  color: #6f8794;\n  line-height: 20px;\n  padding-bottom: 20px;\n  text-align: center;\n  padding: 20px;\n}\n.support[data-v-2d69ed48] {\n  width: 104px;\n}", ""]);
 
 // exports
 
@@ -38577,6 +38692,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--8-2!../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NotFound.vue?vue&type=style&index=0&lang=scss&":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/NotFound.vue?vue&type=style&index=0&lang=scss& ***!
@@ -39900,15 +40045,15 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "right-section col-6" }, [
-              _c("div", {}, [
+              _c("div", { staticClass: "pasta" }, [
                 _c("img", {
                   staticClass: "pasta",
                   attrs: { src: "images/bkg_tre.jpg", alt: "" },
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "logo",
-                  attrs: { src: "images/logo_green.png", alt: "" },
+                  staticClass: "pasta",
+                  attrs: { src: "images/restaurants.jpg", alt: "" },
                 }),
               ]),
             ]),
@@ -39924,10 +40069,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48& ***!
-  \******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -39939,9 +40084,145 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Pagina Contatti")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "contacts" }, [
+      _c("div", { staticClass: "sectionOneMain" }, [
+        _c("div", { staticClass: "bloccoTitolo" }, [
+          _c("div", [
+            _c("h2", { staticClass: "text-uppercase if " }, [
+              _vm._v("contattaci"),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", [_c("section", { staticClass: "line dark" })]),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "title" } }, [
+            _c("h5", { staticClass: "text-uppercase if why col-12" }, [
+              _vm._v(
+                "Come contattarci quando hai bisogno di aiuto, inclusa l'assistenza per gli ordini attivi per partner di ogni tipo.\n                "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "blocInput" }, [
+            _c("div", [
+              _c("input", {
+                staticClass: "input",
+                attrs: { type: "text", placeholder: "  NAME*" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("input", {
+                staticClass: "input",
+                attrs: { type: "text", placeholder: "  EMAIL*" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("input", {
+                staticClass: "input",
+                attrs: { type: "text", placeholder: "  PHONE" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("input", {
+                staticClass: "input danger",
+                attrs: { type: "text", placeholder: "SCRIVICI" },
+              }),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "imagineContattaci" }, [
+        _c("div", { staticClass: "testoContattaci" }, [
+          _c("h2", [_vm._v("Contattaci")]),
+          _vm._v(" "),
+          _c("h5", [
+            _vm._v("Hai una domanda, oppure hai bisogno di consigli o "),
+            _c("br"),
+            _vm._v("assistenza?"),
+          ]),
+          _vm._v(" "),
+          _c("h5", [
+            _vm._v(
+              "Siamo qui per offrirti il nostro supporto in diversi modi."
+            ),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "imgContact",
+          attrs: { src: "images/technology - Copia.jpg", alt: "" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container blocText" }, [
+        _c("div", { staticClass: "row row-cols-lg-3 bloccoLorem" }, [
+          _c("div", [
+            _c("img", {
+              staticClass: "support",
+              attrs: {
+                src: "images/support-2 icon - Copia.svg",
+                alt: "supporto",
+              },
+            }),
+            _vm._v(" "),
+            _c("h3", [_vm._v("Assistenza per ordini attivi")]),
+            _vm._v(" "),
+            _c("h6", { staticClass: "if secondText" }, [
+              _vm._v(
+                "Assistenza telefonica per oridini attivi 24 ore su 24, 7 giorni su 7"
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("img", {
+              attrs: {
+                src: "images/thumbs-up-watch icon 2 - Copia.svg",
+                alt: "thumb up",
+              },
+            }),
+            _vm._v(" "),
+            _c("h3", [_vm._v("Soluzioni rapide")]),
+            _vm._v(" "),
+            _c("h6", { staticClass: "if secondText" }, [
+              _vm._v(
+                'Cerca le risposte alle domande piu comuni nella sezione "Aiuto"'
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("img", {
+              attrs: {
+                src: "images/Laptop icon 2 - Copia.svg",
+                alt: "notebook",
+              },
+            }),
+            _vm._v(" "),
+            _c("h3", [_vm._v("A portata di mano")]),
+            _vm._v(" "),
+            _c("h6", { staticClass: "if secondText" }, [
+              _vm._v(
+                "Utilizza il Restaurant Hub per gestire il tuo account e contattare il nostro team"
+              ),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -56393,9 +56674,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Contacts_vue_vue_type_template_id_2d69ed48___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Contacts.vue?vue&type=template&id=2d69ed48& */ "./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&");
+/* harmony import */ var _Contacts_vue_vue_type_template_id_2d69ed48_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Contacts.vue?vue&type=template&id=2d69ed48&scoped=true& */ "./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&scoped=true&");
 /* harmony import */ var _Contacts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Contacts.vue?vue&type=script&lang=js& */ "./resources/js/pages/Contacts.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _Contacts_vue_vue_type_style_index_0_id_2d69ed48_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss& */ "./resources/js/pages/Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -56403,13 +56686,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _Contacts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Contacts_vue_vue_type_template_id_2d69ed48___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Contacts_vue_vue_type_template_id_2d69ed48___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Contacts_vue_vue_type_template_id_2d69ed48_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Contacts_vue_vue_type_template_id_2d69ed48_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "2d69ed48",
   null
   
 )
@@ -56435,19 +56718,35 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&":
-/*!************************************************************************!*\
-  !*** ./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48& ***!
-  \************************************************************************/
+/***/ "./resources/js/pages/Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/pages/Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss& ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_style_index_0_id_2d69ed48_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--8-2!../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Contacts.vue?vue&type=style&index=0&id=2d69ed48&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_style_index_0_id_2d69ed48_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_style_index_0_id_2d69ed48_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_style_index_0_id_2d69ed48_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_style_index_0_id_2d69ed48_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&scoped=true&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&scoped=true& ***!
+  \************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_template_id_2d69ed48___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Contacts.vue?vue&type=template&id=2d69ed48& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_template_id_2d69ed48___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_template_id_2d69ed48_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Contacts.vue?vue&type=template&id=2d69ed48&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Contacts.vue?vue&type=template&id=2d69ed48&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_template_id_2d69ed48_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_template_id_2d69ed48___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Contacts_vue_vue_type_template_id_2d69ed48_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -98,6 +98,9 @@
                         <div class="form-group row">
                             <h5 class="col-md-3 col-form-label text-md-right">Tipologie</h5>
                             <div class="col-md-8">
+                                @error('types')
+                                    <div class="alert alert-danger col-10 mx-auto">{{$message}}</div>
+                                @enderror
                                 <div class="row"> 
                                     @if ($errors->any() && old('types') != NULL)
                                         @foreach ($types as  $type)
@@ -116,9 +119,7 @@
                                     @endif
                                 </div>
                             </div>
-                            @error('types')
-                                <div class="alert alert-danger col-10 mx-auto">{{$message}}</div>
-                            @enderror
+                            
                         </div>
 
                         <div class="form-group row">

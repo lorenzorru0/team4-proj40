@@ -21,7 +21,8 @@ class UserController extends Controller
         'street_number' => 'string|required',
         'vat_number' => 'numeric|digits:11',
         'description' => 'string',
-        'url_cover' => 'nullable', 'image', 'max:200'
+        'url_cover' => 'nullable', 'image', 'max:200',
+        'types' => ['required']
     ];
 
     /**

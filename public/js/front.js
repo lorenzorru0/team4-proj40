@@ -2320,7 +2320,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'About'
 });
@@ -2336,31 +2335,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -7107,7 +7081,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: rgba(68, 68, 68, 0.054);\n}\n.footerContainer[data-v-61a7c374] {\n  padding: 2.5rem 0;\n}\nul[data-v-61a7c374], li[data-v-61a7c374], a[data-v-61a7c374] {\n  list-style: none;\n  color: rgba(72, 255, 179, 0.534);\n  font-size: 0.9375rem;\n  text-decoration: none;\n}\nul[data-v-61a7c374] {\n  padding: 0 0 0 3.125rem;\n}\n.iscriviti[data-v-61a7c374] {\n  color: white;\n  background-color: #CA34AC;\n  border: none;\n  border-radius: 10%;\n  padding-left: 0.9375rem;\n  padding-right: 0.9375rem;\n}\ni[data-v-61a7c374] {\n  font-size: 25px;\n  margin: 5px;\n}\n.fa-linkedin[data-v-61a7c374] {\n  color: #0966C2;\n}\n.full-name[data-v-61a7c374] {\n  font-size: 20px;\n  width: 190px;\n  margin: 0 auto;\n}\na[data-v-61a7c374] {\n  text-decoration: none;\n  color: black;\n}\n.fa-instagram-square[data-v-61a7c374] {\n  color: #CA34AC;\n  font-size: 30px;\n}\n.margin[data-v-61a7c374] {\n  margin-top: 60px;\n}", ""]);
+exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: #a7a7a748;\n}\n.footerContainer[data-v-61a7c374] {\n  padding: 2.5rem 0;\n}\nul[data-v-61a7c374], li[data-v-61a7c374], a[data-v-61a7c374] {\n  list-style: none;\n  color: rgba(189, 189, 189, 0.596);\n  font-size: 0.9375rem;\n  text-decoration: none;\n}\nul[data-v-61a7c374] {\n  padding: 0 0 0 3.125rem;\n}\n.iscriviti[data-v-61a7c374] {\n  color: white;\n  background-color: #2993e9;\n  border: none;\n  border-radius: 10%;\n  padding-left: 0.9375rem;\n  padding-right: 0.9375rem;\n}\ni[data-v-61a7c374] {\n  font-size: 25px;\n  margin: 5px;\n}\n.fa-linkedin[data-v-61a7c374] {\n  color: #0966C2;\n}\n.full-name[data-v-61a7c374] {\n  font-size: 20px;\n  width: 190px;\n  margin: 0 auto;\n}\na[data-v-61a7c374] {\n  text-decoration: none;\n  color: black;\n}\n.fa-instagram-square[data-v-61a7c374] {\n  color: #CA34AC;\n  font-size: 30px;\n}\n.margin[data-v-61a7c374] {\n  margin-top: 60px;\n}", ""]);
 
 // exports
 
@@ -7202,7 +7176,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".about[data-v-520b5d54] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  padding: 40px;\n}\n.view[data-v-520b5d54] {\n  padding: 30px;\n  background: #ffffff;\n  color: #464646;\n  display: flex;\n  align-items: center;\n}\nul li[data-v-520b5d54] {\n  display: inline-flex;\n  list-style: none;\n  max-width: 100%;\n  padding-right: 70px;\n}\n.unaRealta[data-v-520b5d54] {\n  padding: 30px;\n  margin-top: 40px;\n}\n.pasta[data-v-520b5d54] {\n  width: 100%;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.logo[data-v-520b5d54] {\n  width: 70%;\n  padding-left: 170px;\n  padding-top: 50px;\n}", ""]);
+exports.push([module.i, ".about[data-v-520b5d54] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  padding-top: 100px;\n}\n.view[data-v-520b5d54] {\n  padding: 30px;\n  background: #ffffff00;\n  color: #464646;\n  display: flex;\n  align-items: center;\n}\nul li[data-v-520b5d54] {\n  display: inline-flex;\n  list-style: none;\n  max-width: 100%;\n  padding-right: 70px;\n}\n.unaRealta[data-v-520b5d54] {\n  padding: 30px;\n  margin-top: 40px;\n}\n.imgAbout[data-v-520b5d54] {\n  width: 100%;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.logo[data-v-520b5d54] {\n  width: 70%;\n  padding-left: 170px;\n  padding-top: 50px;\n}\n.imageProva[data-v-520b5d54] {\n  width: 170%;\n  margin-left: 40px;\n}", ""]);
 
 // exports
 
@@ -7221,7 +7195,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".contacts[data-v-2d69ed48] {\n  background-color: #ebeced;\n}\n.bloccoTitolo[data-v-2d69ed48] {\n  text-align: center;\n  padding-top: 80px;\n  color: black;\n}\n.loremMainOne[data-v-2d69ed48] {\n  padding: 40px;\n  padding-bottom: 60px;\n}\n.if[data-v-2d69ed48] {\n  color: #6e89a0;\n  line-height: 20px;\n}\n.why[data-v-2d69ed48] {\n  padding-left: 30%;\n  padding-right: 30%;\n  padding-top: 30px;\n}\n.dark[data-v-2d69ed48] {\n  background: #95b1ba;\n}\n.blocInput[data-v-2d69ed48] {\n  padding-top: 10px;\n  padding-bottom: 80px;\n}\n.input[data-v-2d69ed48] {\n  border: none;\n  width: 30%;\n  font-size: 10px;\n  margin-top: 20px;\n  line-height: 30px;\n}\n.danger[data-v-2d69ed48] {\n  background: #73d29ef8;\n  text-align: center;\n  font-size: 15px;\n  color: white;\n}\n[data-v-2d69ed48]::-moz-placeholder {\n  color: #d5d5d5;\n}\n[data-v-2d69ed48]:-ms-input-placeholder {\n  color: #d5d5d5;\n}\n[data-v-2d69ed48]::placeholder {\n  color: #d5d5d5;\n}\n.imagineContattaci[data-v-2d69ed48] {\n  display: flex;\n  justify-content: center;\n}\n.imgContact[data-v-2d69ed48] {\n  width: 40%;\n  padding: 30px;\n  padding-bottom: 70px;\n}\n.testoContattaci[data-v-2d69ed48] {\n  padding: 20px;\n}\n.about[data-v-2d69ed48] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n}\n.view[data-v-2d69ed48] {\n  padding: 30px;\n  display: flex;\n  align-items: center;\n}\n.blocText[data-v-2d69ed48] {\n  padding-top: 20px;\n  background: #ffffff57;\n  color: #7c7c7c;\n  padding: 60px;\n  text-align: center;\n  max-width: 100%;\n}\n.secondText[data-v-2d69ed48] {\n  color: #6f8794;\n  line-height: 20px;\n  padding-bottom: 20px;\n  text-align: center;\n  padding: 20px;\n}\n.support[data-v-2d69ed48] {\n  width: 104px;\n}", ""]);
+exports.push([module.i, ".contacts[data-v-2d69ed48] {\n  background-color: #ebeced;\n}\n.bloccoTitolo[data-v-2d69ed48] {\n  text-align: center;\n  padding-top: 100px;\n  color: black;\n}\n.loremMainOne[data-v-2d69ed48] {\n  padding: 40px;\n  padding-bottom: 60px;\n}\n.if[data-v-2d69ed48] {\n  color: #000000;\n  line-height: 20px;\n}\n.why[data-v-2d69ed48] {\n  padding-left: 30%;\n  padding-right: 30%;\n  padding-top: 30px;\n}\n.dark[data-v-2d69ed48] {\n  background: #95b1ba;\n}\n.blocInput[data-v-2d69ed48] {\n  padding-top: 10px;\n  padding-bottom: 80px;\n}\n.input[data-v-2d69ed48] {\n  border: none;\n  width: 30%;\n  font-size: 10px;\n  margin-top: 20px;\n  line-height: 30px;\n}\n.danger[data-v-2d69ed48] {\n  background: #73d29ef8;\n  text-align: center;\n  font-size: 15px;\n  color: white;\n}\n[data-v-2d69ed48]::-moz-placeholder {\n  color: #a8a8a8;\n}\n[data-v-2d69ed48]:-ms-input-placeholder {\n  color: #a8a8a8;\n}\n[data-v-2d69ed48]::placeholder {\n  color: #a8a8a8;\n}\n.imagineContattaci[data-v-2d69ed48] {\n  display: flex;\n  justify-content: center;\n}\n.imgContact[data-v-2d69ed48] {\n  width: 30%;\n  padding: 30px;\n  padding-bottom: 70px;\n}\n.testoContattaci[data-v-2d69ed48] {\n  padding: 20px;\n}\n.about[data-v-2d69ed48] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n}\n.view[data-v-2d69ed48] {\n  padding: 30px;\n  display: flex;\n  align-items: center;\n}\n.blocText[data-v-2d69ed48] {\n  padding-top: 20px;\n  background: #ffffff00;\n  color: #525252;\n  padding: 80px;\n  text-align: center;\n  max-width: 70%;\n  border-top: 1px solid #cecece;\n}\n.secondText[data-v-2d69ed48] {\n  color: #6f8794;\n  text-align: center;\n  padding: 30px;\n}\n.support[data-v-2d69ed48] {\n  width: 150px;\n}\n.supportDue[data-v-2d69ed48] {\n  width: 150px;\n}\n.imagineCucino[data-v-2d69ed48] {\n  width: 40%;\n  padding-top: 40px;\n}", ""]);
 
 // exports
 
@@ -39984,8 +39958,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("div", { staticClass: "about" }, [
-        _c("h1", [
-          _vm._v("Deliveboo è una piattaforma che colma ogni tua richiesta"),
+        _c("h2", { staticClass: "text-uppercase font-weight-bold" }, [
+          _vm._v(
+            "Deliveboo è una piattaforma che accontenta ogni tua richiesta"
+          ),
         ]),
       ]),
       _vm._v(" "),
@@ -39994,31 +39970,23 @@ var staticRenderFns = [
       _c("div", { staticClass: "about view text-uppercase text-center" }, [
         _c("ul", { staticClass: "view" }, [
           _c("li", { staticClass: "view" }, [
-            _c("img", {
-              attrs: { src: "images/uno.png", alt: "Rossopomodoro" },
-            }),
+            _c("img", { attrs: { src: "images/uno.png", alt: "Imachai" } }),
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "view" }, [
-            _c("img", {
-              attrs: { src: "images/quattro.png", alt: "La Piadineria" },
-            }),
+            _c("img", { attrs: { src: "images/quattro.png", alt: "Lievita" } }),
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "view" }, [
-            _c("img", {
-              attrs: { src: "images/tre.png", alt: "La Piadineria" },
-            }),
+            _c("img", { attrs: { src: "images/tre.png", alt: "Femakinho" } }),
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "view" }, [
-            _c("img", {
-              attrs: { src: "images/cinque.png", alt: "La Piadineria" },
-            }),
+            _c("img", { attrs: { src: "images/cinque.png", alt: "Starbene" } }),
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "view" }, [
-            _c("img", { attrs: { src: "images/due.png", alt: "lievita" } }),
+            _c("img", { attrs: { src: "images/due.png", alt: "Daruma" } }),
           ]),
         ]),
       ]),
@@ -40042,20 +40010,33 @@ var staticRenderFns = [
                   "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, \r\n                        impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,\r\n                        hic totam, debitis laborum delectus. Fugit, voluptate expedita."
                 ),
               ]),
+              _vm._v(" "),
+              _c("h6", { staticClass: "unaRealta" }, [
+                _vm._v(
+                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, \r\n                        impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,\r\n                        hic totam, debitis laborum delectus. Fugit, voluptate expedita."
+                ),
+              ]),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "right-section col-6" }, [
-              _c("div", { staticClass: "pasta" }, [
+              _c("div", { staticClass: "imgAbout" }, [
                 _c("img", {
-                  staticClass: "pasta",
+                  staticClass: "imgAbout",
                   attrs: { src: "images/bkg_tre.jpg", alt: "" },
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "pasta",
+                  staticClass: "imgAbout",
                   attrs: { src: "images/restaurants.jpg", alt: "" },
                 }),
               ]),
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("img", {
+                staticClass: "imageProva",
+                attrs: { src: "images/pricing_home - Copia.svg", alt: "" },
+              }),
             ]),
           ]),
         ]),
@@ -40095,7 +40076,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "sectionOneMain" }, [
         _c("div", { staticClass: "bloccoTitolo" }, [
           _c("div", [
-            _c("h2", { staticClass: "text-uppercase if " }, [
+            _c("h2", { staticClass: "text-uppercase if font-weight-bold" }, [
               _vm._v("contattaci"),
             ]),
           ]),
@@ -40105,7 +40086,7 @@ var staticRenderFns = [
           _c("div", { attrs: { id: "title" } }, [
             _c("h5", { staticClass: "text-uppercase if why col-12" }, [
               _vm._v(
-                "Come contattarci quando hai bisogno di aiuto, inclusa l'assistenza per gli ordini attivi per partner di ogni tipo.\n                "
+                "Come contattarci quando hai bisogno di aiuto, inclusa l'assistenza per gli ordini attivi per partner di ogni tipo.\r\n                "
               ),
             ]),
           ]),
@@ -40144,7 +40125,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "imagineContattaci" }, [
         _c("div", { staticClass: "testoContattaci" }, [
-          _c("h2", [_vm._v("Contattaci")]),
+          _c("h2", { staticClass: "font-weight-bold" }, [_vm._v("Contattaci")]),
           _vm._v(" "),
           _c("h5", [
             _vm._v("Hai una domanda, oppure hai bisogno di consigli o "),
@@ -40157,6 +40138,8 @@ var staticRenderFns = [
               "Siamo qui per offrirti il nostro supporto in diversi modi."
             ),
           ]),
+          _vm._v(" "),
+          _c("h5", [_vm._v("Contattaci attraverso le nostre reti sociali.")]),
         ]),
         _vm._v(" "),
         _c("img", {
@@ -40176,24 +40159,29 @@ var staticRenderFns = [
               },
             }),
             _vm._v(" "),
-            _c("h3", [_vm._v("Assistenza per ordini attivi")]),
+            _c("h3", { staticClass: "font-weight-bold" }, [
+              _vm._v("Assistenza per ordini attivi"),
+            ]),
             _vm._v(" "),
             _c("h6", { staticClass: "if secondText" }, [
-              _vm._v(
-                "Assistenza telefonica per oridini attivi 24 ore su 24, 7 giorni su 7"
-              ),
+              _vm._v("Assistenza telefonica per oridini attivi 24 ore su 24,"),
+              _c("br"),
+              _vm._v(" 7 giorni su 7"),
             ]),
           ]),
           _vm._v(" "),
           _c("div", [
             _c("img", {
+              staticClass: "supportDue",
               attrs: {
                 src: "images/thumbs-up-watch icon 2 - Copia.svg",
                 alt: "thumb up",
               },
             }),
             _vm._v(" "),
-            _c("h3", [_vm._v("Soluzioni rapide")]),
+            _c("h3", { staticClass: "font-weight-bold" }, [
+              _vm._v("Soluzioni rapide"),
+            ]),
             _vm._v(" "),
             _c("h6", { staticClass: "if secondText" }, [
               _vm._v(
@@ -40204,13 +40192,16 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", [
             _c("img", {
+              staticClass: "supportDue",
               attrs: {
                 src: "images/Laptop icon 2 - Copia.svg",
                 alt: "notebook",
               },
             }),
             _vm._v(" "),
-            _c("h3", [_vm._v("A portata di mano")]),
+            _c("h3", { staticClass: "font-weight-bold" }, [
+              _vm._v("A portata di mano"),
+            ]),
             _vm._v(" "),
             _c("h6", { staticClass: "if secondText" }, [
               _vm._v(
@@ -40218,6 +40209,13 @@ var staticRenderFns = [
               ),
             ]),
           ]),
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("img", {
+            staticClass: "imagineCucino",
+            attrs: { src: "images/imagine_cucino.png", alt: "" },
+          }),
         ]),
       ]),
     ])

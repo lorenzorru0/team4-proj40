@@ -64,7 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-    background-color: rgba(68, 68, 68, 0.054);
+    background-color:  #a7a7a748;
 }
 
 .footerContainer {
@@ -73,7 +73,7 @@ footer {
 
 ul, li, a {
     list-style: none;
-    color: rgba(72, 255, 179, 0.534);
+    color: rgba(189, 189, 189, 0.596);
     font-size: .9375rem;
     text-decoration: none;
 }
@@ -84,7 +84,7 @@ ul{
 
 .iscriviti {
     color:rgb(255, 255, 255);
-    background-color: #CA34AC;
+    background-color: #2993e9;
     border: none;
     border-radius: 10%;
     padding-left: .9375rem;

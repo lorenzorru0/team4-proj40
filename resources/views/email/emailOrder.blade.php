@@ -78,14 +78,14 @@
             <h4>Cognome: {{$newOrder['customer_lastname']}}</h4>
             <h4>Email: {{$newOrder['customer_email']}}</h4>
             <h4>Ristorante: {{$user['business_name']}}</h4>
-            @foreach ($objectQty as $itemQty)
-                <div>x {{$itemQty}} </div>
-            @endforeach
-            <ul>
-                @foreach ($plates as $item)
-                <li> {{$item->plate_name}} {{$item->price}}€</li>
+                @foreach ($objectQty as $itemQty)
+                    <span>x{{$itemQty}}</span>
                 @endforeach
-            </ul>
+            
+                @foreach ($plates as $item)
+                <span>{{$item->plate_name}} {{$item->price}}€</span>
+                @endforeach
+
             <h4>Prezzo totale pagato: {{$newOrder['total_price']}}€</h4>
         </main>
         <footer>

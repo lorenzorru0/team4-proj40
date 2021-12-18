@@ -59,7 +59,9 @@ class PaymentController extends Controller
             DB::table('order_plate')->insert([
                 'plate_id' => $item,
                 'order_id' => $newOrder->id,
-                'quantity' => $qty[$key]
+                'quantity' => $qty[$key],
+                'created_at' => now(),
+                'updated_at' => now()
             ]);
         }
         
@@ -87,6 +89,7 @@ class PaymentController extends Controller
             $user = User::where('id', $newOrder->user_id)->first();
 
             $emails=[$newOrder->customer_email,$user['email']];
+            
             $emailNames=[$newOrder->customer_firstname,$user['business_name']];
 
             foreach ($emails as $key=>$email){

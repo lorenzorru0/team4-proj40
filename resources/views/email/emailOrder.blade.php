@@ -33,13 +33,6 @@
             padding: 10px;
             width: 100%;
         }
-        main ul{
-            width: 100%;
-        }
-        main ul li{
-            list-style: none;
-            margin: 10px 0;
-        }
         .container {
             width: 100%;
         }

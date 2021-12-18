@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use Braintree;
 use App\User;
 use App\Order;
+use App\Plate;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -56,11 +59,21 @@ class PaymentController extends Controller
         $cart = $request->cart;
         $qty = $request->qty;
 
+        $objectQty = (object) $qty;
+
+        $user = User::where('id', $id)->first();
+
+        $user = $this->object_to_array($user->getAttributes());
+       
+        $plates = Plate::where('user_id', $user)->get();
+
         foreach ($cart as $key => $item) {
             DB::table('order_plate')->insert([
                 'plate_id' => $item,
                 'order_id' => $newOrder->id,
-                'quantity' => $qty[$key]
+                'quantity' => $qty[$key],
+                'created_at' => now(),
+                'updated_at' => now()
             ]);
         }
         
@@ -81,17 +94,33 @@ class PaymentController extends Controller
                 'submitForSettlement' => true
             ]
         ]);
-        
+
         if ($result->success) {
-            // $transaction = $result->transaction;
+            $orders = Order::where('user_id')->get();
+
+            $user = User::where('id', $newOrder->user_id)->first();
+
+            $emails=[$newOrder->customer_email,$user['email']];
+            
+            $emailNames=[$newOrder->customer_firstname,$user['business_name']];
+
+            foreach ($emails as $key=>$email){
+                Mail::send('email.emailOrder', compact('newOrder','user','plates', 'objectQty'),
+                function($message) use ($email,$emailNames,$key){
+                    $message->to(strval($email),strval($emailNames[$key]))
+                    ->subject('Il tuo ordine Deliveboo');
+                });
+            }
+            
             return view('successfulPayment');
+            
         } else {
             $errorString = "";
         
             foreach($result->errors->deepAll() as $error) {
                 $errorString .= 'Errore: ' . $error->code . ": " . $error->message . "\n";
             }
-        
+    
             return back()->withErrors('Errore'. $result->message);
         }
     }

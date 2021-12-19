@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
+        "aos": "^2.3.4",
         "vue-router": "^3.5.3"
     }
 }

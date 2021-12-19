@@ -30,7 +30,7 @@
 			<div>
 				<i class="fas fa-shopping-cart"></i> {{cart.cart.length}}
 			</div>
-			<div class="cart" v-if="cart.cart.length > 0">
+			<div class="cart" v-if="cart.cart.length > 0" data-aos="fade-left" data-aos-duration="1000">
 				<h2>Carrello</h2>
 				<ul class="cart-basket" id="cart-basket">
 					<li v-for="(plate, index) in cart.cart" :key="index">

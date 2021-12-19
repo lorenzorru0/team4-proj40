@@ -1,7 +1,7 @@
 <template>
     <div class="user col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
         <div class="userContainer">
-            <router-link class="link" :to="{ name: 'single-user', params: {slug: data.slug} }">
+            <router-link data-aos="zoom-in" data-aos-delay="5000" class="link" :to="{ name: 'single-user', params: {slug: data.slug} }">
                 <img class="cover" :src="'storage/' + data.url_cover" alt="">
                 <div class="infoContainer">
                     <div class="grow">

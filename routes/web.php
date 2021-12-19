@@ -31,6 +31,7 @@ Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->
     Route::resource('plates', 'PlatesController');
     Route::put('/plates/{plate}/visibility', 'PlatesController@changeVisibility')->name('plates.visibility');
     Route::get('/orders', 'OrderController@index')->name('orders.index');
+    Route::get('/orders/stats', 'OrderController@orderStats')->name('orders.stats');
     Route::get('/orders/delivered', 'OrderController@indexDelivered')->name('orders.index.delivered');
     Route::get('/orders/{order}', 'OrderController@show')->name('orders.show');
     Route::put('/orders/{order}/delivered', 'OrderController@changeDeliver')->name('orders.delivered');

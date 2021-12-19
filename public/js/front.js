@@ -2320,6 +2320,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'About'
 });
@@ -7081,7 +7091,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: #a7a7a748;\n}\n.footerContainer[data-v-61a7c374] {\n  padding: 2.5rem 0;\n}\nul[data-v-61a7c374], li[data-v-61a7c374], a[data-v-61a7c374] {\n  list-style: none;\n  color: rgba(189, 189, 189, 0.596);\n  font-size: 0.9375rem;\n  text-decoration: none;\n}\nul[data-v-61a7c374] {\n  padding: 0 0 0 3.125rem;\n}\n.iscriviti[data-v-61a7c374] {\n  color: white;\n  background-color: #2993e9;\n  border: none;\n  border-radius: 10%;\n  padding-left: 0.9375rem;\n  padding-right: 0.9375rem;\n}\ni[data-v-61a7c374] {\n  font-size: 25px;\n  margin: 5px;\n}\n.fa-linkedin[data-v-61a7c374] {\n  color: #0966C2;\n}\n.full-name[data-v-61a7c374] {\n  font-size: 20px;\n  width: 190px;\n  margin: 0 auto;\n}\na[data-v-61a7c374] {\n  text-decoration: none;\n  color: black;\n}\n.fa-instagram-square[data-v-61a7c374] {\n  color: #CA34AC;\n  font-size: 30px;\n}\n.margin[data-v-61a7c374] {\n  margin-top: 60px;\n}", ""]);
+exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: #a7a7a748;\n}\n.footerContainer[data-v-61a7c374] {\n  padding: 2.5rem 0;\n}\nul[data-v-61a7c374], li[data-v-61a7c374], a[data-v-61a7c374] {\n  list-style: none;\n  color: rgba(189, 189, 189, 0.596);\n  font-size: 0.9375rem;\n  text-decoration: none;\n}\nul[data-v-61a7c374] {\n  padding: 0 0 0 3.125rem;\n}\n.iscriviti[data-v-61a7c374] {\n  color: white;\n  background-color: #2993e9;\n  border: none;\n  border-radius: 5px;\n  padding-left: 0.9375rem;\n  padding-right: 0.9375rem;\n}\ni[data-v-61a7c374] {\n  font-size: 25px;\n  margin: 5px;\n}\n.fa-linkedin[data-v-61a7c374] {\n  color: #0966C2;\n}\n.full-name[data-v-61a7c374] {\n  font-size: 20px;\n  width: 190px;\n  margin: 0 auto;\n}\na[data-v-61a7c374] {\n  text-decoration: none;\n  color: black;\n}\n.fa-instagram-square[data-v-61a7c374] {\n  color: #CA34AC;\n  font-size: 30px;\n}\n.margin[data-v-61a7c374] {\n  margin-top: 60px;\n}", ""]);
 
 // exports
 
@@ -7119,7 +7129,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "section[data-v-7ebbb9e5] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  background-repeat: no-repeat;\n  background-image: url(\"/images/bkg_quattro.jpg\");\n  background-position: center;\n  background-size: cover;\n  height: 650px;\n}\nsection .left-section h1[data-v-7ebbb9e5] {\n  color: white;\n  margin-top: 0.9375rem;\n  font-size: 2.5rem;\n  font-weight: 900;\n  display: flex;\n  align-items: center;\n  margin-top: 50px;\n}\nsection .right-section .hero[data-v-7ebbb9e5] {\n  max-width: 43.75rem;\n  margin: auto 0;\n}\nsection .right-section .hero img[data-v-7ebbb9e5] {\n  width: 50%;\n  text-align: center;\n}\nsection .right-section .to-your-home[data-v-7ebbb9e5] {\n  max-width: 43.75rem;\n  text-align: left;\n  color: white;\n  font-size: 1.5625rem;\n  font-weight: 900;\n  padding-bottom: 20px;\n}\n.logo[data-v-7ebbb9e5] {\n  padding: 40px;\n}", ""]);
+exports.push([module.i, "section[data-v-7ebbb9e5] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  background-repeat: no-repeat;\n  background-image: url(\"/images/bkg_quattro.jpg\");\n  background-position: center;\n  background-size: cover;\n  height: 650px;\n}\nsection .left-section h1[data-v-7ebbb9e5] {\n  color: white;\n  margin-top: 0.9375rem;\n  font-size: 2.5rem;\n  font-weight: 900;\n  display: flex;\n  align-items: center;\n  margin-top: 50px;\n}\nsection .right-section .hero[data-v-7ebbb9e5] {\n  max-width: 43.75rem;\n  margin: auto 0;\n}\nsection .right-section .hero img[data-v-7ebbb9e5] {\n  width: 50%;\n  text-align: center;\n}\nsection .right-section .to-your-home[data-v-7ebbb9e5] {\n  max-width: 43.75rem;\n  text-align: left;\n  color: white;\n  font-size: 1.5625rem;\n  font-weight: 900;\n  padding-bottom: 20px;\n}\nsection-[data-v-7ebbb9e5]:hover {\n  background-image: url(\"/images/bkg.jpg\");\n  background-position: center;\n  background-size: cover;\n}\n.logo[data-v-7ebbb9e5] {\n  padding: 40px;\n}\n.ricerca[data-v-7ebbb9e5]:hover {\n  background: coral;\n  transition: 1s;\n}", ""]);
 
 // exports
 
@@ -7176,7 +7186,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".about[data-v-520b5d54] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  padding-top: 100px;\n}\n.view[data-v-520b5d54] {\n  padding: 30px;\n  background: #ffffff00;\n  color: #464646;\n  display: flex;\n  align-items: center;\n}\nul li[data-v-520b5d54] {\n  display: inline-flex;\n  list-style: none;\n  max-width: 100%;\n  padding-right: 70px;\n}\n.unaRealta[data-v-520b5d54] {\n  padding: 30px;\n  margin-top: 40px;\n}\n.imgAbout[data-v-520b5d54] {\n  width: 100%;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.logo[data-v-520b5d54] {\n  width: 70%;\n  padding-left: 170px;\n  padding-top: 50px;\n}\n.imageProva[data-v-520b5d54] {\n  width: 170%;\n  margin-left: 40px;\n}", ""]);
+exports.push([module.i, ".about[data-v-520b5d54] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  padding-top: 100px;\n}\n.view[data-v-520b5d54] {\n  padding: 30px;\n  background: #ffffff00;\n  color: #464646;\n  display: flex;\n  align-items: center;\n}\n.a[data-v-520b5d54]:hover {\n  transform: translateY(-20px);\n  transition: 1s;\n}\nul li[data-v-520b5d54] {\n  display: inline-flex;\n  list-style: none;\n  max-width: 100%;\n  padding-right: 70px;\n}\n.unaRealta[data-v-520b5d54] {\n  padding: 30px;\n  margin-top: 40px;\n}\n.imgAbout[data-v-520b5d54] {\n  width: 100%;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.logo[data-v-520b5d54] {\n  width: 70%;\n  padding-left: 170px;\n  padding-top: 50px;\n}\n.imageProva[data-v-520b5d54] {\n  width: 200%;\n  margin-left: 40px;\n}\n.iscriviti[data-v-520b5d54] {\n  color: white;\n  background-color: #6dc96d;\n  border: none;\n  border-radius: 10px;\n  padding: 10px;\n  width: 120px;\n  margin-top: 50px;\n}\n.iscriviti[data-v-520b5d54]:hover {\n  background: coral;\n  transition: 1s;\n}\n.cf[data-v-520b5d54] {\n  position: relative;\n  height: 300px;\n  width: 450px;\n  margin: 0 auto;\n}\n.cf img[data-v-520b5d54] {\n  position: absolute;\n  left: 0;\n  transition: opacity 1s ease-in-out;\n}\n.cf img.top[data-v-520b5d54]:hover {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -39722,7 +39732,8 @@ var staticRenderFns = [
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-success",
+                  staticClass:
+                    "btn btn-success text-uppercase font-weight-bold p3 ricerca",
                   attrs: {
                     type: "button",
                     "data-toggle": "collapse",
@@ -39965,28 +39976,55 @@ var staticRenderFns = [
         ]),
       ]),
       _vm._v(" "),
-      _c("h3", { staticClass: "about" }, [_vm._v("i nostri Partner")]),
+      _c("h3", { staticClass: "about" }, [
+        _vm._v("Fai visita ai nostri Partner"),
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "about view text-uppercase text-center" }, [
         _c("ul", { staticClass: "view" }, [
           _c("li", { staticClass: "view" }, [
-            _c("img", { attrs: { src: "images/uno.png", alt: "Imachai" } }),
+            _c("a", { attrs: { href: "https://matcha.com/" } }, [
+              _c("img", {
+                staticClass: "a",
+                attrs: { src: "images/uno.png", alt: "Macha" },
+              }),
+            ]),
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "view" }, [
-            _c("img", { attrs: { src: "images/quattro.png", alt: "Lievita" } }),
+            _c("a", { attrs: { href: "https://lievital.it/" } }, [
+              _c("img", {
+                staticClass: "a",
+                attrs: { src: "images/quattro.png", alt: "Lievita" },
+              }),
+            ]),
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "view" }, [
-            _c("img", { attrs: { src: "images/tre.png", alt: "Femakinho" } }),
+            _c("a", { attrs: { href: "https://www.temakinho.com/" } }, [
+              _c("img", {
+                staticClass: "a",
+                attrs: { src: "images/tre.png", alt: "Temakinho" },
+              }),
+            ]),
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "view" }, [
-            _c("img", { attrs: { src: "images/cinque.png", alt: "Starbene" } }),
+            _c("a", { attrs: { href: "https://www.starbene.it/" } }, [
+              _c("img", {
+                staticClass: "a",
+                attrs: { src: "images/cinque.png", alt: "Starbene" },
+              }),
+            ]),
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "view" }, [
-            _c("img", { attrs: { src: "images/due.png", alt: "Daruma" } }),
+            _c("a", { attrs: { href: "https://www.darumasushi.com/" } }, [
+              _c("img", {
+                staticClass: "a",
+                attrs: { src: "images/due.png", alt: "Daruma" },
+              }),
+            ]),
           ]),
         ]),
       ]),
@@ -39996,7 +40034,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "left-section col-6" }, [
               _c("h1", { staticClass: "unaRealta" }, [
-                _vm._v("una realtà consolidata con l'esperienza"),
+                _vm._v("Una realtà consolidata con l'esperienza"),
               ]),
               _vm._v(" "),
               _c("h6", { staticClass: "unaRealta" }, [
@@ -40019,16 +40057,55 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "right-section col-6" }, [
-              _c("div", { staticClass: "imgAbout" }, [
+              _c("div", { staticClass: "imgAbout cf" }, [
                 _c("img", {
-                  staticClass: "imgAbout",
+                  staticClass: "imgAbout bottom",
                   attrs: { src: "images/bkg_tre.jpg", alt: "" },
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "imgAbout",
+                  staticClass: "imgAbout top",
                   attrs: { src: "images/restaurants.jpg", alt: "" },
                 }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "imgAbout cf" }, [
+                _c("img", {
+                  staticClass: "imgAbout bottom",
+                  attrs: { src: "images/bkg_tre.jpg", alt: "" },
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "imgAbout top",
+                  attrs: { src: "images/restaurants.jpg", alt: "" },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "imgAbout cf" }, [
+                _c("a", { attrs: { href: "/register" } }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "iscriviti  text-uppercase  font-weight-bold",
+                    },
+                    [_vm._v("Iscriviti")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("h4", { staticClass: "pt-4 font-weight-bold" }, [
+                  _vm._v("Centro iscrizione Deliveboo"),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "pt-2" }, [
+                  _vm._v(
+                    "Hai una domanda, oppure hai bisogno di consigli o assistenza? "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\r\n                        Siamo qui per offrirti il nostro supporto in diversi modi."
+                  ),
+                ]),
               ]),
             ]),
             _vm._v(" "),

@@ -3,24 +3,24 @@
     <div class="about">
        <h2 class="text-uppercase font-weight-bold">Deliveboo è una piattaforma che accontenta ogni tua richiesta</h2> 
     </div>
-    <h3 class="about">i nostri Partner</h3>
+    <h3 class="about">Fai visita ai nostri Partner</h3>
 
     <div class="about view text-uppercase text-center">
         <ul class="view">
             <li class="view">
-                <img src="images/uno.png" alt="Imachai">
+                <a href="https://matcha.com/"><img class="a" src="images/uno.png" alt="Macha"></a>
             </li>
             <li class="view">
-                <img src="images/quattro.png" alt="Lievita">
+                <a href="https://lievital.it/"><img class="a" src="images/quattro.png" alt="Lievita"></a>
             </li>
             <li class="view">
-                <img src="images/tre.png" alt="Femakinho">
+                <a href="https://www.temakinho.com/"><img class="a" src="images/tre.png" alt="Temakinho"></a>
             </li>
             <li class="view">
-                <img src="images/cinque.png" alt="Starbene">
+                <a href="https://www.starbene.it/"><img class="a" src="images/cinque.png" alt="Starbene"></a>
             </li>
             <li class="view">
-                <img src="images/due.png" alt="Daruma">
+                <a href="https://www.darumasushi.com/"><img class="a" src="images/due.png" alt="Daruma"></a>
             </li>
         </ul>
     </div>
@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row">
                 <div class="left-section col-6" >
-                    <h1 class="unaRealta">una realtà consolidata con l'esperienza</h1>
+                    <h1 class="unaRealta">Una realtà consolidata con l'esperienza</h1>
                     <h6 class="unaRealta">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, 
                         impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,
@@ -44,11 +44,21 @@
                         hic totam, debitis laborum delectus. Fugit, voluptate expedita.</h6>
                 </div>
                 <div class="right-section col-6" >
-                    <div class="imgAbout">
-                        <img class="imgAbout" src="images/bkg_tre.jpg" alt="">
-                        <img class="imgAbout" src="images/restaurants.jpg" alt="">
-                       
+                    <div class="imgAbout cf">
+                        <img class="imgAbout bottom" src="images/bkg_tre.jpg" alt="">
+                        <img class="imgAbout top" src="images/restaurants.jpg" alt="">
                     </div>
+                     <div class="imgAbout cf">
+                        <img class="imgAbout bottom" src="images/bkg_tre.jpg" alt="">
+                        <img class="imgAbout top" src="images/restaurants.jpg" alt="">
+                    </div>
+                    <div class="imgAbout cf">
+                        <a href="/register"><button class="iscriviti  text-uppercase  font-weight-bold">Iscriviti</button></a>
+                        <h4 class="pt-4 font-weight-bold">Centro iscrizione Deliveboo</h4>
+                        <p class="pt-2">Hai una domanda, oppure hai bisogno di consigli o assistenza? <br>
+                        Siamo qui per offrirti il nostro supporto in diversi modi.</p>
+                    </div>
+                    
                 </div>
                 
                 <div>
@@ -87,6 +97,11 @@ export default {
    align-items: center;
 }
 
+.a:hover {
+    transform: translateY(-20px);
+    transition: 1s;
+}
+
 ul li {
     display: inline-flex;
     list-style: none;
@@ -112,8 +127,43 @@ ul li {
 }
 
 .imageProva {
-    width: 170%;
+    width: 200%;
     margin-left: 40px;
+}
+
+.iscriviti {
+    color:rgb(255, 255, 255);
+    background-color: #6dc96d;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 120px;
+    margin-top: 50px;
+}
+
+.iscriviti:hover {
+    background: coral;
+    transition: 1s;
+}
+
+.cf {
+  position:relative;
+  height:300px;
+  width:450px;
+  margin:0 auto;
+}
+
+.cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.cf img.top:hover {
+  opacity:0;
 }
 
 </style>

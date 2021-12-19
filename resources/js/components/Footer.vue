@@ -19,8 +19,8 @@
                 <div class="col d-flex justify-content-center flex-column">
                     <div class="full-name d-flex justify-content-center">Michele Amoruso</div>
                     <div class="contacts d-flex justify-content-center">
-                        <a href="#"><i class="fab fa-github" target="_blank"></i></a>  
-                        <a href="#"><i class="fab fa-linkedin" target="_blank"></i></a> 
+                        <a href="https://github.com/Mikele91"><i class="fab fa-github" target="_blank"></i></a>  
+                        <a href="https://www.linkedin.com/in/michele-amoruso-webdeveloper/"><i class="fab fa-linkedin" target="_blank"></i></a> 
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center flex-column">

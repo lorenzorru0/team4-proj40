@@ -77,7 +77,8 @@ export default {
             }
         }
 
-        &-:hover {
+        &:hover {
+            transition: 4s;
             background-image: url('/images/bkg.jpg');
             background-position: center;
             background-size: cover;

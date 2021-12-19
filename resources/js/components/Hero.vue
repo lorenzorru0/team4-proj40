@@ -15,7 +15,7 @@
                         <div class="to-your-home">#aCasaTuaConDeliveboo</div>
                     </div>
                     <p>
-                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <button class="btn btn-success text-uppercase font-weight-bold p3 ricerca" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                             Ricerca i ristoranti tramite le tipologie
                         </button>
                     </p>
@@ -76,10 +76,30 @@ export default {
                 padding-bottom: 20px;
             }
         }
+
+        &-:hover {
+            background-image: url('/images/bkg.jpg');
+            background-position: center;
+            background-size: cover;
+        }
     }
 
     .logo {
        padding: 40px;
     }
+
+    .ricerca:hover {
+        background: coral;
+        transition: 1s;
+}
+
+// .container:hover {
+//     transition: 4s;
+//     background-color: rgba(0,0,0,0.3);
+//     background-image: url('/images/bkg.jpg');
+//     background-position: center;
+//     background-size: cover;
+//     // max-width:1900px;
+// }
 
 </style>

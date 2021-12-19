@@ -86,7 +86,7 @@ ul{
     color:rgb(255, 255, 255);
     background-color: #2993e9;
     border: none;
-    border-radius: 10%;
+    border-radius: 5px;
     padding-left: .9375rem;
     padding-right: .9375rem;
 }

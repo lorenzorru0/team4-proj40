@@ -1,7 +1,7 @@
 <template>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 video">
+        <div class="col-12 mobile-app">
             <img src="https://i2.wp.com/devdactic.com/wp-content/uploads/2021/05/ionic-deliveroo.gif?resize=323%2C627&ssl=1" alt="Mobile Deliveboo App">
         </div>  
         <div class="about col-12">
@@ -13,19 +13,19 @@
     <div class="about view text-uppercase text-center">
         <ul class="view row">
             <li class="view col d-flex flex-column align-items-center">
-                <a href="https://matcha.com/"><img class="a" src="images/uno.png" alt="Macha"></a>
+                <a href="https://matcha.com/" target="_blank"><img class="a" src="images/uno.png" alt="Macha"></a>
             </li>
             <li class="view col d-flex flex-column align-items-center">
-                <a href="https://lievital.it/"><img class="a" src="images/quattro.png" alt="Lievita"></a>
+                <a href="https://lievital.it/" target="_blank"><img class="a" src="images/quattro.png" alt="Lievita"></a>
             </li>
             <li class="view col d-flex flex-column align-items-center">
-                <a href="https://www.temakinho.com/"><img class="a" src="images/tre.png" alt="Temakinho"></a>
+                <a href="https://www.temakinho.com/" target="_blank"><img class="a" src="images/tre.png" alt="Temakinho"></a>
             </li>
             <li class="view col d-flex flex-column align-items-center">
-                <a href="https://www.starbene.it/"><img class="a" src="images/cinque.png" alt="Starbene"></a>
+                <a href="https://www.starbene.it/" target="_blank"><img class="a" src="images/cinque.png" alt="Starbene"></a>
             </li>
             <li class="view col d-flex flex-column align-items-center">
-                <a href="https://www.darumasushi.com/"><img class="a" src="images/due.png" alt="Daruma"></a>
+                <a href="https://www.darumasushi.com/" target="_blank"><img class="a" src="images/due.png" alt="Daruma"></a>
             </li>
         </ul>
     </div>
@@ -117,15 +117,15 @@ ul li {
     }
 }
 
-.video {
-    width: 120px;
+.mobile-app {
+    width: 100px;
     display: flex;
     justify-content: center;
     padding-top: 20px;
 }
 
 .founder {
-    width: 350px;
+    width: 400px;
     padding: 20px;
     img {
         width: 100%;

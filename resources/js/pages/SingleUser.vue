@@ -129,11 +129,6 @@ export default {
 			deep: true
 		}
 	},
-	computed: {
-		quantity() {
-			return this.qty;
-		}
-	},
 	methods: {
 		addToCart: function(plate) {
 			let testCart =  JSON.parse(localStorage[`cart-${this.user.id}`]);

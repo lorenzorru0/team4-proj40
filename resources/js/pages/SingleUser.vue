@@ -1,6 +1,6 @@
 <template>
 <section class="container-fluid">
-	<div class="row">
+	<div class="row mx-0">
 	
 		<div v-if="user" class="col-12">
 			<h1>{{user.business_name}}</h1>
@@ -8,7 +8,27 @@
 			<p>{{user.description}}</p>
 		</div>
 
-		<div class="row">
+		<div class="col-12">
+		<div class="row mx-0">
+			<div class="col-12 col-xl-8">
+				<div class="row row-cols-1 row-cols-sm-1 row-cols-xl-2">
+					<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
+						<div class="plate-container d-flex row mt-5">
+							<div v-if="plate.url_photo" class="plate-image col-12 col-sm-6 text-center">
+								<img :src="require(`../../../public/storage/${plate.url_photo}`)" :alt="plate.name">
+							</div>
+								
+							<div class="col-12 col-sm-6 text-center text-sm-left">
+								<h3>{{plate.plate_name}}</h3>
+								<div class="price">Prezzo: {{plate.price}}€</div>
+								<div>Descrizione: {{plate.description}}</div>
+								<button class="btn add-cart mt-3" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+
 			<div class="col-12 col-xl-4">	
 				<div>
 					<i class="fas fa-shopping-cart"></i> {{cart.cart.length}}
@@ -18,18 +38,18 @@
 					<ul class="cart-basket" id="cart-basket">
 						<li v-for="(plate, index) in cart.cart" :key="index">
 							<template class="row">
-								<div class="col-4">
+								<div class="col-12 col-sm-4">
 									<h4>{{plate.plate_name}}<h4>
 									</h4>{{plate.price}}€</h4>
 								</div>
-								<div class="col-4">
+								<div class="col-12 col-sm-4 d-flex justify-content-center">
 									<div class="input-group d-flex justify-content-around">
 										<div class="event" @click="cartMinus(plate.id)"><i class="fas fa-minus"></i></div>
 										<input disabled min="1" max="10" type="number" step="1" v-model="qty.qty[plate.id]" name="quantity" class="quantity-field qty">
 										<div class="event" @click="cartPlus(plate.id)"><i class="fas fa-plus"></i></div>
 									</div>
 								</div>
-								<div class="col-4">
+								<div class="col-12 col-sm-4">
 									<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
 								</div>
 							</template>
@@ -46,25 +66,8 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="col-12 col-xl-8">
-				<div class="row row-cols-1 row-cols-sm-1 row-cols-xl-2">
-					<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
-						<div class="plate-container d-flex mt-5">
-							<div v-if="plate.url_photo" class="plate-image">
-								<img :src="require(`../../../public/storage/${plate.url_photo}`)" :alt="plate.name">
-							</div>
-								
-							<div>
-								<h3>{{plate.plate_name}}</h3>
-								<div class="price">Prezzo: {{plate.price}}€</div>
-								<div>Descrizione: {{plate.description}}</div>
-								<button class="btn add-cart mt-3" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
-							</div>
-						</div>
-					</div>
-				</div>	
-			</div>
+			
+		</div>
 		</div>
 
 		
@@ -218,7 +221,7 @@ export default {
 
 section {
     // display: flex;
-	padding: 50px;
+	padding: 50px 5px;
 	// background-image: url('../../../public/images/texture.jpeg');
 	// background-color: rgb(231, 212, 212);
 	// & > .row {
@@ -254,6 +257,10 @@ i {
 	font-size: 20px;
 }
 
+.cart {
+	width: 100%;
+}
+
 .cart-basket {
 	margin-top: 40px;
 }
@@ -261,6 +268,7 @@ i {
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	border-bottom: 1px solid #00CCBC;
 	padding: 20px;
 }
@@ -321,7 +329,6 @@ a {
 		// right: 0;
 		// z-index: 50;
 		border-radius: 10px;
-		margin-left: 20px;
 		border: 3px solid #00CCBC;
 		ul {
 			padding: 0px;

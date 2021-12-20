@@ -71,6 +71,10 @@ footer {
     align-items:center;
     justify-content: center;
     max-width: 100%;
+
+    .row {
+        margin: 0;
+    } 
 }
 
 .titleFooter {
@@ -105,7 +109,6 @@ ul, li, a {
     padding-left: 3.125rem;
     padding-top: 10px;
     position: relative;
-   
 }
 
 .icon_fontawesome {

@@ -1,10 +1,10 @@
 <template>
     <div class="users-container">
-        <!-- <p>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <p>
+            <button class="btn btn-success text-uppercase font-weight-bold p3 ricerca" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Ricerca i ristoranti tramite le tipologie
             </button>
-        </p> -->
+        </p>
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
@@ -96,6 +96,15 @@ export default {
     width: 80%;
     margin: auto;
     padding: 20px; 
+
+    .ricerca {
+        transition-duration: .5s;
+
+        &:hover {
+            background: coral;
+        }
+    }
+
 
     // MENU-OPEN
     // .menu{

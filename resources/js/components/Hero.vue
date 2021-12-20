@@ -14,11 +14,6 @@
                         <img class="logo" src="http://localhost:3000/images/logo_white.png" alt="logoTipo Deliveboo">
                         <div class="to-your-home">#aCasaTuaConDeliveboo</div>
                     </div>
-                    <p>
-                        <button class="btn btn-success text-uppercase font-weight-bold p3 ricerca" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            Ricerca i ristoranti tramite le tipologie
-                        </button>
-                    </p>
                 </div>
             </div>
         </div>
@@ -43,6 +38,8 @@ export default {
         background-position: center;
         background-size: cover;
         height: 650px;
+        -webkit-transition-duration: 3s; /* Safari & Chrome */
+        transition-duration: 3s;
         // filter: brightness(50%);
         .left-section {
             h1 {
@@ -78,7 +75,6 @@ export default {
         }
 
         &:hover {
-            transition: 4s;
             background-image: url('/images/bkg.jpg');
             background-position: center;
             background-size: cover;
@@ -86,13 +82,8 @@ export default {
     }
 
     .logo {
-       padding: 40px;
+        padding: 40px;
     }
-
-    .ricerca:hover {
-        background: coral;
-        transition: 1s;
-}
 
 // .container:hover {
 //     transition: 4s;

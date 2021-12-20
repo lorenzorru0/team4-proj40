@@ -3,6 +3,7 @@
 
 
 <div class="contacts ">
+
     
     <div class="sectionOneMain">
         <div class="bloccoTitolo">
@@ -30,7 +31,6 @@
                 </div>
 
             </div>
-            <img class="imgContact" src="images/technology - Copia.jpg" alt="">
         </div>
 
             <form class="container">
@@ -108,39 +108,33 @@
                 </div>
 
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Invia</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Invia</button>-->
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Contattaci</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Grazie per averci contattato <br>
-                                Provvederemo a rispondere quanto prima!
-                            </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-secondary" >Chiudi</button>
-                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                        </div>
+               <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Contattaci</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Grazie per averci contattato <br>
+                                    Provvederemo a rispondere quanto prima!
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-secondary" >Chiudi</button>
+                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                            </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+            </div> 
 
-            </form>
 
-                <div>
-                    <button> Contattaci</button> 
-                </div>
-            </div> -->
-
-        </div>
         <div class="container blocText">
             <div class="row row-cols-lg-3 bloccoLorem">
                 <div>
@@ -166,6 +160,10 @@
             </div>
         </div>
 </div>
+    
+
+
+
 
 
 </template>
@@ -276,9 +274,7 @@ export default {
 }
 
 .imgContact { 
-    width: 100%;
-    clip-path: polygon(0 0, 100% 0, 85% 100%, 13% 91%);
-   
+    width: 100%; 
 }
 
 .testoContattaci {
@@ -303,13 +299,11 @@ export default {
     color: #525252;
     padding: 80px;
     text-align: center;
-    max-width: 70%;
-    border-top: 1px solid rgb(206, 206, 206);
+    // max-width: 70%;
 }  
 
 .secondText {
     color: rgb(111, 135, 148);
-    // line-height: 20px;
     text-align: center;
     padding: 30px;
 }

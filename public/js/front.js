@@ -2330,6 +2330,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'About'
 });
@@ -7186,7 +7191,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".about[data-v-520b5d54] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  padding-top: 100px;\n}\n.view[data-v-520b5d54] {\n  padding: 30px;\n  background: #ffffff00;\n  color: #464646;\n  display: flex;\n  align-items: center;\n}\n.a[data-v-520b5d54]:hover {\n  transform: translateY(-20px);\n  transition: 1s;\n}\nul li[data-v-520b5d54] {\n  display: inline-flex;\n  list-style: none;\n  max-width: 100%;\n  padding-right: 70px;\n}\n.unaRealta[data-v-520b5d54] {\n  padding: 30px;\n  margin-top: 40px;\n}\n.imgAbout[data-v-520b5d54] {\n  width: 100%;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.logo[data-v-520b5d54] {\n  width: 70%;\n  padding-left: 170px;\n  padding-top: 50px;\n}\n.imageProva[data-v-520b5d54] {\n  width: 200%;\n  margin-left: 40px;\n}\n.iscriviti[data-v-520b5d54] {\n  color: white;\n  background-color: #6dc96d;\n  border: none;\n  border-radius: 10px;\n  padding: 10px;\n  width: 120px;\n  margin-top: 50px;\n}\n.iscriviti[data-v-520b5d54]:hover {\n  background: coral;\n  transition: 1s;\n}\n.cf[data-v-520b5d54] {\n  position: relative;\n  height: 300px;\n  width: 450px;\n  margin: 0 auto;\n}\n.cf img[data-v-520b5d54] {\n  position: absolute;\n  left: 0;\n  transition: opacity 1s ease-in-out;\n}\n.cf img.top[data-v-520b5d54]:hover {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".about[data-v-520b5d54] {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  padding-top: 100px;\n}\n.view[data-v-520b5d54] {\n  padding: 30px;\n  background: #ffffff00;\n  color: #464646;\n  display: flex;\n  align-items: center;\n}\n.a[data-v-520b5d54]:hover {\n  transform: translateY(-20px);\n  transition: 1s;\n}\nul li[data-v-520b5d54] {\n  display: inline-flex;\n  list-style: none;\n  max-width: 100%;\n  padding-right: 70px;\n}\n.unaRealta[data-v-520b5d54] {\n  padding: 30px;\n}\n.imgAbout[data-v-520b5d54] {\n  width: 100%;\n  padding-top: 40px;\n  padding-bottom: 40px;\n  -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 13% 91%);\n          clip-path: polygon(0 0, 100% 0, 85% 100%, 13% 91%);\n}\n.logo[data-v-520b5d54] {\n  width: 70%;\n  padding-left: 170px;\n  padding-top: 50px;\n}\n.imageProva[data-v-520b5d54] {\n  width: 160%;\n  margin-left: 40px;\n}\n.iscriviti[data-v-520b5d54] {\n  color: white;\n  background-color: #6dc96d;\n  border: none;\n  border-radius: 10px;\n  padding: 10px;\n  width: 120px;\n  margin-top: 130px;\n}\n.iscriviti[data-v-520b5d54]:hover {\n  background: coral;\n  transition: 1s;\n}\n.cf[data-v-520b5d54] {\n  position: relative;\n  height: 300px;\n  width: 450px;\n  margin: 0 auto;\n}\n.cf img[data-v-520b5d54] {\n  position: absolute;\n  left: 0;\n  transition: opacity 1s ease-in-out;\n}\n.cf img.top[data-v-520b5d54]:hover {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -40033,25 +40038,25 @@ var staticRenderFns = [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "left-section col-6" }, [
-              _c("h1", { staticClass: "unaRealta" }, [
+              _c("h2", { staticClass: "unaRealta font-weight-bold" }, [
                 _vm._v("Una realtà consolidata con l'esperienza"),
               ]),
               _vm._v(" "),
               _c("h6", { staticClass: "unaRealta" }, [
                 _vm._v(
-                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, \r\n                        impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,\r\n                        hic totam, debitis laborum delectus. Fugit, voluptate expedita."
+                  "\r\n                        La società Deliveboo, con sede a Londra, è stata fondata nel 2013 da Will Shu e Greg Orlowski, entrambi statunitensi.\r\n                        La società guadagna addebitando una commissione ai ristoranti e addebitando ai clienti una commissione per ordine. Opera in cinquecento città a livello glbale.\r\n                        Gli ordini vengono effettuati tramite l'applicazione o tramite il sito e successivamente i rider (fattorini) trasportano il cibo dal ristorante fino all'indirizzo indicato dal cliente.\r\n                        "
                 ),
               ]),
               _vm._v(" "),
               _c("h6", { staticClass: "unaRealta" }, [
                 _vm._v(
-                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, \r\n                        impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,\r\n                        hic totam, debitis laborum delectus. Fugit, voluptate expedita."
+                  "\r\n                        Nel Regno Unito, oltre che con migliaia di ristoranti indipendenti, Deliveboo lavora con alcuni delle più grandi catene della ristorazione presenti nel paese. \r\n                        Il 16 novembre 2016, la società produttrice di birra Heineken International concluse un accordo con Deliveboo per la consegna di birre.\r\n                        Nel gennaio 2017, Deliveboo annunciò l'intenzione di creare 300 posti di lavoro in ambito tecnologico nel Regno Unito in vista dell'apertura della nuova sede di Londra alla fine dello stesso anno.\r\n                        "
                 ),
               ]),
               _vm._v(" "),
               _c("h6", { staticClass: "unaRealta" }, [
                 _vm._v(
-                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, \r\n                        impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,\r\n                        hic totam, debitis laborum delectus. Fugit, voluptate expedita."
+                  '\r\n                        A metà giugno 2016, i fondatori di Deliveboo, Will Shu e Greg Orlowski hanno ricevuto un premio per i "Best Startup Founders" nell\'ambito di "The Europas Startup Conference and Awards", \r\n                        assegnati a società tecnologiche. La società ha anche vinto il premio "Fastest Rising Startup of the Year" e il premio "Europas Grand Prix".\r\n                        Deliveboo ha registrato una perdita di 1,4 milioni di sterline per l\'anno 2015.\r\n                        '
                 ),
               ]),
             ]),
@@ -40060,28 +40065,28 @@ var staticRenderFns = [
               _c("div", { staticClass: "imgAbout cf" }, [
                 _c("img", {
                   staticClass: "imgAbout bottom",
-                  attrs: { src: "images/bkg_tre.jpg", alt: "" },
+                  attrs: { src: "images/okokok.png", alt: "" },
                 }),
                 _vm._v(" "),
                 _c("img", {
                   staticClass: "imgAbout top",
-                  attrs: { src: "images/restaurants.jpg", alt: "" },
+                  attrs: { src: "images/okDeliveboo.png", alt: "" },
                 }),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "imgAbout cf" }, [
                 _c("img", {
                   staticClass: "imgAbout bottom",
-                  attrs: { src: "images/bkg_tre.jpg", alt: "" },
+                  attrs: { src: "images/hamb.jpg", alt: "" },
                 }),
                 _vm._v(" "),
                 _c("img", {
                   staticClass: "imgAbout top",
-                  attrs: { src: "images/restaurants.jpg", alt: "" },
+                  attrs: { src: "images/consumers - Copia.jpg", alt: "" },
                 }),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "imgAbout cf" }, [
+              _c("div", { staticClass: "cf" }, [
                 _c("a", { attrs: { href: "/register" } }, [
                   _c(
                     "button",

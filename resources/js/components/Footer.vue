@@ -61,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 footer {
     background-color: rgba(177, 234, 248, 0.651);
-    border-top: 1px solid rgb(0, 140, 255);
+    // border-top: 1px solid rgba(0, 140, 255, 0.521);
 }
 
 .footerContainer {

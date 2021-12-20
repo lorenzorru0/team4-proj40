@@ -4,7 +4,7 @@
     <div class="sectionOneMain">
         <div class="bloccoTitolo">
             <div>
-                <h2 class="my-5 text-center text-uppercase if font-weight-bold">contattaci</h2>
+               <h2 class="my-5 text-center text-uppercase if font-weight-bold">contattaci</h2>
             </div> 
             <div>
                  <section class="line dark"></section>
@@ -14,7 +14,7 @@
                 </h5>
             </div>
 
-            <div class="imagineContattaci my-5">
+          <div class="imagineContattaci my-5">
                 <div class="testoContattaci">
                     <h2 class=" font-weight-bold my-3 ">Contattaci</h2>
                     <h5>Hai una domanda, oppure hai bisogno di consigli o <br>assistenza?</h5>
@@ -77,16 +77,63 @@
 
                 <div>
                     <input class="input" type="text" placeholder="  EMAIL*"> 
-                </div>
-
-                <div>
-                    <input class="input" type="text" placeholder="  PHONE"> 
 
                 </div>
+                <img class="imgContact" src="images/technology - Copia.jpg" alt="">
+            </div>
+
+            <form @submit.prevent="sendForm()" class="container">
+
+                <div class="form-group ">
+                    <label for="name">Nome</label>
+                    <input   type="text" class="form-control w-50" id="name" placeholder="Inserisci il tuo nome">
+                </div>
+
+                  <div class="form-group  ">
+                    <label for="email">Email address</label>
+                    <input  type="email"  class="form-control w-50" id="email" aria-describedby="emailHelp" placeholder="Inserisci e-mail ">
+                    <small id="emailHelp" class="form-text text-muted">Avremo premura di ricontattarti il prima possibile</small>
+                </div>
+                    <div class="form-group">
+                    <label for="textarea">Inserisci qui il tuo commento</label>
+                    <textarea class="form-control w-50" id="textarea" rows="3"></textarea>
+                 </div>
+
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                     Invia
+                 </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Contattaci</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Grazie per averci contattato <br>
+                                Provvederemo a rispondere quanto prima!
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-secondary" >Chiudi</button>
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
                 <div>
                     <button> Contattaci</button> 
                 </div>
             </div> -->
+
         </div>
     </div>
 
@@ -125,6 +172,42 @@
 
 export default {
     name: 'Contacts',
+    data(){
+        return{
+            name = '',
+            email = '',
+            message = '',
+            errors = {},
+            success = false
+        }
+    },
+    methods:{
+        sendForm(){
+            this.sending = true;
+            this.sending = false;
+            axios.post('/api/contacts',{
+                "name":this.name,
+                "email":this.email,
+                "message":this.message,
+            }).then((response)=>{
+                this.sending = false;
+                if(!response.data.success){
+                    this.errors=response.data.errors;
+                    this.success = false;
+                }
+                else{
+                    this.name = '';
+                    this.email = '';
+                    this.message = '';
+                    this.errors = {};
+                    this.success = true;
+
+                }
+            });
+        }
+    }
+}
+
 
   }
 </script>

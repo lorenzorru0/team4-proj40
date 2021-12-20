@@ -55,7 +55,7 @@
                     </div>
                      <div class="imgAbout cf">
                         <img class="imgAbout bottom" src="images/hamb.jpg" alt="">
-                        <img class="imgAbout top" src="images/consumers - Copia.jpg" alt="">
+                        <img class="imgAbout top" src="images/Dana-Sushi.jpg" alt="">
                     </div>
                     <div class="cf">
                         <a href="/register"><button class="iscriviti  text-uppercase  font-weight-bold">Iscriviti</button></a>

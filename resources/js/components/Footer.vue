@@ -1,51 +1,47 @@
 <template>
     <footer>
-        <div class="container footerContainer">
-            <div class="row mx-0">
-                <div class="col d-flex justify-content-center flex-column">
-                    <div class="full-name d-flex justify-content-center">Andrea Geraci</div>
-                    <div class="contacts d-flex justify-content-center">
-                        <a href="https://github.com/touros91" target="_blank"><i class="fab fa-github"></i></a>  
-                        <a href="https://www.linkedin.com/in/andrea-geraci-web-developer/" target="_blank"><i class="fab fa-linkedin"></i></a> 
+        <div class="container footerContainer col-12">
+            <div class="row">
+                <div>
+                    <ul>
+                        <li><a href="#"><span class="text-secondary titleFooter font-weight-bold">Deliveboo Restaurant</span></a></li>
+                        <li><a href="#">signature</a></li>
+                        <li><a href="#">integrazione del sistema di<br>Cassa</a></li>
+                    </ul>
+                    <div class="copy">
+                        <a href="#"><img class="flag" src="data:image/jpeg;base64,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" alt="Language"></a>
+                        <h6 class="copy_due"><i class="far fa-copyright c"></i>2021 Deliveboo</h6>
                     </div>
                 </div>
-                <div class="col d-flex justify-content-center flex-column">
-                    <div class="full-name d-flex justify-content-center">Lorenzo Orrù</div>
-                    <div class="contacts d-flex justify-content-center">
-                        <a href="https://github.com/lorenzorru0" target="_blank"><i class="fab fa-github"></i></a>  
-                        <a href="https://www.linkedin.com/in/lorenzo-orrù/" target="_blank"><i class="fab fa-linkedin"></i></a> 
+                
+                <div>
+                    <ul>
+                        <li><a href="#"><span class="text-secondary titleFooter font-weight-bold">Legal</span></a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Cookie</a></li>
+                        <li><a href="#">Termini & condizioni</a></li>
+                        <li><a href="#">Politiche</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#"><span class="text-secondary titleFooter font-weight-bold">Help</span></a></li>
+                        <li><a href="#">Aiuto</a></li>
+                        <li><a href="#">signature</a></li>
+                        <li><a href="#">signature</a></li>
+                        <li><a href="#">signature</a></li>
+                    </ul>
+                </div>
+                <div class="vuoi">
+                    <h6 class="">Vuoi il tuo ristornate su Deliveboo?</h6>
+                    <a href="/register"><button class="iscriviti  text-uppercase  font-weight-bold">Iscriviti</button></a>
+                    <h6 class="seguici">Seguici</h6>
+                    <div class="icon_fontawesome">
+                        <a href="https://twitter.com/tweeter"><i class="fab fa-twitter icon_fontawesome"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-square icon_fontawesome"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram-square icon_fontawesome"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fab fa-youtube icon_fontawesome"></i></a>
                     </div>
-                </div>
-                <div class="col d-flex justify-content-center flex-column">
-                    <div class="full-name d-flex justify-content-center">Michele Amoruso</div>
-                    <div class="contacts d-flex justify-content-center">
-                        <a href="https://github.com/Mikele91"><i class="fab fa-github" target="_blank"></i></a>  
-                        <a href="https://www.linkedin.com/in/michele-amoruso-webdeveloper/"><i class="fab fa-linkedin" target="_blank"></i></a>
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center flex-column">
-                    <div class="full-name d-flex justify-content-center">Ilario Cocco</div>
-                    <div class="contacts d-flex justify-content-center">
-                        <a href="https://github.com/IlarioCocco" target="_blank"><i class="fab fa-github"></i></a>  
-                        <a href="https://www.linkedin.com/in/ilario-cocco-ba728a10a/" target="_blank"><i class="fab fa-linkedin"></i></a> 
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center flex-column">
-                    <div class="full-name d-flex justify-content-center">Simone Severini</div>
-                    <div class="contacts d-flex justify-content-center">
-                        <a href="https://github.com/SamSepiool" target="_blank"><i class="fab fa-github"></i></a>  
-                        <a href="www.linkedin.com/in/simone--severini" target="_blank"><i class="fab fa-linkedin"></i></a> 
-                    </div>
-                </div>
-            </div>
-            <div class="row mx-0">
-                <div class="col-6 d-flex flex-column align-items-center margin text-align-center">
-                    <h6 class="font-weight-bold">Vuoi il tuo ristorante su Deliveboo?</h6>
-                    <a href="/register"><button class="iscriviti">Iscriviti</button></a>
-                </div>
-                <div class="col-6 d-flex flex-column align-items-center margin text-align-center">
-                    <h6>Seguici su Instagram</h6>
-                    <a href="https://www.instagram.com/deliveboo40/" target="_blank"><i class="fab fa-instagram-square icon_fontawesome"></i></a>
                 </div>
             </div>
         </div>
@@ -64,59 +60,90 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-    background-color:  #a7a7a748;
+    background-color: rgba(177, 234, 248, 0.651);
+    border-top: 1px solid rgb(0, 140, 255);
 }
 
 .footerContainer {
-    padding: 2.5rem 0; 
+    padding: 2.7rem 0; 
+    margin: auto;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    max-width: 100%;
 }
+
+.titleFooter {
+    margin-bottom: 30px;
+}
+
 
 ul, li, a {
     list-style: none;
-    color: rgba(189, 189, 189, 0.596);
+    color: rgb(172, 172, 172);
     font-size: .9375rem;
     text-decoration: none;
+    // line-height: 35px;
 }
 
-ul{
-    padding: 0 0 0 3.125rem;
-}
 
 .iscriviti {
     color:rgb(255, 255, 255);
-    background-color: #2993e9;
+    background-color: #6dc96d;
     border: none;
-    border-radius: 5px;
-    padding-left: .9375rem;
-    padding-right: .9375rem;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100px;
 }
 
-i {
-    font-size: 25px;
-    margin: 5px;
+.iscriviti:hover {
+    background: coral;
+    transition: 1s;
 }
 
-.fa-linkedin {
-    color: #0966C2;
+.vuoi {
+    padding-left: 3.125rem;
+    padding-top: 10px;
+    position: relative;
+   
 }
 
-.full-name {
-    font-size: 20px;
-    width: 190px;
-    margin: 0 auto;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.fa-instagram-square {
-    color: #CA34AC;
+.icon_fontawesome {
+    display: flex;
+    color: rgb(172, 172, 172);
+    padding-right: 20px;
+    padding-top: 35px;
     font-size: 30px;
 }
 
-.margin {
-    margin-top: 60px;
+.icon_fontawesome:hover {
+    color: rgb(6, 114, 255);
+    transition: 1s;
 }
+
+.seguici {
+    position: absolute;
+    top: 110px;
+    color: gray
+}
+
+.flag {
+    border-radius: 50px;
+    width: 20px;
+    margin-left: 40px;
+}
+
+.copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+}
+
+.copy_due,
+.c {
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
 </style>

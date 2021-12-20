@@ -35336,9 +35336,9 @@ try {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/lorenzoorru0/Desktop/team4-proj40/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/lorenzoorru0/Desktop/team4-proj40/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/lorenzoorru0/Desktop/team4-proj40/resources/sass/admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\Users\lallo\OneDrive\Desktop\proj\team4-proj40\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\lallo\OneDrive\Desktop\proj\team4-proj40\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\lallo\OneDrive\Desktop\proj\team4-proj40\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

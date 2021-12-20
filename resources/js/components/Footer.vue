@@ -39,11 +39,11 @@
                 </div>
             </div>
             <div class="row mx-0">
-                <div class="col-6 d-flex flex-column align-items-center margin">
+                <div class="col-6 d-flex flex-column align-items-center margin text-align-center">
                     <h6 class="font-weight-bold">Vuoi il tuo ristorante su Deliveboo?</h6>
                     <a href="/register"><button class="iscriviti">Iscriviti</button></a>
                 </div>
-                <div class="col-6 d-flex flex-column align-items-center margin">
+                <div class="col-6 d-flex flex-column align-items-center margin text-align-center">
                     <h6>Seguici su Instagram</h6>
                     <a href="https://www.instagram.com/deliveboo40/" target="_blank"><i class="fab fa-instagram-square icon_fontawesome"></i></a>
                 </div>

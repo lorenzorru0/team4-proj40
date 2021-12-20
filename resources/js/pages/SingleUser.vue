@@ -40,8 +40,10 @@
 								</h4>{{plate.price}}€</h4>
 							</div>
 							<div class="col-4">
-								<div class="input-group">
-									<input min="1" max="10" :placeholder='qty[plate.id]' type="number" step="1" v-model.number="qty.qty[plate.id]" name="quantity" class="quantity-field qty">
+								<div class="input-group d-flex justify-content-around">
+									<div class="event" @click="cartMinus(plate.id)"><i class="fas fa-minus"></i></div>
+									<input disabled min="1" max="10" type="number" step="1" v-model="qty.qty[plate.id]" name="quantity" class="quantity-field qty">
+									<div class="event" @click="cartPlus(plate.id)"><i class="fas fa-plus"></i></div>
 								</div>
 							</div>
 							<div class="col-4">
@@ -127,6 +129,11 @@ export default {
 			deep: true
 		}
 	},
+	computed: {
+		quantity() {
+			return this.qty;
+		}
+	},
 	methods: {
 		addToCart: function(plate) {
 			let testCart =  JSON.parse(localStorage[`cart-${this.user.id}`]);
@@ -144,6 +151,8 @@ export default {
 					localStorage[`qty-${this.user.id}`] = JSON.stringify(this.qty);
 					this.cart.cart.push(plate);
 				} 
+			} else {
+				this.cartPlus(plate.id);
 			}
 		},
 		removeToCart: function(id) {
@@ -185,7 +194,21 @@ export default {
 			if (infoCart.length > 0) {
 				window.location.assign(`/checkout/${this.user.id}`);
 			}
-		}
+		},
+		cartMinus: function(id) {
+			if(this.qty.qty[id] >= 2) {
+				this.qty.qty[id] = this.qty.qty[id] - 1;
+				localStorage[`qty-${this.user.id}`] = JSON.stringify(this.qty);
+				this.qty = JSON.parse(localStorage[`qty-${this.user.id}`]);
+			}
+		},
+		cartPlus: function(id) {
+			if(this.qty.qty[id] >= 1 && this.qty.qty[id] < 10) {
+				this.qty.qty[id] = this.qty.qty[id] + 1;
+				localStorage[`qty-${this.user.id}`] = JSON.stringify(this.qty);
+				this.qty = JSON.parse(localStorage[`qty-${this.user.id}`]);
+			}
+		},
 	}
 }
 </script>
@@ -254,7 +277,6 @@ i {
 	width: 100%;
 	margin-left: 20px;
 	.qty {
-		width: 100%;
 		border: none;
 		font-size: 1.1rem;
 		// padding: 15px;
@@ -302,6 +324,10 @@ a {
 		border: 3px solid #00CCBC;
 		ul {
 			padding: 0px;
+		}
+
+		.event {
+			cursor: pointer;
 		}
 	}
     

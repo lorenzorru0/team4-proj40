@@ -1,12 +1,14 @@
 <template>
-    <header class="d-flex justify-content-between">
-        <div>
-	        <img class="logo" src="http://localhost:3000/images/logoTipoDeliveboo.png" alt="logoTipo Deliveboo">
-        </div>
-        <div class="bottoni">
-            <router-link class="link" :to="{ name: 'home' }">Homepage</router-link>
-            <router-link class="link" :to="{ name: 'about' }">Chi Siamo</router-link>
-            <router-link class="link" :to="{ name: 'contacts' }">Contatti</router-link>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 justify-content-sm-center">
+                <img class="logo" src="http://localhost:3000/images/logoTipoDeliveboo.png" alt="logoTipo Deliveboo">
+            </div>
+            <div class="col-xs-12 col-sm-9 justify-content-sm-end buttons">
+                <router-link class="link" :to="{ name: 'home' }">Homepage</router-link>
+                <router-link class="link" :to="{ name: 'about' }">Chi Siamo</router-link>
+                <router-link class="link" :to="{ name: 'contacts' }">Contatti</router-link>
+            </div>
         </div>
     </header>
 </template>
@@ -33,7 +35,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
 header {
     // background-color: #43c6bf73;
     background-color: #73d29ef8;
@@ -58,7 +63,7 @@ header {
     padding:10px;
 }
 
-.bottoni {
+.buttons {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

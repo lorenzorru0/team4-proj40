@@ -71,14 +71,16 @@
             <h4>Cognome: {{$newOrder['customer_lastname']}}</h4>
             <h4>Email: {{$newOrder['customer_email']}}</h4>
             <h4>Ristorante: {{$user['business_name']}}</h4>
-                @foreach ($objectQty as $itemQty)
-                    <span>x{{$itemQty}}</span>
-                @endforeach
-            
-                @foreach ($plates as $item)
-                <span>{{$item->plate_name}} {{$item->price}}€</span>
-                @endforeach
-
+            @php
+                foreach ($objectQty as $itemQty) {
+                    $qty[] = $itemQty;
+                }
+            @endphp
+        
+            @foreach ($plates as $key => $item)
+                <span>x{{$qty[$key]}} {{$item->plate_name}} {{$item->price}}€</span>
+                <br>
+            @endforeach
             <h4>Prezzo totale pagato: {{$newOrder['total_price']}}€</h4>
         </main>
         <footer>

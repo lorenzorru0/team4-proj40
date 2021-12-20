@@ -1,14 +1,54 @@
 <template>
 <section class="container-fluid">
 	<div class="row">
-		<div class="col-sm-12 col-md-8 flex-column justify-content-center">
-			<div v-if="user" class="col">
-				<h1>{{user.business_name}}</h1>
-				<h5>{{user.address}} {{user.street_number}}</h5>
-				<p>{{user.description}}</p>
+	
+		<div v-if="user" class="col-12">
+			<h1>{{user.business_name}}</h1>
+			<h5>{{user.address}} {{user.street_number}}</h5>
+			<p>{{user.description}}</p>
+		</div>
+
+		<div class="row">
+			<div class="col-12 col-xl-4">	
+				<div>
+					<i class="fas fa-shopping-cart"></i> {{cart.cart.length}}
+				</div>
+				<div class="cart" v-if="cart.cart.length > 0" data-aos="fade-left" data-aos-duration="1000">
+					<h2>Carrello</h2>
+					<ul class="cart-basket" id="cart-basket">
+						<li v-for="(plate, index) in cart.cart" :key="index">
+							<template class="row">
+								<div class="col-4">
+									<h4>{{plate.plate_name}}<h4>
+									</h4>{{plate.price}}€</h4>
+								</div>
+								<div class="col-4">
+									<div class="input-group d-flex justify-content-around">
+										<div class="event" @click="cartMinus(plate.id)"><i class="fas fa-minus"></i></div>
+										<input disabled min="1" max="10" type="number" step="1" v-model="qty.qty[plate.id]" name="quantity" class="quantity-field qty">
+										<div class="event" @click="cartPlus(plate.id)"><i class="fas fa-plus"></i></div>
+									</div>
+								</div>
+								<div class="col-4">
+									<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
+								</div>
+							</template>
+						</li>
+					</ul>
+					<div class="total">
+						<div class="mb-2">
+							<strong>Totale:</strong> <span id="total-price">{{getTotalPrice()}}€</span> 
+						</div>
+						<div>
+							<button @click="sendInfo()" class="btn btn-primary">Checkout</button>
+						</div>
+						<button v-if="cart.cart.length > 0" class="btn btn-danger" @click="removeCart()">Svuota Carrello</button>
+					</div>
+				</div>
 			</div>
 
-			<div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
+			<div class="col-12 col-xl-8">
+				<div class="row row-cols-1 row-cols-sm-1 row-cols-xl-2">
 					<div class="plate col" v-for="(plate, index) in plates" :key="index+'first'" v-show="plate.visible">
 						<div class="plate-container d-flex mt-5">
 							<div v-if="plate.url_photo" class="plate-image">
@@ -25,44 +65,10 @@
 					</div>
 				</div>	
 			</div>
-		
-		<div class="col-sm-12 col-md-4">	
-			<div>
-				<i class="fas fa-shopping-cart"></i> {{cart.cart.length}}
-			</div>
-			<div class="cart" v-if="cart.cart.length > 0" data-aos="fade-left" data-aos-duration="1000">
-				<h2>Carrello</h2>
-				<ul class="cart-basket" id="cart-basket">
-					<li v-for="(plate, index) in cart.cart" :key="index">
-						<template class="row">
-							<div class="col-4">
-								<h4>{{plate.plate_name}}<h4>
-								</h4>{{plate.price}}€</h4>
-							</div>
-							<div class="col-4">
-								<div class="input-group d-flex justify-content-around">
-									<div class="event" @click="cartMinus(plate.id)"><i class="fas fa-minus"></i></div>
-									<input disabled min="1" max="10" type="number" step="1" v-model="qty.qty[plate.id]" name="quantity" class="quantity-field qty">
-									<div class="event" @click="cartPlus(plate.id)"><i class="fas fa-plus"></i></div>
-								</div>
-							</div>
-							<div class="col-4">
-								<button class="btn cart-remove" @click="removeToCart(plate.id)">Rimuovi</button>
-							</div>
-						</template>
-					</li>
-				</ul>
-				<div class="total">
-					<div class="mb-2">
-						<strong>Totale:</strong> <span id="total-price">{{getTotalPrice()}}€</span> 
-					</div>
-					<div>
-						<button @click="sendInfo()" class="btn btn-primary">Checkout</button>
-					</div>
-					<button v-if="cart.cart.length > 0" class="btn btn-danger" @click="removeCart()">Svuota Carrello</button>
-				</div>
-			</div>
 		</div>
+
+		
+		
 	</div>
 </section>
 
@@ -325,27 +331,5 @@ a {
 			cursor: pointer;
 		}
 	}
-    
-    // // MENU-TRANSITION
-    // .sideCart{
-    //     &-enter, &-leave-to {
-    //         opacity: 0;
-    //         transform: translateX(60px);
-    //     }
-    //     &-enter-active, &-leave-active{
-    //         transition: all 500ms;
-    //     }
-
-    // }
-
-    // .types{
-    //     &-enter {
-    //         opacity: 0;
-    //         transform: translateX(60px);
-    //     }
-    //     &-enter-active{
-    //         transition: all 500ms ease-in-out;
-    //     }
-    // }
 
 </style>

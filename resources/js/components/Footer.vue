@@ -87,15 +87,14 @@ ul, li, a {
     color: rgb(172, 172, 172);
     font-size: .9375rem;
     text-decoration: none;
-    // line-height: 35px;
 }
 
 
 .iscriviti {
     color:rgb(255, 255, 255);
-    background-color: #6dc96d;
+    background-color: #38c172;
     border: none;
-    border-radius: 10px;
+    border-radius: 0.25rem;
     padding: 5px;
     width: 100px;
 }

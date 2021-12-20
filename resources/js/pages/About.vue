@@ -29,30 +29,35 @@
         <div class="container">
             <div class="row">
                 <div class="left-section col-6" >
-                    <h1 class="unaRealta">Una realtà consolidata con l'esperienza</h1>
-                    <h6 class="unaRealta">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, 
-                        impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,
-                        hic totam, debitis laborum delectus. Fugit, voluptate expedita.</h6>
-                         <h6 class="unaRealta">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, 
-                        impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,
-                        hic totam, debitis laborum delectus. Fugit, voluptate expedita.</h6>
-                        <h6 class="unaRealta">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur nesciunt excepturi earum cum saepe voluptas magni mollitia, 
-                        impedit dolor consectetur tenetur odio quaerat temporibus voluptates! Molestiae ipsa numquam cupiditate?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae at suscipit eius saepe officia voluptatibus corrupti laudantium dicta sit culpa ex aliquam,
-                        hic totam, debitis laborum delectus. Fugit, voluptate expedita.</h6>
+                    <h2 class="unaRealta font-weight-bold">Una realtà consolidata con l'esperienza</h2>
+                    <h6 class="unaRealta">
+                        La società Deliveboo, con sede a Londra, è stata fondata nel 2013 da Will Shu e Greg Orlowski, entrambi statunitensi.
+                        La società guadagna addebitando una commissione ai ristoranti e addebitando ai clienti una commissione per ordine. Opera in cinquecento città a livello glbale.
+                        Gli ordini vengono effettuati tramite l'applicazione o tramite il sito e successivamente i rider (fattorini) trasportano il cibo dal ristorante fino all'indirizzo indicato dal cliente.
+                        </h6>
+                        
+                        <h6 class="unaRealta">
+                        Nel Regno Unito, oltre che con migliaia di ristoranti indipendenti, Deliveboo lavora con alcuni delle più grandi catene della ristorazione presenti nel paese. 
+                        Il 16 novembre 2016, la società produttrice di birra Heineken International concluse un accordo con Deliveboo per la consegna di birre.
+                        Nel gennaio 2017, Deliveboo annunciò l'intenzione di creare 300 posti di lavoro in ambito tecnologico nel Regno Unito in vista dell'apertura della nuova sede di Londra alla fine dello stesso anno.
+                        </h6>
+
+                        <h6 class="unaRealta">
+                        A metà giugno 2016, i fondatori di Deliveboo, Will Shu e Greg Orlowski hanno ricevuto un premio per i "Best Startup Founders" nell'ambito di "The Europas Startup Conference and Awards", 
+                        assegnati a società tecnologiche. La società ha anche vinto il premio "Fastest Rising Startup of the Year" e il premio "Europas Grand Prix".
+                        Deliveboo ha registrato una perdita di 1,4 milioni di sterline per l'anno 2015.
+                        </h6>
                 </div>
                 <div class="right-section col-6" >
                     <div class="imgAbout cf">
-                        <img class="imgAbout bottom" src="images/bkg_tre.jpg" alt="">
-                        <img class="imgAbout top" src="images/restaurants.jpg" alt="">
+                        <img class="imgAbout bottom" src="images/okokok.png" alt="">
+                        <img class="imgAbout top" src="images/okDeliveboo.png" alt="">
                     </div>
                      <div class="imgAbout cf">
-                        <img class="imgAbout bottom" src="images/bkg_tre.jpg" alt="">
-                        <img class="imgAbout top" src="images/restaurants.jpg" alt="">
+                        <img class="imgAbout bottom" src="images/hamb.jpg" alt="">
+                        <img class="imgAbout top" src="images/Dana-Sushi.jpg" alt="">
                     </div>
-                    <div class="imgAbout cf">
+                    <div class="cf">
                         <a href="/register"><button class="iscriviti  text-uppercase  font-weight-bold">Iscriviti</button></a>
                         <h4 class="pt-4 font-weight-bold">Centro iscrizione Deliveboo</h4>
                         <p class="pt-2">Hai una domanda, oppure hai bisogno di consigli o assistenza? <br>
@@ -111,13 +116,13 @@ ul li {
 
 .unaRealta{
     padding: 30px;
-    margin-top: 40px;
 }
 
 .imgAbout {
     width: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 13% 91%);
 }
 
 .logo {
@@ -127,7 +132,7 @@ ul li {
 }
 
 .imageProva {
-    width: 200%;
+    width: 160%;
     margin-left: 40px;
 }
 
@@ -138,7 +143,7 @@ ul li {
     border-radius: 10px;
     padding: 10px;
     width: 120px;
-    margin-top: 50px;
+    margin-top: 130px;
 }
 
 .iscriviti:hover {

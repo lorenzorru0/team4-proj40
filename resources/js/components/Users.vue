@@ -1,10 +1,10 @@
 <template>
     <div class="users-container">
-        <!-- <p>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <p>
+            <button class="btn btn-success text-uppercase font-weight-bold p3 ricerca" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Ricerca i ristoranti tramite le tipologie
             </button>
-        </p> -->
+        </p>
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
@@ -97,38 +97,12 @@ export default {
     margin: auto;
     padding: 20px; 
 
-    // MENU-OPEN
-    // .menu{
-    //     width: 31.25rem;
-    //     background-color: rgba($color: #ffff, $alpha: .9);
-    //     position: absolute;
-    //     right: 0;
-    //     z-index: 50;
-    //     border-radius: 10px;
+    .ricerca {
+        transition-duration: .5s;
 
-        
-        
-    // }
-    // MENU-TRANSITION
-    // .menu{
-    //     &-enter, &-leave-to {
-    //         opacity: 0;
-    //         transform: translateX(60px);
-    //     }
-    //     &-enter-active, &-leave-active{
-    //         transition: all 500ms;
-    //     }
-
-    // }
-
-    // .types{
-    //     &-enter {
-    //         opacity: 0;
-    //         transform: translateX(60px);
-    //     }
-    //     &-enter-active{
-    //         transition: all 500ms ease-in-out;
-    //     }
-    // }
+        &:hover {
+            background: coral;
+        }
+    }
 }
 </style>

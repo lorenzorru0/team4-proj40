@@ -34,7 +34,12 @@
     <body>
         <div class="container">
             <div>
+              <div class="d-flex justify-content-between align-items-center">
                 <h1>Dettagli Pagamento</h1>
+                <div>
+                  <a href="javascript:history.back()">Torna al ristorante</a>
+                </div>
+              </div>
                 <div class="spacer"></div>
 
                 @if (session()->has('success_message'))

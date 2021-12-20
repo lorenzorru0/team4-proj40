@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Order;
+use Carbon\Carbon;
 
 class OrderController extends Controller
 {
@@ -84,5 +85,22 @@ class OrderController extends Controller
         $order->save();
 
         return redirect()->route("admin.orders.index")->with('success', "Ordine segnato come consegnato.");
+    }
+
+    public function orderStats(){
+
+        $data = Order::where('user_id', Auth::user()->id)->get()->groupBy(function($data){
+            return Carbon::parse($data->created_at)->format('M/Y');
+        });
+    
+        $months=[];
+        $monthOrders=[];
+        foreach($data as $month => $values){
+            $months[]=$month;
+            $monthOrders[]=count($values);
+        }
+    
+        return view('orders.stats', compact('data', 'months', 'monthOrders'));
+    
     }
 }

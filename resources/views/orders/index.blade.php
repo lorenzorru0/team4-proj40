@@ -18,6 +18,10 @@
         <div class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{ route('admin.orders.index.delivered')}}">Visualizza ordini consegnati</a>
         </div>
+        <div class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ route('admin.orders.stats')}}">Visualizza statistiche</a>
+        </div>
+        
     </div>
 
     @if (count($orders) == 0)

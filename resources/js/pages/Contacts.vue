@@ -1,43 +1,48 @@
 <template>
     
-<div class="contacts">
+
+
+<div class="contacts ">
+    
     <div class="sectionOneMain">
         <div class="bloccoTitolo">
             <div>
                 <h2 class="my-5 text-center text-uppercase if font-weight-bold">contattaci</h2>
             </div> 
             <div>
-                 <section class="line dark"></section>
+               
             </div>
-            <div id="title">
-                <h5 class="text-uppercase if why col-12">Come contattarci quando hai bisogno di aiuto, inclusa l'assistenza per gli ordini attivi per partner di ogni tipo.
+            <div class="my-5" id="title">
+                <h5 class="  text-center col">Come contattarci quando hai bisogno di aiuto, inclusa l'assistenza per gli ordini attivi per partner di ogni tipo.
                 </h5>
             </div>
 
-            <div class="imagineContattaci my-5">
-                <div class="testoContattaci">
+            <div class="container imagineContattaci my-5">
+                <div class="row">
+                    <div class="testoContattaci col-sm-6 ">
                     <h2 class=" font-weight-bold my-3 ">Contattaci</h2>
                     <h5>Hai una domanda, oppure hai bisogno di consigli o <br>assistenza?</h5>
                     <h5>Siamo qui per offrirti il nostro supporto in diversi modi.</h5>
                     <h5>Contattaci attraverso le nostre reti sociali.</h5>
+                    </div>
+                    <img class="imgContact col-sm-12 col-md-6" src="images/technology - Copia.jpg" alt="">
                 </div>
-                <img class="imgContact" src="images/technology - Copia.jpg" alt="">
             </div>
 
             <form class="container">
               
                 <div class="form-group ">
                     <label for="name">Nome</label>
-                    <input  required type="text" class="form-control w-50" id="name" placeholder="Inserisci il tuo nome">
+                    <input  required type="text" class="form-control " id="name" placeholder="Inserisci il tuo nome">
                 </div>
                   <div class="form-group  ">
                     <label for="email">Email address</label>
-                    <input  required type="email"  class="form-control w-50" id="email" aria-describedby="emailHelp" placeholder="Inserisci e-mail ">
+                    <input  required type="email"  class="form-control " id="email" aria-describedby="emailHelp" placeholder="Inserisci e-mail ">
                     <small id="emailHelp" class="form-text text-muted">Avremo premura di ricontattarti il prima possibile</small>
                 </div>
                     <div class="form-group">
                     <label for="textarea">Inserisci qui il tuo commento</label>
-                    <textarea class="form-control w-50" id="textarea" rows="3"></textarea>
+                    <textarea class="form-control " id="textarea" rows="3"></textarea>
                  </div>
                
 
@@ -192,9 +197,9 @@ export default {
 }
 
 .imgContact { 
-    width: 30%;
-    padding: 30px;
-    padding-bottom: 70px;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 13% 91%);
+   
 }
 
 .testoContattaci {
@@ -239,8 +244,9 @@ export default {
 }
 
 .imagineCucino{
-    width: 40%;
-    padding-top: 40px;
+    width: 100%;
+    max-width: 400px;
+   
 }
 
 </style>

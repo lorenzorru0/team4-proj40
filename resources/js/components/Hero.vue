@@ -74,11 +74,11 @@ export default {
             }
         }
 
-        &:hover {
-            background-image: url('/images/bkg.jpg');
-            background-position: center;
-            background-size: cover;
-        }
+        // &:hover {
+        //     background-image: url('/images/bkg.jpg');
+        //     background-position: center;
+        //     background-size: cover;
+        // }
     }
 
     .logo {

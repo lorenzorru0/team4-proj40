@@ -40,20 +40,21 @@ export default {
     margin-left: 0;
 }
 header {
-    // background-color: #43c6bf73;
     background-color: #73d29ef8;
     padding: 10px;
-    // position: fixed;
-    // margin: auto;
-    // width: 100%;
 
     .link {
         display: inline-flex;
         margin: .3125rem;
         padding: .3125rem .9375rem;
-        background-color: white;
-        color: black;
+        background-color: coral;
+        color: white;
         border-radius: .3125rem;
+        text-decoration: none;
+    }
+    .link:hover {
+        background-color: #00BAE8;
+        transition: 1s;
     }
 }
 

@@ -24,7 +24,7 @@
     @endif
 
     <div class="row my-5">
-       
+    
         <div class="list col-sm-12 col-md-6 ">
             Tipologie:
             <div>

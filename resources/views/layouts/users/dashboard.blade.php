@@ -109,11 +109,11 @@
                 Vuoi confermare la cancellazione dell'account?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
                 <form action="{{ route('admin.users.destroy', Auth::user()->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-primary">Delete</button>
+                    <button type="submit" class="btn btn-primary">Cancella</button>
                 </form>
             </div>
             </div>

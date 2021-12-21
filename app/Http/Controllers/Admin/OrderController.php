@@ -92,7 +92,17 @@ class OrderController extends Controller
         $data = Order::where('user_id', Auth::user()->id)->get()->groupBy(function($data){
             return Carbon::parse($data->created_at)->format('M/Y');
         });
-    
+        // $allOrders = Order::all()->where('user_id', Auth::user()->id);
+
+        // $years = $allOrders->groupBy(function($allOrders){
+        //     return Carbon::parse($allOrders->created_at)->format('Y');
+        // });
+        
+
+        // $months = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Sep','Oct','Nov','Dic'];
+
+        // dd($months);
+        
         $months=[];
         $monthOrders=[];
         foreach($data as $month => $values){

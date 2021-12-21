@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Deliveboo</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/logo_green.png')}}" type="image/x-icon">
 </head>
 <body>
 

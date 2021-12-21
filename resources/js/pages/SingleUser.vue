@@ -20,7 +20,7 @@
 								
 							<div class="col-12 col-sm-6 text-center text-sm-left">
 								<h3>{{plate.plate_name}}</h3>
-								<div class="price">Prezzo: {{plate.price}}€</div>
+								<div class="price">Prezzo: {{plate.price.toFixed(2)}}€</div>
 								<div>Descrizione: {{plate.description}}</div>
 								<button class="btn add-cart mt-3" @click="addToCart(plate), getTotalPrice(), cartOpen = true">Aggiungi al carrello</button>
 							</div>
@@ -40,7 +40,7 @@
 							<template class="row">
 								<div class="col-12 col-sm-4">
 									<h4>{{plate.plate_name}}<h4>
-									</h4>{{plate.price}}€</h4>
+									</h4>{{plate.price.toFixed(2)}}€</h4>
 								</div>
 								<div class="col-12 col-sm-4 d-flex justify-content-center">
 									<div class="input-group d-flex justify-content-around">
@@ -57,7 +57,7 @@
 					</ul>
 					<div class="total">
 						<div class="mb-2">
-							<strong>Totale:</strong> <span id="total-price">{{getTotalPrice()}}€</span> 
+							<strong>Totale:</strong> <span id="total-price">{{getTotalPrice().toFixed(2)}}€</span> 
 						</div>
 						<div>
 							<button @click="sendInfo()" class="btn btn-primary">Checkout</button>

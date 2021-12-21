@@ -77,7 +77,8 @@
                 }
             @endphp
         
-            @foreach ($plates as $key => $item)
+            
+            @foreach ($objectCart as $key => $item)
                 <span>x{{$qty[$key]}} {{$item->plate_name}} {{$item->price}}€</span>
                 <br>
             @endforeach

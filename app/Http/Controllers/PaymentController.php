@@ -64,8 +64,18 @@ class PaymentController extends Controller
         $user = User::where('id', $id)->first();
 
         $user = $this->object_to_array($user->getAttributes());
-       
+
         $plates = Plate::where('user_id', $user)->get();
+
+        foreach ($cart as $item) {
+            foreach ($plates as $plate) {
+                if ($item == $plate->id) {
+                    $arrayCart[] = $plate;
+                }
+            }
+        }
+
+        $objectCart = (object) $arrayCart;
 
         foreach ($cart as $key => $item) {
             DB::table('order_plate')->insert([
@@ -105,7 +115,7 @@ class PaymentController extends Controller
             $emailNames=[$newOrder->customer_firstname,$user['business_name']];
 
             foreach ($emails as $key=>$email){
-                Mail::send('email.emailOrder', compact('newOrder','user','plates', 'objectQty'),
+                Mail::send('email.emailOrder', compact('newOrder','user', 'objectCart', 'objectQty'),
                 function($message) use ($email,$emailNames,$key){
                     $message->to(strval($email),strval($emailNames[$key]))
                     ->subject('Il tuo ordine Deliveboo');

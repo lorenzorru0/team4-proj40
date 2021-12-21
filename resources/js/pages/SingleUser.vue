@@ -45,7 +45,7 @@
 								<div class="col-12 col-sm-4 d-flex justify-content-center">
 									<div class="input-group d-flex justify-content-around">
 										<div class="event" @click="cartMinus(plate.id)"><i class="fas fa-minus"></i></div>
-										<input disabled min="1" max="10" type="number" step="1" v-model="qty.qty[plate.id]" name="quantity" class="quantity-field qty">
+										<input disabled min="1" max="10" type="number" step="1" v-model="qty.qty[plate.id]" name="quantity" class="quantity-field qty text-center">
 										<div class="event" @click="cartPlus(plate.id)"><i class="fas fa-plus"></i></div>
 									</div>
 								</div>
@@ -284,7 +284,7 @@ i {
 
 .input-group {
 	width: 100%;
-	margin-left: 20px;
+	// margin-left: 20px;
 	.qty {
 		border: none;
 		font-size: 1.1rem;

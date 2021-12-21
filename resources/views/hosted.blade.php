@@ -297,13 +297,13 @@
 
         newCart.innerHTML = `<input type="hidden" name="cart[]" value="${element.id}">`;
         newQty.innerHTML = `<input type="hidden" name="qty[]" value="${qty.qty[element.id]}">`;
-        newInfo.innerHTML = `<span>${qty.qty[element.id]}x ${element.plate_name}      ${element.price} €</span>`
+        newInfo.innerHTML = `<span>${qty.qty[element.id]}x ${element.plate_name}     ${element.price.toFixed(2)} €</span>`
 
         document.getElementById("cartContainer").appendChild(newCart);
         document.getElementById("cartContainer").appendChild(newQty);
         document.getElementById("infoContainer").appendChild(newInfo);
       });
-      document.getElementById('amount').value = totalPrice;
+      document.getElementById('amount').value = totalPrice.toFixed(2);
 
       let buttonPay = document.getElementById('payNow');
 

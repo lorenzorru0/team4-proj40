@@ -78,7 +78,7 @@
             @endphp
         
             @foreach ($plates as $key => $item)
-                <span>x{{$qty[$key]}} {{$item->plate_name}} {{$item->price}}€</span>
+                <span>x{{$qty[$key]}} {{$item->plate_name}} {{number_format($item->price, 2, '.', '')}}€</span>
                 <br>
             @endforeach
             <h4>Prezzo totale pagato: {{$newOrder['total_price']}}€</h4>

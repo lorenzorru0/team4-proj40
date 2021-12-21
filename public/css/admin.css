@@ -10037,6 +10037,10 @@ h3 {
   max-width: 200px;
 }
 
+.imgPlate {
+  max-height: 400px;
+}
+
 .totalPrice {
   position: relative;
 }

@@ -28,7 +28,7 @@
         </div>
         <div class="col-12 col-md-6">
             @if ($plate->url_photo)
-                <img class="w-100 rounded" src="{{asset('storage/'. $plate->url_photo)}}" alt="Plate photo">
+                <img class="rounded imgPlate" src="{{asset('storage/'. $plate->url_photo)}}" alt="Plate photo">
             @else
                 <p>Non è stata caricata nessuna foto.</p>
             @endif

@@ -30,7 +30,7 @@
         </ul>
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6 padding-content">
                 <h2 class="font-weight-bold">Una realtà consolidata con l'esperienza</h2>

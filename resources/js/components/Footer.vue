@@ -5,7 +5,6 @@
                 <div>
                     <ul>
                         <li><a href="#"><span class="text-secondary titleFooter font-weight-bold">Deliveboo Restaurant</span></a></li>
-                        <li><a href="#">signature</a></li>
                         <li><a href="#">integrazione del sistema di<br>Cassa</a></li>
                     </ul>
                     <div class="copy">
@@ -27,9 +26,6 @@
                     <ul>
                         <li><a href="#"><span class="text-secondary titleFooter font-weight-bold">Help</span></a></li>
                         <li><a href="#">Aiuto</a></li>
-                        <li><a href="#">signature</a></li>
-                        <li><a href="#">signature</a></li>
-                        <li><a href="#">signature</a></li>
                     </ul>
                 </div>
                 <div class="vuoi">
